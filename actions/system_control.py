@@ -2,7 +2,7 @@
 Advanced System Controls & Security Module for Motu Assistant (Phase 2 & Phase 6 Upgrade).
 Handles Screenshot Capture, Screen Brightness Control, Windows File Search, Windows Explorer Restart,
 and Security Confirmation Safeguards before critical OS/file modifications.
-Natively captures Windows desktop screenshots via PowerShell GDI fallback.
+Captures Windows desktop screenshots via mss, PIL ImageGrab, PyAutoGUI, or native Windows PowerShell GDI.
 """
 
 import os
@@ -18,14 +18,19 @@ from core.logger import logger
 from core.database import db
 
 try:
-    import pyautogui
+    import mss
 except ImportError:
-    pyautogui = None
+    mss = None
 
 try:
     from PIL import ImageGrab
 except ImportError:
     ImageGrab = None
+
+try:
+    import pyautogui
+except ImportError:
+    pyautogui = None
 
 try:
     import screen_brightness_control as sbc
@@ -44,7 +49,7 @@ class SystemControlHandler:
     def take_screenshot(self) -> str:
         """
         Capture desktop screen and save to data/screenshots/ folder.
-        Uses PyAutoGUI, PIL ImageGrab, or native Windows PowerShell GDI fallback.
+        Uses mss, PIL ImageGrab, PyAutoGUI, or native Windows PowerShell GDI fallback.
         
         Returns:
             Status message with file path.
@@ -55,32 +60,47 @@ class SystemControlHandler:
 
         captured = False
 
-        if pyautogui:
+        # 1. Try mss (Fastest native multi-monitor screen capture)
+        if mss:
             try:
-                pyautogui.screenshot(str(filepath))
-                captured = True
+                with mss.mss() as sct:
+                    sct.shot(mon=-1, output=str(filepath))
+                    if filepath.exists():
+                        captured = True
             except Exception as err:
-                logger.debug(f"PyAutoGUI screenshot failed: {err}")
+                logger.debug(f"mss screenshot failed: {err}")
 
+        # 2. Try PIL ImageGrab
         if not captured and ImageGrab:
             try:
                 img = ImageGrab.grab()
                 img.save(str(filepath))
-                captured = True
+                if filepath.exists():
+                    captured = True
             except Exception as err:
                 logger.debug(f"PIL ImageGrab screenshot failed: {err}")
 
-        # Native Windows PowerShell GDI Base64 Fallback
+        # 3. Try PyAutoGUI
+        if not captured and pyautogui:
+            try:
+                pyautogui.screenshot(str(filepath))
+                if filepath.exists():
+                    captured = True
+            except Exception as err:
+                logger.debug(f"PyAutoGUI screenshot failed: {err}")
+
+        # 4. Native Windows PowerShell GDI Base64 Fallback
         if not captured:
             try:
                 target_str = str(filepath.resolve()).replace("\\", "/")
                 ps_code = f"""
-Add-Type -AssemblyName System.Windows.Forms,System.Drawing
+[Reflection.Assembly]::LoadWithPartialName('System.Windows.Forms')
+[Reflection.Assembly]::LoadWithPartialName('System.Drawing')
 $b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
 $bmp = New-Object System.Drawing.Bitmap($b.Width, $b.Height)
 $g = [System.Drawing.Graphics]::FromImage($bmp)
 $g.CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
-$bmp.Save('{target_str}')
+$bmp.Save('{target_str}', [System.Drawing.Imaging.ImageFormat]::Png)
 $g.Dispose()
 $bmp.Dispose()
 """
