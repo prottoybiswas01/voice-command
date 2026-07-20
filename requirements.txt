@@ -1,3 +1,4 @@
+# Core Dependencies for X Assistant (Phase 2)
 pyttsx3>=2.90
 SpeechRecognition>=3.10.0
 # PyAudio (Install prebuilt binary wheel if building from source fails on Python 3.14: pip install pyaudio)
@@ -7,7 +8,9 @@ psutil>=5.9.8
 PyYAML>=6.0.1
 playwright>=1.42.0
 
-# Database & Async Utilities
+# Phase 2 Intelligence & Automation Dependencies
+wikipedia>=1.4.0
+screen-brightness-control>=0.22.0
 requests>=2.31.0
 urllib3>=2.2.1
 

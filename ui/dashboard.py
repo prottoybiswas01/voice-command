@@ -1,28 +1,30 @@
 """
-GUI Dashboard Module for X Assistant.
-Provides a modern dark-themed Tkinter interface displaying assistant state, speech transcripts, and system metrics.
+GUI Dashboard Module for X Assistant (Phase 2 Upgrade).
+Provides a modern dark-themed Tkinter interface displaying assistant state, speech transcripts,
+system diagnostics, memory buffer inspector, and smart automation shortcuts.
 """
 
 import sys
 import threading
 import tkinter as tk
-from tkinter import ttk, scrolledtext
+from tkinter import ttk, scrolledtext, messagebox
 from typing import Optional, Callable
 from config.settings import settings
 from core.logger import logger
+from core.database import db
 from core.event_bus import event_bus
 from actions.productivity_actions import productivity_actions
 
 
 class AssistantDashboard:
-    """Tkinter Desktop Dashboard Interface for X Assistant."""
+    """Tkinter Desktop Dashboard Interface for X Assistant Phase 2."""
 
     def __init__(self, on_user_submit_callback: Optional[Callable[[str], None]] = None) -> None:
         self.on_user_submit_callback = on_user_submit_callback
         self.root = tk.Tk()
-        self.root.title(f"{settings.assistant.name} - Control Dashboard")
-        self.root.geometry("850x600")
-        self.root.minsize(700, 500)
+        self.root.title(f"{settings.assistant.name} Phase 2 - Control Dashboard")
+        self.root.geometry("900x650")
+        self.root.minsize(750, 550)
 
         # Apply dark theme styling
         self.bg_color = "#1E1E2E"
@@ -44,8 +46,8 @@ class AssistantDashboard:
 
         title_label = tk.Label(
             header_frame,
-            text=f"🤖 {settings.assistant.name}",
-            font=("Segoe UI", 18, "bold"),
+            text=f"🤖 {settings.assistant.name} (v{settings.assistant.version})",
+            font=("Segoe UI", 16, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
         )
@@ -70,8 +72,8 @@ class AssistantDashboard:
 
         log_title = tk.Label(
             left_frame,
-            text="Live Transcript & History",
-            font=("Segoe UI", 12, "bold"),
+            text="Live AI Reasoning & Transcript Log",
+            font=("Segoe UI", 11, "bold"),
             fg=self.fg_color,
             bg=self.bg_color
         )
@@ -106,7 +108,7 @@ class AssistantDashboard:
 
         send_btn = tk.Button(
             input_frame,
-            text="Send",
+            text="Execute",
             font=("Segoe UI", 10, "bold"),
             bg=self.accent_color,
             fg="#000000",
@@ -118,43 +120,45 @@ class AssistantDashboard:
         send_btn.pack(side=tk.RIGHT)
 
         # Right Column: Quick Stats & Controls Sidebar
-        right_frame = tk.Frame(main_container, bg=self.card_bg, width=220, padx=15, pady=15)
+        right_frame = tk.Frame(main_container, bg=self.card_bg, width=250, padx=15, pady=15)
         right_frame.pack(side=tk.RIGHT, fill=tk.Y)
         right_frame.pack_propagate(False)
 
         sidebar_title = tk.Label(
             right_frame,
-            text="System Diagnostics",
+            text="System & AI Status",
             font=("Segoe UI", 11, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
         )
-        sidebar_title.pack(anchor="w", pady=(0, 10))
+        sidebar_title.pack(anchor="w", pady=(0, 5))
 
         self.metrics_label = tk.Label(
             right_frame,
             text="CPU: --%\nRAM: --%\nBattery: --%\nNet: Online",
-            font=("Segoe UI", 10),
+            font=("Segoe UI", 9),
             fg=self.fg_color,
             bg=self.card_bg,
             justify=tk.LEFT
         )
-        self.metrics_label.pack(anchor="w", pady=(0, 20))
+        self.metrics_label.pack(anchor="w", pady=(0, 15))
 
         btn_title = tk.Label(
             right_frame,
-            text="Quick Commands",
+            text="Phase-2 Automation",
             font=("Segoe UI", 11, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
         )
-        btn_title.pack(anchor="w", pady=(0, 10))
+        btn_title.pack(anchor="w", pady=(0, 5))
 
         quick_cmds = [
-            ("🕒 Current Time", "what time is it"),
-            ("📅 Current Date", "what is today's date"),
-            ("💻 System Info", "show system info"),
-            ("📝 Show Todos", "show todo list"),
+            ("🎵 Play Music", "play music"),
+            ("⛅ Live Weather", "get live weather"),
+            ("📰 Live News", "get live news"),
+            ("📸 Take Screenshot", "take screenshot"),
+            ("🌐 Open GitHub", "open github"),
+            ("🧠 Inspect Memory", "__memory__"),
             ("🧹 Clear Log", "__clear__")
         ]
 
@@ -172,19 +176,16 @@ class AssistantDashboard:
                 pady=4,
                 command=lambda c=cmd: self._handle_quick_cmd(c)
             )
-            btn.pack(fill=tk.X, pady=3)
+            btn.pack(fill=tk.X, pady=2)
 
     def _subscribe_events(self) -> None:
-        """Register listeners on event bus."""
         event_bus.subscribe("wake_word_detected", self._on_wake_word)
 
     def _on_wake_word(self, text: str = "") -> None:
-        """Update status label when wake word is detected."""
         self.root.after(0, lambda: self.status_label.config(text="● Active / Listening...", fg="#FF5555"))
         self.root.after(4000, lambda: self.status_label.config(text="● Listening for 'X' / 'Hey X'", fg=self.highlight_color))
 
     def append_transcript(self, sender: str, message: str) -> None:
-        """Append message to transcript scrollable text view."""
         def _update():
             self.transcript_box.config(state=tk.NORMAL)
             prefix = "👤 User: " if sender.lower() == "user" else "🤖 X Assistant: "
@@ -195,7 +196,6 @@ class AssistantDashboard:
         self.root.after(0, _update)
 
     def _on_send(self) -> None:
-        """Handle manual text input submission."""
         text = self.input_entry.get().strip()
         if not text:
             return
@@ -207,11 +207,16 @@ class AssistantDashboard:
             threading.Thread(target=self.on_user_submit_callback, args=(text,), daemon=True).start()
 
     def _handle_quick_cmd(self, cmd: str) -> None:
-        """Handle sidebar quick action button click."""
         if cmd == "__clear__":
             self.transcript_box.config(state=tk.NORMAL)
             self.transcript_box.delete(1.0, tk.END)
             self.transcript_box.config(state=tk.DISABLED)
+            return
+
+        if cmd == "__memory__":
+            prefs = db.get_all_preferences()
+            pref_text = "\n".join([f"{k}: {v}" for k, v in prefs.items()]) if prefs else "No user preferences stored yet."
+            messagebox.showinfo("Memory Buffer Inspector", f"Stored User Preferences:\n\n{pref_text}")
             return
 
         self.append_transcript("User", cmd)
@@ -219,7 +224,6 @@ class AssistantDashboard:
             threading.Thread(target=self.on_user_submit_callback, args=(cmd,), daemon=True).start()
 
     def _start_metrics_timer(self) -> None:
-        """Periodically update system metrics on sidebar."""
         def _update_metrics():
             info = productivity_actions.get_system_info("all")
             self.metrics_label.config(text=info.replace(". ", "\n"))
@@ -228,7 +232,6 @@ class AssistantDashboard:
         self.root.after(1000, _update_metrics)
 
     def start(self) -> None:
-        """Start Tkinter main GUI loop."""
         self.root.mainloop()
 
 

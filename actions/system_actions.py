@@ -1,5 +1,5 @@
 """
-System Actions Module for X Assistant.
+System Actions Module for X Assistant (Phase 2 Upgrade).
 Handles Windows OS application launches, system time/date queries, power management, and exit routines.
 """
 
@@ -13,12 +13,13 @@ from core.database import db
 
 
 class SystemActionsHandler:
-    """Executes Windows system commands and controls."""
+    """Executes Windows system commands and controls with Phase-2 security features."""
 
     def __init__(self) -> None:
         self.app_paths = {
             "chrome": ["chrome.exe", "start chrome"],
             "edge": ["msedge.exe", "start msedge"],
+            "firefox": ["firefox.exe", "start firefox"],
             "vscode": ["code", "code.cmd"],
             "notepad": ["notepad.exe"],
             "calculator": ["calc.exe"],
@@ -27,15 +28,7 @@ class SystemActionsHandler:
         }
 
     def execute_app_launch(self, app_name: str) -> str:
-        """
-        Open specified local Windows application.
-        
-        Args:
-            app_name: Name of application key.
-            
-        Returns:
-            Status response message.
-        """
+        """Open specified local Windows application."""
         if app_name not in self.app_paths:
             msg = f"Application '{app_name}' is not recognized."
             logger.warning(msg)
@@ -92,25 +85,16 @@ class SystemActionsHandler:
         else:
             time_greeting = "Good evening"
             
-        return f"{time_greeting}! I am X Assistant. How can I assist you today?"
+        return f"{time_greeting}! I am X Assistant Phase 2. How can I help you today?"
 
     def confirm_power_action(self, action: str) -> str:
-        """
-        Request user confirmation for critical power commands.
-        
-        Args:
-            action: 'shutdown', 'restart', or 'sleep'.
-            
-        Returns:
-            Confirmation prompt message.
-        """
+        """Request user confirmation for critical power commands."""
         if action == "shutdown":
             return "Are you sure you want to shutdown the computer? Say confirm to proceed."
         elif action == "restart":
             return "Are you sure you want to restart the computer? Say confirm to proceed."
         elif action == "sleep":
             return "Putting computer to sleep."
-            # Native Windows sleep command
             os.system("rundll32.exe powrprof.dll,SetSuspendState 0,1,0")
             return "Goodnight. Computer is going to sleep."
         return "Unknown power action."

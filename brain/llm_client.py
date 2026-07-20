@@ -1,6 +1,7 @@
 """
-Local Ollama LLM Client for X Assistant.
-Interacts with locally hosted Ollama models (Gemma, Llama, Mistral) over HTTP REST API.
+Local Ollama LLM Client for X Assistant (Phase 2 Upgrade).
+Interacts with locally hosted Ollama models (Gemma, Llama, Mistral) over HTTP REST API
+with context memory injection and long context prompt handling.
 """
 
 import json
@@ -9,10 +10,11 @@ import urllib.error
 from typing import Dict, Any, Optional
 from config.settings import settings
 from core.logger import logger
+from brain.memory import memory_manager
 
 
 class OllamaClient:
-    """Client for querying local Ollama LLM server."""
+    """Client for querying local Ollama LLM server with memory injection."""
 
     def __init__(self, host: Optional[str] = None, model: Optional[str] = None) -> None:
         self.host = (host or settings.ollama.host).rstrip("/")
@@ -29,23 +31,29 @@ class OllamaClient:
         except Exception:
             return False
 
-    def generate_response(self, user_prompt: str) -> str:
+    def generate_response(self, user_prompt: str, include_memory: bool = True) -> str:
         """
-        Generate response from Ollama local model.
+        Generate response from Ollama local model with memory context injection.
         
         Args:
             user_prompt: User's spoken or typed prompt.
+            include_memory: Whether to inject long-term context memory.
             
         Returns:
             Assistant text response string.
         """
         if not user_prompt or not user_prompt.strip():
-            return "I am listening. How can I help you?"
+            return "I am listening. How can I help you today?"
+
+        # Build context prompt from memory manager
+        context_block = memory_manager.build_context_prompt() if include_memory else ""
 
         endpoint = f"{self.host}/api/generate"
+        full_system = f"{self.system_prompt}\n{context_block}"
+        
         payload = {
             "model": self.model,
-            "prompt": f"System: {self.system_prompt}\nUser: {user_prompt}\nAssistant:",
+            "prompt": f"System: {full_system}\nUser: {user_prompt}\nAssistant:",
             "stream": False
         }
 
@@ -78,11 +86,11 @@ class OllamaClient:
         clean = text.lower().strip()
 
         if any(w in clean for w in ["hello", "hi", "hey", "সালাম", "হ্যালো"]):
-            return "Hello! I am X Assistant. How can I help you today?"
+            return "Hello! I am X Assistant Phase 2. How can I help you today?"
         elif any(w in clean for w in ["who are you", "কে তুমি", "তোমার নাম কি", "what is your name"]):
-            return "I am X Assistant, your personal local AI assistant built with open-source tools."
+            return "I am X Assistant Phase 2, your personal AI assistant built with local open-source tools."
         elif any(w in clean for w in ["how are you", "কেমন আছো", "কেমন আছেন"]):
-            return "I am doing great! Ready to help you with anything you need."
+            return "I am doing great! Ready to execute smart automation for you."
         elif any(w in clean for w in ["thank you", "thanks", "ধন্যবাদ"]):
             return "You are very welcome! Let me know if you need anything else."
         elif any(w in clean for w in ["bye", "goodbye", "বিদায়"]):
@@ -91,5 +99,5 @@ class OllamaClient:
         return f"I processed your request: '{text}'. Start Ollama locally for deep conversational responses."
 
 
-# Global Ollama client instance
+# Global Phase-2 Ollama client instance
 ollama_client = OllamaClient()

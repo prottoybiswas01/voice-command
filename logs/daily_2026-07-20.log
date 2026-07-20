@@ -93,3 +93,37 @@
 [2026-07-20 22:35:32] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
 [2026-07-20 22:35:32] [INFO] [XAssistant]: Speaking: I processed your request: 'all system off now'. Start Ollama locally for deep conversational responses.
 [2026-07-20 22:35:36] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:20] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:30] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 22:38:31] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:31] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:32] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Burnham promises help with your money. How could it affect you?; 2. Burnham's policy choices reveal what kind of PM he wants to be; 3. Key takeaways as Andy Burnham becomes PM
+[2026-07-20 22:38:32] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Live weather for Dhaka: Overcast , 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: User preference saved: favorite_song = hotel california
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: User preference saved: favorite_music = Rock
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:38:33] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:38:33] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.

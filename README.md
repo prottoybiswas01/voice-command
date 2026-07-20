@@ -1,34 +1,41 @@
-# X Assistant (Phase-1) 🤖
+# X Assistant - Phase 2 (AI Brain & Smart Automation) 🤖
 
-**X Assistant** is a complete, production-ready, clean-architecture Personal AI Voice Assistant built in Python using **100% Free and Open Source local tools**. It features offline voice recognition, wake word detection (**"X"**, **"Hey X"**, **"X Listen"**), local LLM integration via Ollama, native Windows automation, productivity tools (todos, notes, reminders), hardware diagnostics, multi-language support (Bangla, English, Mixed Banglish), and a visual Tkinter GUI dashboard.
+**X Assistant Phase 2** is a production-ready, clean-architecture Personal AI Voice Assistant built in Python using **100% Free and Open Source local tools**. Phase-2 introduces multi-step AI reasoning, persistent user memory, Playwright browser automation, smart music playback, live internet data (weather, news, Wikipedia), and advanced Windows system controls.
 
 ---
 
-## 🌟 Key Features
+## 🚀 Phase-2 Features
 
-### 🎙️ Voice & AI Intelligence
-- **Wake Word Engine**: Listens continuously for `"X"`, `"Hey X"`, or `"X Listen"` before triggering activation.
-- **Offline Speech-To-Text (STT)**: Recognizes voice prompts in English (`en-US`) and Bangla (`bn-BD`).
-- **Text-To-Speech (TTS)**: Offline voice synthesis using `pyttsx3` with Windows SAPI5 engines.
-- **Local LLM Conversation**: Connects to **Ollama** (`gemma2:2b`, `llama3.2`, `mistral`) for privacy-first AI responses without paid APIs.
+### 🧠 1. Smart Memory & Context Buffer
+- **User Preferences**: Remembers your favorite song, artist, preferred browser, user name, and custom preferences in local SQLite database.
+- **Context Injection**: Automatically injects past conversation context and user memory into Ollama system prompts.
+- **Implicit Memory Extraction**: Listens for statements like *"My favorite song is Hotel California"* or *"Remember that my name is Alex"* and saves them automatically.
 
-### 💻 System & OS Automation
-- **App Launchers**: Launch Chrome, Edge, VS Code, Notepad, Calculator, File Explorer, Task Manager.
-- **Media Controls**: Play, Pause, Stop music via hardware media keys.
-- **System Volume**: Volume Up, Volume Down, Mute/Unmute.
-- **Power Controls**: Computer Shutdown, Restart, and Sleep with safety confirmation prompts.
-- **Date & Time**: Speech query for current time and date.
+### 🧩 2. Multi-Step Reasoning Agent
+- **Task Decomposition**: Automatically breaks multi-intent prompts like *"Take a screenshot, search news, and open GitHub"* into sequential ordered sub-tasks.
 
-### 🌐 Web & Productivity Tools
-- **Web Integrations**: Google Search, YouTube Search, Open YouTube.
-- **Productivity Systems**: Todo List, Voice Notes, Scheduled Reminders (with background checker).
-- **System Diagnostics**: Live CPU usage %, RAM %, Battery percentage & status, Internet connection check.
-- **Offline Placeholders**: Weather & News forecast engines.
+### 🌐 3. Playwright Browser Automation
+- **Browser Support**: Chrome, Edge, Firefox.
+- **Social Media & Web Portals**: Quick navigation & interaction for Facebook, Messenger, Instagram, LinkedIn, GitHub, Gmail, and Google Drive.
+- **Automation Actions**: Fill forms, click buttons, scroll pages up/down, read page titles, and check notification badges.
 
-### 🖥️ Modern Dashboard & Logs
-- **Tkinter Dark Mode Dashboard**: Animated status bar, interactive chat transcript, and hardware stats sidebar.
-- **SQLite Database**: Persistent history for conversations, commands, todos, notes, and reminders.
-- **Dual Logger**: Daily execution logs (`logs/daily_YYYY-MM-DD.log`) and Error logs (`logs/error_YYYY-MM-DD.log`).
+### 🎵 4. Smart Music Playback Engine
+- **Priority Dispatch Hierarchy**:
+  1. **Spotify**: Opens Spotify app or web search.
+  2. **YouTube**: Searches & plays song on YouTube.
+  3. **Local Music Folder**: Scans `C:\Users\<user>\Music` for `.mp3`, `.wav`, `.flac` files.
+
+### 📡 5. Live Web Intelligence (No API Keys)
+- **Live Weather**: Real-time temperature & forecast for any city via `wttr.in`.
+- **Live News**: Top global and local headlines via RSS feeds.
+- **Wikipedia Search**: Summarizes any topic using `wikipedia` package.
+
+### 💻 6. Advanced System Controls & Security Gates
+- **Screen Brightness**: Adjust monitor brightness up/down/set level.
+- **Screen Capture**: Takes desktop screenshots and saves to `data/screenshots/`.
+- **File Search**: Searches Documents, Downloads, and Desktop for files matching query.
+- **Explorer Restart**: Restarts Windows File Explorer (`explorer.exe`).
+- **Security Confirmation Safeguards**: Asks double-confirmation before executing Shutdown, Restart, File Deletion, or closing major apps.
 
 ---
 
@@ -37,96 +44,86 @@
 ```
 c:\voice command\
 ├── config/
-│   ├── config.yaml           # YAML App configuration settings
-│   └── settings.py           # Configuration loader & settings singleton
+│   ├── config.yaml           # Phase-2 settings schema
+│   └── settings.py           # Configuration loader singleton
 ├── core/
-│   ├── logger.py             # Dual logging system (Daily & Error)
-│   ├── database.py           # SQLite database CRUD manager
+│   ├── logger.py             # Dual logging system
+│   ├── database.py           # Phase-2 SQLite tables (preferences, memory, stats)
 │   └── event_bus.py          # Pub-sub event bus
 ├── speech/
 │   ├── stt.py                # Speech-To-Text engine
 │   ├── tts.py                # Text-To-Speech engine
 │   └── wake_word.py          # Wake word listener ("X", "Hey X")
 ├── brain/
+│   ├── memory.py             # [NEW] Long-term memory & preference manager
+│   ├── reasoning.py          # [NEW] Multi-step reasoning agent
 │   ├── llm_client.py         # Local Ollama HTTP API client
-│   └── intent_parser.py      # Natural language intent classifier
+│   └── intent_parser.py      # Phase-2 Intent classifier
 ├── actions/
-│   ├── system_actions.py     # Windows OS apps & power actions
-│   ├── media_actions.py      # Hardware media keys & volume control
-│   ├── web_actions.py        # Web search & site opening
-│   └── productivity_actions. # Todo, Notes, Reminders & System metrics
+│   ├── browser_automation.py # [NEW] Playwright browser automation
+│   ├── smart_music.py        # [NEW] Priority music dispatcher
+│   ├── internet_actions.py   # [NEW] Weather, RSS News, Wikipedia
+│   ├── system_control.py     # [NEW] Screenshots, Brightness, File Search
+│   ├── system_actions.py     # OS app launches & confirmation gates
+│   ├── media_actions.py      # Volume & media keys
+│   ├── web_actions.py        # Web openers & search
+│   └── productivity_actions. # Todo, Notes, Reminders
 ├── ui/
-│   └── dashboard.py          # Tkinter visual UI dashboard
+│   └── dashboard.py          # Phase-2 Tkinter dark mode UI
 ├── utils/
-│   └── helpers.py            # Text sanitization & timestamp utils
+│   └── helpers.py            # Sanitization & timestamp helpers
 ├── tests/
-│   └── test_assistant.py     # Unit test suite
-├── main.py                   # Main application entry point
+│   ├── test_assistant.py     # Phase-1 test suite
+│   └── test_phase2.py        # [NEW] Phase-2 unit test suite
+├── main.py                   # Main orchestrator entry point
 ├── requirements.txt          # Python package manifest
-├── .env.example              # Environment variables template
-├── setup.bat                 # Windows virtual environment setup
+├── setup.bat                 # Environment setup script
 ├── install.bat               # Package dependency installer
-└── run.bat                   # App launcher
+└── run.bat                   # App launcher script
 ```
 
 ---
 
-## 🛠️ Step-by-Step Installation Instructions (Windows)
+## 🛠️ Step-by-Step Installation Guide (Windows)
 
 ### Step 1: Prerequisites
-1. **Python 3.10+**: Download & install Python from [python.org](https://www.python.org/downloads/). Ensure **"Add Python to PATH"** is checked during installation.
-2. **Ollama (Local LLM Server)**: Download & install Ollama from [ollama.com](https://ollama.com/download/windows).
-   Open Command Prompt / Terminal and pull a lightweight model:
+1. **Python 3.10+**: Download & install Python from [python.org](https://www.python.org/downloads/).
+2. **Ollama**: Download & install from [ollama.com](https://ollama.com). Run terminal command:
    ```cmd
    ollama pull gemma2:2b
    ```
 
----
+### Step 2: Automatic Setup
+1. Run **`setup.bat`** to create virtual environment `venv`.
+2. Run **`install.bat`** to install dependencies:
+   ```cmd
+   install.bat
+   ```
 
-### Step 2: Automatic Setup & Installation
-1. Double-click **`setup.bat`** to create the Python virtual environment (`venv`).
-2. Double-click **`install.bat`** to install all required dependencies.
-   *(Note: If PyAudio compilation raises an error on Python 3.14, install the prebuilt wheel via `pip install pyaudio --only-binary=:all:` or use the GUI text input fallback).*
-
----
-
-### Step 3: Launching X Assistant
-1. Ensure Ollama is running in the background.
-2. Double-click **`run.bat`** (or execute `python main.py` in terminal).
+### Step 3: Launch Assistant
+1. Ensure Ollama server is running locally.
+2. Double-click **`run.bat`** or run `python main.py` in terminal.
 3. Say **"Hey X"** or **"X"** to wake up the assistant!
 
 ---
 
 ## 🗣️ Example Voice Commands
 
-### English Commands
-- *"Hey X, what time is it?"*
-- *"X, open Chrome"*
-- *"X, open VS Code"*
-- *"X, volume up"*
-- *"X, search Google for Python clean architecture"*
-- *"X, add todo buy milk"*
-- *"X, take note meeting at 4 PM"*
-- *"X, check battery status"*
-- *"X, shutdown computer"*
-
-### Bangla / Mixed Commands
-- *"হে এক্স, এখন কয়টা বাজে?"*
-- *"এক্স শোনো, নোটিপ্যাড খুলো"*
-- *"এক্স, সাউন্ড বাড়াও"*
-- *"এক্স, গুগল সার্চ করো বাংলাদেশ আবহাওয়া"*
-- *"এক্স, পিসি অবস্থা দেখাও"*
+- *"Hey X, play music"* (Dispatches via Spotify -> YouTube -> Local)
+- *"X, check weather in Dhaka"*
+- *"X, what are the latest news headlines?"*
+- *"X, search Wikipedia for Artificial Intelligence"*
+- *"X, open GitHub"*
+- *"X, take a screenshot"*
+- *"X, set brightness to 80%"*
+- *"X, search file report"*
+- *"X, take a screenshot and check weather"* (Multi-step reasoning)
 
 ---
 
 ## 🧪 Running Unit Tests
 
-To verify all database, intent, and helper functions:
+Run Phase-1 and Phase-2 unit test suites:
 ```cmd
-python -m unittest discover tests
+$env:PYTHONPATH="." ; .\venv\Scripts\python.exe -m unittest discover tests
 ```
-
----
-
-## 📄 License
-This project is released under the **MIT Open Source License**. Built with 100% Free Tools.
