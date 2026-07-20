@@ -1,6 +1,8 @@
 """
-Main Application Entry Point for X Assistant (Phase 6 Debugged & Upgraded).
-Orchestrates Autonomous AI Agent, Voice Listener Thread, Multimodal Vision AI, Local RAG Knowledge Base,
+Main Application Entry Point for X Assistant (Phase 6 Ecosystem & Diagnostic Upgrade).
+Runs 11-step System Diagnostics Check on launch, verifies Microphone, Speaker, Ollama Server,
+AI Model, Configuration, Folders, Database, and Debug Logs.
+Orchestrates Autonomous AI Agent, Voice Listener, Multimodal Vision AI, Local RAG Knowledge Base,
 Extensible Plugin Framework, Macro Workflows, Self-Diagnostics Monitor, Arduino Serial Bridge,
 Win32 Window Manager, Ollama LLM, TTS, and GUI Dashboard.
 """
@@ -14,6 +16,7 @@ from config.settings import settings
 from core.logger import logger
 from core.database import db
 from core.event_bus import event_bus
+from core.system_checker import system_checker
 from core.diagnostics import diagnostics_monitor
 
 from speech.stt import stt_engine
@@ -67,9 +70,10 @@ class XAssistantController:
 
     def __init__(self) -> None:
         logger.info(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
-        print(f"\n===================================================")
-        print(f"  Starting {settings.assistant.name} (v{settings.assistant.version}) Ecosystem")
-        print(f"===================================================\n")
+        
+        # Execute Full 11-Step Startup Diagnostics Checklist
+        self.diagnostic_results = system_checker.run_all_checks()
+
         self.dashboard: Optional[AssistantDashboard] = None
         self.is_running = True
         self.pending_confirmation: Optional[dict] = None
@@ -370,7 +374,6 @@ class XAssistantController:
 
     def _voice_listener_loop(self) -> None:
         """Background thread listening for Wake Word and processing voice input."""
-        print("\n[Voice Listener Thread] Background voice listener thread active.")
         logger.info("[Voice Listener Thread] Background voice listener thread active.")
 
         def on_wake_detected():
@@ -391,13 +394,11 @@ class XAssistantController:
     def start(self) -> None:
         """Launch X Assistant Phase-6 controller and GUI Dashboard."""
         logger.info(f"Starting {settings.assistant.name} Phase-6 application...")
-        print(f"[Voice System] Starting VoiceListener background thread...")
         tts_engine.speak(f"{settings.assistant.name} Phase 6 ready. Personal AI Ecosystem online.")
 
         # Automatically start VoiceListener Thread on launch
         listener_thread = threading.Thread(target=self._voice_listener_loop, daemon=True)
         listener_thread.start()
-        print("[Voice System] VoiceListener active. Automatic wake word monitoring started.\n")
 
         self.dashboard = AssistantDashboard(on_user_submit_callback=self.process_command)
         self.dashboard.append_transcript("Assistant", "X Assistant Phase 6 online. Personal AI Ecosystem active!")

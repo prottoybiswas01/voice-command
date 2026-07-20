@@ -1,6 +1,6 @@
 """
 Logging framework for X Assistant.
-Handles daily execution logging and separate error logging with console output.
+Handles daily execution logging, error logging, debug logging, and clean console output.
 """
 
 import sys
@@ -12,7 +12,7 @@ from config.settings import settings
 
 
 class DualLogger:
-    """Manages custom daily and error log file handlers."""
+    """Manages custom daily, debug, and error log file handlers."""
 
     _logger_instance: Optional[logging.Logger] = None
 
@@ -22,7 +22,7 @@ class DualLogger:
             return cls._logger_instance
 
         logger = logging.getLogger(name)
-        logger.setLevel(logging.DEBUG if settings.assistant.debug_mode else logging.INFO)
+        logger.setLevel(logging.DEBUG)
         logger.propagate = False
 
         if logger.handlers:
@@ -34,6 +34,7 @@ class DualLogger:
 
         daily_log_file = logs_dir / f"daily_{today_str}.log"
         error_log_file = logs_dir / f"error_{today_str}.log"
+        debug_log_file = logs_dir / "debug.log"
 
         formatter = logging.Formatter(
             fmt="[%(asctime)s] [%(levelname)s] [%(name)s]: %(message)s",
@@ -52,9 +53,15 @@ class DualLogger:
         error_handler.setFormatter(formatter)
         logger.addHandler(error_handler)
 
+        # File handler for debug logs
+        debug_handler = logging.FileHandler(debug_log_file, encoding="utf-8")
+        debug_handler.setLevel(logging.DEBUG)
+        debug_handler.setFormatter(formatter)
+        logger.addHandler(debug_handler)
+
         # Console handler
         console_handler = logging.StreamHandler(sys.stdout)
-        console_handler.setLevel(logging.DEBUG if settings.assistant.debug_mode else logging.INFO)
+        console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
 
