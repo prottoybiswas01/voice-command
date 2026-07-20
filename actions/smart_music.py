@@ -1,23 +1,23 @@
 r"""
-Smart Music Dispatcher Module for X Assistant (Phase 2).
-Executes smart music playback routing according to strict priority:
-1. Spotify -> 2. YouTube -> 3. Local Music Folder (C:/Users/<user>/Music).
+Smart Music Dispatcher Module for Motu Assistant (Phase 2 & Phase 6 Upgrade).
+Executes smart music playback routing strictly inside Google Chrome:
+1. Spotify Web/App -> 2. YouTube Music -> 3. Local Music Folder.
 """
 
 import os
 import glob
 import subprocess
 import urllib.parse
-import webbrowser
 from pathlib import Path
 from typing import List, Optional
 from config.settings import settings
 from core.logger import logger
 from core.database import db
+from actions.system_actions import open_in_chrome
 
 
 class SmartMusicDispatcher:
-    """Manages priority-driven music playback."""
+    """Manages priority-driven music playback strictly in Google Chrome."""
 
     def __init__(self) -> None:
         self.priority_list = settings.music.priority
@@ -63,11 +63,11 @@ class SmartMusicDispatcher:
                     db.log_command("smart_music:local", "SUCCESS", res)
                     return res
 
-        # Ultimate fallback to YouTube
+        # Ultimate fallback to YouTube in Google Chrome
         return self._try_youtube(clean_query or "relaxing music")
 
     def _try_spotify(self, query: str) -> Optional[str]:
-        """Attempt Spotify app protocol or Spotify Web open."""
+        """Attempt Spotify web search specifically inside Google Chrome."""
         try:
             if query:
                 encoded = urllib.parse.quote(query)
@@ -75,8 +75,8 @@ class SmartMusicDispatcher:
             else:
                 spotify_url = "https://open.spotify.com"
 
-            webbrowser.open(spotify_url)
-            msg = f"Playing '{query or 'music'}' on Spotify."
+            open_in_chrome(spotify_url)
+            msg = f"Playing '{query or 'music'}' on Spotify in Google Chrome."
             logger.info(msg)
             return msg
         except Exception as err:
@@ -84,12 +84,12 @@ class SmartMusicDispatcher:
             return None
 
     def _try_youtube(self, query: str) -> str:
-        """Play music via YouTube Search."""
+        """Play music via YouTube Search in Google Chrome."""
         search_query = f"{query} song" if query else "top hits music"
         encoded = urllib.parse.quote(search_query)
         yt_url = f"https://www.youtube.com/results?search_query={encoded}"
-        webbrowser.open(yt_url)
-        msg = f"Playing '{query or 'music'}' on YouTube."
+        open_in_chrome(yt_url)
+        msg = f"Playing '{query or 'music'}' on YouTube in Google Chrome."
         logger.info(msg)
         return msg
 
@@ -107,7 +107,6 @@ class SmartMusicDispatcher:
         if not audio_files:
             return None
 
-        # Try matching query in filename
         target_file = audio_files[0]
         if query:
             for f in audio_files:

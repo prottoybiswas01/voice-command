@@ -1,7 +1,8 @@
 """
-System Actions Module for X Assistant (Phase 6 Upgraded & Debugged).
+System Actions Module for X Assistant / Motu Assistant (Phase 6 Upgraded & Debugged).
 Handles Windows OS application launches, system time/date queries, power management, and exit routines.
 Locates absolute executable paths for Chrome, Edge, VS Code, Notepad, Calculator, Explorer, etc.
+Provides open_in_chrome helper to force all web browsing & music links to open strictly in Google Chrome.
 """
 
 import os
@@ -12,6 +13,53 @@ from datetime import datetime
 from typing import Dict, Any, Tuple
 from core.logger import logger
 from core.database import db
+
+
+def open_in_chrome(url: str) -> bool:
+    """
+    Launch target URL specifically inside user's local Google Chrome browser.
+    Prevents Windows from falling back to Microsoft Edge.
+    """
+    if not url:
+        return False
+
+    clean_url = url if url.startswith("http") else f"https://{url}"
+
+    program_files = os.environ.get("ProgramFiles", r"C:\Program Files")
+    program_files_x86 = os.environ.get("ProgramFiles(x86)", r"C:\Program Files (x86)")
+    local_app_data = os.environ.get("LOCALAPPDATA", r"C:\Users\USER\AppData\Local")
+
+    chrome_candidates = [
+        rf"{program_files}\Google\Chrome\Application\chrome.exe",
+        rf"{program_files_x86}\Google\Chrome\Application\chrome.exe",
+        rf"{local_app_data}\Google\Chrome\Application\chrome.exe"
+    ]
+
+    # Priority 1: Direct Google Chrome executable call
+    for chrome_exe in chrome_candidates:
+        if os.path.exists(chrome_exe):
+            try:
+                subprocess.Popen([chrome_exe, clean_url])
+                logger.info(f"Opened URL in Google Chrome executable: '{clean_url}'")
+                return True
+            except Exception as err:
+                logger.debug(f"Failed opening Chrome path '{chrome_exe}': {err}")
+
+    # Priority 2: Windows shell start command specifically for chrome
+    try:
+        subprocess.Popen(f'start chrome "{clean_url}"', shell=True)
+        logger.info(f"Opened URL via 'start chrome': '{clean_url}'")
+        return True
+    except Exception as err:
+        logger.debug(f"Failed 'start chrome' command: {err}")
+
+    # Priority 3: Fallback via webbrowser module
+    try:
+        webbrowser.open(clean_url)
+        return True
+    except Exception as err:
+        logger.error(f"Fallback browser open failed: {err}")
+        return False
 
 
 class SystemActionsHandler:
@@ -89,13 +137,9 @@ class SystemActionsHandler:
                 except Exception as err:
                     logger.debug(f"Failed to launch command {item}: {err}")
 
-        # Browser fallback using webbrowser module
+        # Browser fallback using open_in_chrome
         if not launched and clean_app in ["chrome", "edge"]:
-            try:
-                webbrowser.open("https://www.google.com")
-                launched = True
-            except Exception:
-                pass
+            launched = open_in_chrome("https://www.google.com")
 
         if launched:
             msg = f"Opening {clean_app.replace('_', ' ').capitalize()}."
