@@ -331,6 +331,9 @@ class XAssistantController:
             if intent.name == "volume_control":
                 cmd = intent.params.get("command", "")
                 response = media_actions.control_volume(cmd)
+            elif intent.name == "media_control":
+                cmd = intent.params.get("command", "")
+                response = system_actions.handle_media_control(cmd)
 
         # S. Web Openers
         elif intent.action_type == "web":

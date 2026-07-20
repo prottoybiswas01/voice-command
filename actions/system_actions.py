@@ -168,6 +168,38 @@ class SystemActionsHandler:
         logger.info(msg)
         return msg
 
+    def handle_media_control(self, command: str) -> str:
+        """Execute Windows hardware media key action (Next, Previous, Pause, Play, Stop)."""
+        import ctypes
+        clean_cmd = command.lower().strip()
+
+        # Virtual Key Codes
+        VK_MEDIA_NEXT_TRACK = 0xB0
+        VK_MEDIA_PREV_TRACK = 0xB1
+        VK_MEDIA_STOP = 0xB2
+        VK_MEDIA_PLAY_PAUSE = 0xB3
+
+        if clean_cmd in ["next", "change"]:
+            ctypes.windll.user32.keybd_event(VK_MEDIA_NEXT_TRACK, 0, 0, 0)
+            ctypes.windll.user32.keybd_event(VK_MEDIA_NEXT_TRACK, 0, 2, 0)
+            msg = "Skipped to the next song."
+            logger.info(msg)
+            return msg
+        elif clean_cmd in ["pause", "stop"]:
+            ctypes.windll.user32.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, 0, 0)
+            ctypes.windll.user32.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, 2, 0)
+            msg = "Paused music playback."
+            logger.info(msg)
+            return msg
+        elif clean_cmd in ["play", "resume"]:
+            ctypes.windll.user32.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, 0, 0)
+            ctypes.windll.user32.keybd_event(VK_MEDIA_PLAY_PAUSE, 0, 2, 0)
+            msg = "Resumed music playback."
+            logger.info(msg)
+            return msg
+
+        return "Unknown media command."
+
     def handle_greeting(self) -> str:
         """Return warm welcome greeting."""
         now_hour = datetime.now().hour
