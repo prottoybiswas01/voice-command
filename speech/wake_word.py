@@ -1,7 +1,7 @@
 """
-Wake Word Listener for X Assistant (Phase 6 Final Upgrade & Bug Fix).
-Continuously monitors microphone for wake words ("X", "Hey X", "X Listen", "হে এক্স")
-using regex word boundaries to prevent false substring matches (e.g., matching 'x' inside 'next' or 'exit'),
+Wake Word Listener for X Assistant (Phase 6 Final Upgrade & Bangla Fix).
+Continuously monitors microphone for wake words ("X", "Hey X", "X Listen", "হে এক্স", "এক্স")
+using boundary regex matching to prevent false substring matches,
 and extracts any command payload spoken after the wake word in a single utterance.
 """
 
@@ -19,13 +19,16 @@ class WakeWordDetector:
 
     def __init__(self, wake_words: Optional[List[str]] = None) -> None:
         self.wake_words = [w.lower() for w in (wake_words or settings.assistant.wake_words)]
-        self.wake_words.extend(["হে এক্স", "এক্স শোনো", "এক্স শোন", "hey x", "x listen", "x"])
+        self.wake_words.extend([
+            "হে এক্স", "হেই এক্স", "এক্স শোনো", "এক্স শোন", "এক্সে", "এক্স",
+            "hey x", "x listen", "x"
+        ])
         self.is_listening = False
         self._waiting_logged = False
 
     def is_wake_word_present(self, text: str) -> Tuple[bool, str]:
         """
-        Check if input text contains any configured wake word using word boundary matching.
+        Check if input text contains any configured wake word using boundary matching.
         
         Args:
             text: Input phrase recognized by STT engine.
@@ -41,11 +44,12 @@ class WakeWordDetector:
         sorted_words = sorted(self.wake_words, key=len, reverse=True)
 
         for word in sorted_words:
-            pattern = r'(?:\b|^)' + re.escape(word) + r'(?:\b|$)'
+            # Use boundary matching suitable for ASCII and Unicode Bangla scripts
+            pattern = r'(?:^|\s|\b)' + re.escape(word) + r'(?:$|\s|\b)'
             match = re.search(pattern, clean_text)
             if match:
                 # Extract command text remaining after removing the wake word
-                command_remainder = re.sub(pattern, "", clean_text, count=1).strip()
+                command_remainder = re.sub(pattern, " ", clean_text, count=1).strip()
                 return True, command_remainder
 
         return False, ""
@@ -85,7 +89,7 @@ class WakeWordDetector:
         self.is_listening = True
         self._waiting_logged = False
         print("\n[Voice System] Wake word detector active.")
-        print("[Voice System] Listening for 'X', 'Hey X', 'X Listen'...")
+        print("[Voice System] Listening for 'X', 'Hey X', 'X Listen', 'এক্স'...")
         logger.info("[Voice System] Wake word detector active.")
 
         while self.is_listening:

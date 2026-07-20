@@ -263,7 +263,7 @@ class IntentParser:
         # 20. Basic System App Launchers & Greetings
         if any(w in clean for w in ["hello", "hi", "hey", "good morning", "good evening", "সালাম", "হ্যালো", "আসসালামু আলাইকুম"]):
             return Intent(name="greeting", action_type="system", params={"type": "greeting"}, raw_prompt=text)
-        if any(w in clean for w in ["time", "what time", "কয়টা বাজে", "সময়", "সময়"]):
+        if any(w in clean for w in ["time", "what time", "কয়টা বাজে", "কয়টা বাজে", "সময়", "সময়"]):
             return Intent(name="get_time", action_type="system", params={"type": "time"}, raw_prompt=text)
         if any(w in clean for w in ["date", "what date", "today's date", "আজকের তারিখ", "তারিখ"]):
             return Intent(name="get_date", action_type="system", params={"type": "date"}, raw_prompt=text)
