@@ -1,5 +1,5 @@
 """
-X Assistant Configuration Loader Module (Phase 3 Upgrade).
+X Assistant Configuration Loader Module (Phase 4 Upgrade).
 Provides centralized settings management loading from YAML and environment variables.
 """
 
@@ -21,7 +21,7 @@ CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
 @dataclass
 class AssistantSettings:
     name: str = "X Assistant"
-    version: str = "3.0.0"
+    version: str = "4.0.0"
     wake_words: List[str] = field(default_factory=lambda: ["x", "hey x", "x listen"])
     language: str = "bn-EN"
     debug_mode: bool = True
@@ -43,7 +43,7 @@ class OllamaSettings:
     model: str = "gemma2:2b"
     timeout: int = 45
     max_context_length: int = 4096
-    system_prompt: str = "You are X Assistant Phase 3, an autonomous AI Agent with full Windows control."
+    system_prompt: str = "You are X Assistant Phase 4, a Smart Home and IoT AI Assistant."
 
 
 @dataclass
@@ -67,6 +67,14 @@ class AgentSettings:
 
 
 @dataclass
+class IoTSettings:
+    baud_rate: int = 9600
+    auto_detect_com: bool = True
+    simulation_mode_if_disconnected: bool = True
+    default_room: str = "Living Room"
+
+
+@dataclass
 class PathSettings:
     db_path: Path = BASE_DIR / "data" / "x_assistant.db"
     logs_dir: Path = BASE_DIR / "logs"
@@ -77,7 +85,7 @@ class PathSettings:
 
 
 class Settings:
-    """Central configuration instance for X Assistant Phase 3."""
+    """Central configuration instance for X Assistant Phase 4."""
 
     def __init__(self, config_file: Path = CONFIG_PATH) -> None:
         self.config_file = config_file
@@ -87,6 +95,7 @@ class Settings:
         self.browser = BrowserSettings()
         self.music = MusicSettings()
         self.agent = AgentSettings()
+        self.iot = IoTSettings()
         self.paths = PathSettings()
         self.load_config()
 
@@ -141,6 +150,12 @@ class Settings:
                 self.agent.pomodoro_focus_minutes = data["agent"].get("pomodoro_focus_minutes", self.agent.pomodoro_focus_minutes)
                 self.agent.pomodoro_break_minutes = data["agent"].get("pomodoro_break_minutes", self.agent.pomodoro_break_minutes)
 
+            if "iot" in data:
+                self.iot.baud_rate = data["iot"].get("baud_rate", self.iot.baud_rate)
+                self.iot.auto_detect_com = data["iot"].get("auto_detect_com", self.iot.auto_detect_com)
+                self.iot.simulation_mode_if_disconnected = data["iot"].get("simulation_mode_if_disconnected", self.iot.simulation_mode_if_disconnected)
+                self.iot.default_room = data["iot"].get("default_room", self.iot.default_room)
+
             if "paths" in data:
                 if "db_path" in data["paths"]:
                     self.paths.db_path = BASE_DIR / data["paths"]["db_path"]
@@ -167,5 +182,5 @@ class Settings:
         self.paths.audio_dir.mkdir(parents=True, exist_ok=True)
 
 
-# Global Phase-3 settings instance
+# Global Phase-4 settings instance
 settings = Settings()

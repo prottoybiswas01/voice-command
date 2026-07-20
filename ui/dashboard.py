@@ -1,7 +1,7 @@
 """
-GUI Dashboard Module for X Assistant (Phase 3 Upgrade).
+GUI Dashboard Module for X Assistant (Phase 4 Upgrade).
 Provides a modern dark-themed Tkinter interface displaying autonomous AI agent status, speech transcripts,
-hardware diagnostics (CPU, RAM, Battery, Disk), Pomodoro timer, Audit logs, and desktop automation controls.
+hardware diagnostics (CPU, RAM, Battery, Disk), Pomodoro timer, Audit logs, and Smart Home IoT Tab.
 """
 
 import sys
@@ -16,19 +16,21 @@ from core.event_bus import event_bus
 from actions.productivity_actions import productivity_actions
 from brain.pomodoro import pomodoro_timer
 from actions.security_auditor import security_auditor
+from iot.arduino_bridge import arduino_bridge
+from iot.smart_home import smart_home_controller
 
 
 class AssistantDashboard:
-    """Tkinter Desktop Dashboard Interface for X Assistant Phase 3."""
+    """Tkinter Desktop Dashboard Interface for X Assistant Phase 4."""
 
     def __init__(self, on_user_submit_callback: Optional[Callable[[str], None]] = None) -> None:
         self.on_user_submit_callback = on_user_submit_callback
         self.root = tk.Tk()
-        self.root.title(f"{settings.assistant.name} Phase 3 - Autonomous AI Agent Dashboard")
-        self.root.geometry("950x680")
-        self.root.minsize(800, 580)
+        self.root.title(f"{settings.assistant.name} Phase 4 - Smart Home & IoT AI Assistant")
+        self.root.geometry("1000x720")
+        self.root.minsize(850, 600)
 
-        # Apply dark theme styling
+        # Dark theme styling
         self.bg_color = "#1E1E2E"
         self.card_bg = "#282A36"
         self.fg_color = "#F8F8F2"
@@ -41,14 +43,14 @@ class AssistantDashboard:
         self._start_metrics_timer()
 
     def _setup_ui(self) -> None:
-        """Construct dashboard components."""
+        """Construct dashboard components with Notebook tab bar."""
         # Top Header Bar
         header_frame = tk.Frame(self.root, bg=self.card_bg, pady=15, padx=20)
         header_frame.pack(fill=tk.X, side=tk.TOP)
 
         title_label = tk.Label(
             header_frame,
-            text=f"🤖 {settings.assistant.name} (v{settings.assistant.version}) - Autonomous AI Agent",
+            text=f"🤖 {settings.assistant.name} (v{settings.assistant.version}) - Smart Home & IoT AI Agent",
             font=("Segoe UI", 15, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
@@ -64,129 +66,159 @@ class AssistantDashboard:
         )
         self.status_label.pack(side=tk.RIGHT)
 
-        # Main Workspace Container
-        main_container = tk.Frame(self.root, bg=self.bg_color, padx=15, pady=15)
+        # Tabbed Notebook Container
+        self.notebook = ttk.Notebook(self.root)
+        self.notebook.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
+
+        # TAB 1: AI Agent & Desktop Controls
+        self.tab_agent = tk.Frame(self.notebook, bg=self.bg_color)
+        self.notebook.add(self.tab_agent, text="🤖 AI Agent & System")
+        self._setup_agent_tab()
+
+        # TAB 2: Smart Home & IoT Control
+        self.tab_iot = tk.Frame(self.notebook, bg=self.bg_color)
+        self.notebook.add(self.tab_iot, text="🏠 Smart Home & IoT")
+        self._setup_iot_tab()
+
+    def _setup_agent_tab(self) -> None:
+        """Construct Main AI Agent tab."""
+        main_container = tk.Frame(self.tab_agent, bg=self.bg_color, padx=10, pady=10)
         main_container.pack(fill=tk.BOTH, expand=True)
 
-        # Left Column: Conversation & Logs
+        # Left Column: Transcript
         left_frame = tk.Frame(main_container, bg=self.bg_color)
         left_frame.pack(side=tk.LEFT, fill=tk.BOTH, expand=True, padx=(0, 10))
 
-        log_title = tk.Label(
-            left_frame,
-            text="Live Autonomous Reasoning & Task Log",
-            font=("Segoe UI", 11, "bold"),
-            fg=self.fg_color,
-            bg=self.bg_color
-        )
+        log_title = tk.Label(left_frame, text="Live AI Reasoning Log", font=("Segoe UI", 11, "bold"), fg=self.fg_color, bg=self.bg_color)
         log_title.pack(anchor="w", pady=(0, 5))
 
-        self.transcript_box = scrolledtext.ScrolledText(
-            left_frame,
-            wrap=tk.WORD,
-            font=("Consolas", 10),
-            bg=self.card_bg,
-            fg=self.fg_color,
-            insertbackground=self.fg_color,
-            relief=tk.FLAT
-        )
+        self.transcript_box = scrolledtext.ScrolledText(left_frame, wrap=tk.WORD, font=("Consolas", 10), bg=self.card_bg, fg=self.fg_color, insertbackground=self.fg_color, relief=tk.FLAT)
         self.transcript_box.pack(fill=tk.BOTH, expand=True)
         self.transcript_box.config(state=tk.DISABLED)
 
-        # Manual Text Command Input Bar
+        # Input Bar
         input_frame = tk.Frame(left_frame, bg=self.bg_color, pady=10)
         input_frame.pack(fill=tk.X)
 
-        self.input_entry = tk.Entry(
-            input_frame,
-            font=("Segoe UI", 11),
-            bg=self.card_bg,
-            fg=self.fg_color,
-            insertbackground=self.fg_color,
-            relief=tk.FLAT
-        )
+        self.input_entry = tk.Entry(input_frame, font=("Segoe UI", 11), bg=self.card_bg, fg=self.fg_color, insertbackground=self.fg_color, relief=tk.FLAT)
         self.input_entry.pack(side=tk.LEFT, fill=tk.X, expand=True, padx=(0, 5))
         self.input_entry.bind("<Return>", lambda e: self._on_send())
 
-        send_btn = tk.Button(
-            input_frame,
-            text="Execute Agent",
-            font=("Segoe UI", 10, "bold"),
-            bg=self.accent_color,
-            fg="#000000",
-            activebackground="#A480E0",
-            relief=tk.FLAT,
-            padx=15,
-            command=self._on_send
-        )
+        send_btn = tk.Button(input_frame, text="Execute", font=("Segoe UI", 10, "bold"), bg=self.accent_color, fg="#000000", relief=tk.FLAT, padx=15, command=self._on_send)
         send_btn.pack(side=tk.RIGHT)
 
-        # Right Column: Quick Stats & Controls Sidebar
+        # Right Column: Sidebar
         right_frame = tk.Frame(main_container, bg=self.card_bg, width=260, padx=15, pady=15)
         right_frame.pack(side=tk.RIGHT, fill=tk.Y)
         right_frame.pack_propagate(False)
 
-        sidebar_title = tk.Label(
-            right_frame,
-            text="Hardware Diagnostics",
-            font=("Segoe UI", 11, "bold"),
-            fg=self.accent_color,
-            bg=self.card_bg
-        )
+        sidebar_title = tk.Label(right_frame, text="System Health", font=("Segoe UI", 11, "bold"), fg=self.accent_color, bg=self.card_bg)
         sidebar_title.pack(anchor="w", pady=(0, 5))
 
-        self.metrics_label = tk.Label(
-            right_frame,
-            text="CPU: --%\nRAM: --%\nBattery: --%\nNet: Online",
-            font=("Segoe UI", 9),
-            fg=self.fg_color,
-            bg=self.card_bg,
-            justify=tk.LEFT
-        )
+        self.metrics_label = tk.Label(right_frame, text="CPU: --%\nRAM: --%\nBattery: --%", font=("Segoe UI", 9), fg=self.fg_color, bg=self.card_bg, justify=tk.LEFT)
         self.metrics_label.pack(anchor="w", pady=(0, 10))
-
-        btn_title = tk.Label(
-            right_frame,
-            text="Phase-3 Computer Control",
-            font=("Segoe UI", 11, "bold"),
-            fg=self.accent_color,
-            bg=self.card_bg
-        )
-        btn_title.pack(anchor="w", pady=(0, 5))
 
         quick_cmds = [
             ("🍅 Start Pomodoro", "start pomodoro"),
             ("📋 Clipboard History", "__clipboard__"),
-            ("🎙️ Record Voice Note", "record voice note"),
-            ("🖥️ Record Screen", "record screen"),
-            ("🔒 Security Audit Logs", "__audit__"),
-            ("🎵 Play Music", "play music"),
-            ("⛅ Live Weather", "get live weather"),
+            ("📸 Take Screenshot", "take screenshot"),
+            ("🔒 Security Logs", "__audit__"),
             ("🧹 Clear Log", "__clear__")
         ]
 
         for label, cmd in quick_cmds:
+            btn = tk.Button(right_frame, text=label, font=("Segoe UI", 9), bg="#383A59", fg=self.fg_color, relief=tk.FLAT, anchor="w", padx=10, pady=3, command=lambda c=cmd: self._handle_quick_cmd(c))
+            btn.pack(fill=tk.X, pady=2)
+
+    def _setup_iot_tab(self) -> None:
+        """Construct Smart Home IoT control tab."""
+        container = tk.Frame(self.tab_iot, bg=self.bg_color, padx=15, pady=15)
+        container.pack(fill=tk.BOTH, expand=True)
+
+        # Hardware Connection Card
+        conn_card = tk.Frame(container, bg=self.card_bg, padx=15, pady=10)
+        conn_card.pack(fill=tk.X, pady=(0, 15))
+
+        self.arduino_status_lbl = tk.Label(
+            conn_card,
+            text="⚡ Arduino Status: Scanning Serial Ports...",
+            font=("Segoe UI", 11, "bold"),
+            fg=self.highlight_color,
+            bg=self.card_bg
+        )
+        self.arduino_status_lbl.pack(side=tk.LEFT)
+
+        # Telemetry Sensor Gauges Card
+        sensor_card = tk.LabelFrame(container, text="Live Sensor Telemetry", font=("Segoe UI", 11, "bold"), fg=self.accent_color, bg=self.card_bg, padx=15, pady=15)
+        sensor_card.pack(fill=tk.X, pady=(0, 15))
+
+        self.temp_lbl = tk.Label(sensor_card, text="🌡️ Temp: 28.5 °C", font=("Segoe UI", 12, "bold"), fg=self.fg_color, bg=self.card_bg)
+        self.temp_lbl.grid(row=0, column=0, padx=20, pady=10)
+
+        self.humidity_lbl = tk.Label(sensor_card, text="💧 Humidity: 65 %", font=("Segoe UI", 12, "bold"), fg=self.fg_color, bg=self.card_bg)
+        self.humidity_lbl.grid(row=0, column=1, padx=20, pady=10)
+
+        self.motion_lbl = tk.Label(sensor_card, text="🏃 Motion: Clear", font=("Segoe UI", 12, "bold"), fg=self.fg_color, bg=self.card_bg)
+        self.motion_lbl.grid(row=0, column=2, padx=20, pady=10)
+
+        self.gas_lbl = tk.Label(sensor_card, text="⚠️ Gas Level: Safe", font=("Segoe UI", 12, "bold"), fg=self.fg_color, bg=self.card_bg)
+        self.gas_lbl.grid(row=0, column=3, padx=20, pady=10)
+
+        # Relay & Hardware Controls
+        control_card = tk.LabelFrame(container, text="Hardware Actuator Controls", font=("Segoe UI", 11, "bold"), fg=self.accent_color, bg=self.card_bg, padx=15, pady=15)
+        control_card.pack(fill=tk.BOTH, expand=True)
+
+        iot_actions = [
+            ("💡 Toggle Light ON", "turn on room light"),
+            ("💡 Toggle Light OFF", "turn off room light"),
+            ("🌀 Toggle Fan ON", "turn on fan"),
+            ("🌀 Toggle Fan OFF", "turn off fan"),
+            ("🔔 Test Alarm Buzzer", "blink led"),
+            ("🔑 Servo Lock (90°)", "rotate servo to 90 degrees"),
+            ("⚡ All Relays ON", "turn on all relays"),
+            ("🛑 All Relays OFF", "turn off all relays")
+        ]
+
+        r, c = 0, 0
+        for label, cmd in iot_actions:
             btn = tk.Button(
-                right_frame,
+                control_card,
                 text=label,
-                font=("Segoe UI", 9),
+                font=("Segoe UI", 10, "bold"),
                 bg="#383A59",
                 fg=self.fg_color,
                 activebackground=self.accent_color,
                 relief=tk.FLAT,
-                anchor="w",
-                padx=10,
-                pady=3,
+                padx=15,
+                pady=10,
                 command=lambda c=cmd: self._handle_quick_cmd(c)
             )
-            btn.pack(fill=tk.X, pady=2)
+            btn.grid(row=r, column=c, padx=10, pady=10, sticky="ew")
+            c += 1
+            if c > 3:
+                c = 0
+                r += 1
 
     def _subscribe_events(self) -> None:
         event_bus.subscribe("wake_word_detected", self._on_wake_word)
+        event_bus.subscribe("arduino_telemetry", self._on_telemetry)
 
     def _on_wake_word(self, text: str = "") -> None:
         self.root.after(0, lambda: self.status_label.config(text="● Active / Listening...", fg="#FF5555"))
         self.root.after(4000, lambda: self.status_label.config(text="● Listening for 'X' / 'Hey X'", fg=self.highlight_color))
+
+    def _on_telemetry(self, data: dict = None) -> None:
+        if not data:
+            return
+        def _update():
+            if "temp" in data:
+                self.temp_lbl.config(text=f"🌡️ Temp: {data['temp']} °C")
+            if "humidity" in data:
+                self.humidity_lbl.config(text=f"💧 Humidity: {data['humidity']} %")
+            if "motion" in data:
+                m_txt = "DETECTED!" if data['motion'] else "Clear"
+                self.motion_lbl.config(text=f"🏃 Motion: {m_txt}")
+        self.root.after(0, _update)
 
     def append_transcript(self, sender: str, message: str) -> None:
         def _update():
@@ -235,9 +267,20 @@ class AssistantDashboard:
         def _update_metrics():
             info = productivity_actions.get_system_info("all")
             pomo_status = pomodoro_timer.get_status()
-            full_status = f"{info.replace('. ', '\n')}\n\n{pomo_status}"
-            self.metrics_label.config(text=full_status)
-            self.root.after(10000, _update_metrics)
+            self.metrics_label.config(text=f"{info.replace('. ', '\n')}\n\n{pomo_status}")
+
+            # Update IoT status bar
+            if arduino_bridge.simulation_mode:
+                self.arduino_status_lbl.config(text="⚡ Arduino Status: Virtual Simulation Mode (Active)", fg="#FFB86C")
+            else:
+                self.arduino_status_lbl.config(text=f"⚡ Arduino Status: Connected on {arduino_bridge.active_com_port}", fg=self.highlight_color)
+
+            # Update simulated telemetry labels
+            telem = arduino_bridge.get_latest_telemetry()
+            self.temp_lbl.config(text=f"🌡️ Temp: {telem.get('temp', 28.5)} °C")
+            self.humidity_lbl.config(text=f"💧 Humidity: {telem.get('humidity', 65.0)} %")
+
+            self.root.after(5000, _update_metrics)
 
         self.root.after(1000, _update_metrics)
 

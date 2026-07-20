@@ -1,46 +1,30 @@
-# X Assistant - Phase 3 (AI Agent & Full Computer Control) 🤖
+# X Assistant - Phase 4 (Arduino, IoT & Smart Home Integration) 🏠⚡
 
-**X Assistant Phase 3** transforms the voice assistant into a fully autonomous **Personal AI Agent** capable of controlling the entire Windows computer through voice and text commands. It features autonomous step planning, verification, and auto-retry, Win32 application window controls, file/folder operations & ZIP archiving, screen & audio recording, network/settings management, Playwright multi-tab browser automation, productivity hub (Pomodoro focus timer, clipboard history, calendar), and a security auditor with complete SQLite audit trails.
+**X Assistant Phase 4** transforms the voice assistant into a complete **Smart Home and IoT AI Assistant** capable of communicating with physical Arduino hardware boards over USB Serial, controlling electronics, reading real-time sensors, and executing automated smart home rules.
 
 ---
 
-## 🌟 Key Phase-3 Features
+## 🌟 Key Phase-4 Features
 
-### 🤖 1. Autonomous AI Agent Loop
-- **Think Before Acting**: Autonomous plan generation -> step execution -> verification -> auto-retry on errors.
-- **Self-Explanation**: Explains active step status and error recovery in clear human-friendly language.
+### ⚡ 1. Arduino Two-Way Serial Bridge
+- **PySerial Integration**: Connects via USB Serial (`9600` baud rate) with automatic COM port scanning and heartbeat pings.
+- **Virtual Simulation Mode**: Automatic fallback mode when no physical Arduino board is connected, allowing complete UI, voice commands, and automation testing without hardware errors.
+- **Production Firmware**: Includes complete C++ Arduino sketch [firmware/x_assistant_arduino.ino](file:///c:/voice%20command/firmware/x_assistant_arduino.ino).
 
-### 🪟 2. Native Win32 Window Manager
-- **Application Window Control**: Minimize, Maximize, Restore, Close, and Switch between active Windows applications (Chrome, VS Code, Notepad, Spotify).
-- **Window Enumeration**: Inspects top-level desktop open windows.
+### 💡 2. Smart Home Voice Control
+- **Relays & Lighting**: *"X, turn on room light"*, *"X, turn off fan"*, *"X, turn on all relays"*.
+- **Sensors**: *"X, read room temperature"*, *"X, show humidity"*, *"X, detect motion"*, *"X, check if anyone is at the door"*.
+- **Motors & Actuators**: *"X, rotate servo to 90 degrees"*, *"X, blink LED 5 times"*.
 
-### 📁 3. File System & Archive Manager
-- **File & Directory Management**: Create, Rename, Copy, Move, and Delete files/directories.
-- **Security Confirmation Gate**: Asks explicit user confirmation before deleting files or formatting.
-- **ZIP Archiving**: Compress directories into `.zip` archives and extract `.zip` files.
+### 🔄 3. Rule-Based Automation Engine
+- **Rule 1**: Temperature > 32°C ➔ Turn ON Room Fan Relay.
+- **Rule 2**: Motion Detected ➔ Turn ON Room Light Relay.
+- **Rule 3**: Gas Leak > Threshold ➔ Activate Alarm Buzzer & Voice Warning.
 
-### 🎙️ 4. Screen & Audio Recording
-- **Microphone Audio Recording**: Captures audio voice notes and saves `.wav` files into `data/audio/`.
-- **Screen Recording**: Captures frame sequence snapshots to `data/recordings/`.
-
-### 📶 5. Network & Windows Settings
-- **Wi-Fi Management**: Scan nearby networks, turn Wi-Fi on/off via `netsh`.
-- **Windows Settings Shortcuts**: Open Bluetooth settings, Sound, Display, Network, Apps settings directly.
-- **Startup Apps**: List registered Windows startup applications.
-
-### 🌐 6. Advanced Playwright Browser Agent
-- **Multi-Tab Navigation**: Open, switch, and close browser tabs for Chrome, Edge, and Firefox.
-- **File Upload & Download**: Automated download triggering and file upload handling.
-- **Structured Content Extraction**: Extracts main text snippets, links, and forms from active web pages.
-
-### 🍅 7. Productivity Hub & Focus Tracker
-- **Pomodoro Focus Timer**: 25-minute focus session / 5-minute break timer with audio notifications.
-- **Clipboard History Tracker**: Monitors and stores Windows clipboard text history using `pyperclip`.
-- **Calendar & Schedule Events**: Add and list scheduled events.
-
-### 🔒 8. Security Auditor & Audit Logger
-- **Confirmation Safeguards**: Required confirmation before File Deletion, Shutdown, Restart, or closing major applications.
-- **SQLite Audit Logs**: Tracks every critical system action in `audit_logs` table.
+### 🖥️ 4. Upgraded Smart Home IoT Dashboard
+- **Live Sensor Telemetry**: Gauges for Temperature (°C), Humidity (%), Motion status, and Gas levels.
+- **Interactive Actuator Toggles**: Buttons for toggling Light Relays, Fan Relays, Servo Lock, and Security Alarm.
+- **COM Port Status**: Live COM port status & connection monitor.
 
 ---
 
@@ -49,52 +33,48 @@
 ```
 c:\voice command\
 ├── config/
-│   ├── config.yaml           # Phase-3 configuration schema
-│   └── settings.py           # Configuration loader singleton
+│   ├── config.yaml           # Phase-4 IoT configuration
+│   └── settings.py           # Configuration loader
 ├── core/
-│   ├── logger.py             # Dual logging system
-│   ├── database.py           # Phase-3 SQLite tables (audit_logs, clipboard, pomodoro, calendar)
+│   ├── logger.py             # Dual logger
+│   ├── database.py           # Phase-4 SQLite tables (iot_devices, sensor_logs, automation_rules)
 │   └── event_bus.py          # Pub-sub event bus
-├── speech/
-│   ├── stt.py                # Speech-To-Text engine
-│   ├── tts.py                # Text-To-Speech engine
-│   └── wake_word.py          # Wake word listener ("X", "Hey X")
+├── firmware/
+│   └── x_assistant_arduino.ino # [NEW] Production Arduino C++ firmware sketch
+├── iot/
+│   ├── arduino_bridge.py     # [NEW] PySerial bridge, auto-COM detection, virtual simulation
+│   ├── device_manager.py     # [NEW] Device registry, pin mapping, room grouping
+│   ├── smart_home.py         # [NEW] Voice to hardware command translator
+│   └── automation_rules.py   # [NEW] Rule-based automation engine
 ├── brain/
-│   ├── agent.py              # [NEW] Autonomous AI Agent Loop (Plan -> Verify -> Retry)
-│   ├── pomodoro.py           # [NEW] Pomodoro Focus Timer daemon
+│   ├── agent.py              # Autonomous AI Agent Loop
+│   ├── pomodoro.py           # Pomodoro Focus Timer
 │   ├── memory.py             # Long-term memory manager
 │   ├── reasoning.py          # Task decomposition agent
-│   ├── llm_client.py         # Local Ollama HTTP API client
-│   └── intent_parser.py      # Phase-3 Intent classifier
+│   ├── llm_client.py         # Local Ollama client
+│   └── intent_parser.py      # Phase-4 Intent classifier
 ├── actions/
-│   ├── window_manager.py     # [NEW] Win32 Window Manager (Minimize, Maximize, Close, Switch)
-│   ├── file_organizer.py     # [NEW] File/Folder Manager & ZIP Compress/Extract
-│   ├── recorder.py           # [NEW] Screen Recorder & Audio Mic Recorder
-│   ├── network_settings.py   # [NEW] Wi-Fi, Bluetooth, Settings, Startup Apps
-│   ├── browser_agent.py      # [NEW] Multi-Tab Playwright Browser Agent
-│   ├── productivity_hub.py   # [NEW] Pomodoro, Calendar, Clipboard History
-│   ├── security_auditor.py   # [NEW] Security Auditor & Audit Logger
-│   ├── browser_automation.py # Playwright browser controller
-│   ├── smart_music.py        # Priority music dispatcher
-│   ├── internet_actions.py   # Weather, News, Wikipedia
-│   ├── system_control.py     # Hardware diagnostics & screenshots
-│   ├── system_actions.py     # App launchers & power actions
-│   ├── media_actions.py      # Volume & media keys
-│   ├── web_actions.py        # Web openers & search
-│   └── productivity_actions. # Todo, Notes, Reminders
+│   ├── window_manager.py     # Win32 Window Manager
+│   ├── file_organizer.py     # File System & ZIP Manager
+│   ├── recorder.py           # Screen & Audio Recorder
+│   ├── network_settings.py   # Wi-Fi, Bluetooth & Settings
+│   ├── browser_agent.py      # Playwright Browser Agent
+│   ├── productivity_hub.py   # Pomodoro, Calendar, Clipboard
+│   └── security_auditor.py   # Security Auditor & Audit Logger
 ├── ui/
-│   └── dashboard.py          # Phase-3 Tkinter dark mode UI
-├── utils/
-│   └── helpers.py            # Helper utilities
+│   └── dashboard.py          # Upgraded Smart Home IoT Tab UI
+├── docs/
+│   └── wiring_guide.md       # Hardware pinout schematics & wiring guide
 ├── tests/
-│   ├── test_assistant.py     # Phase-1 test suite
-│   ├── test_phase2.py        # Phase-2 test suite
-│   └── test_phase3.py        # [NEW] Phase-3 test suite
-├── main.py                   # Main orchestrator entry point
+│   ├── test_assistant.py     # Phase-1 tests
+│   ├── test_phase2.py        # Phase-2 tests
+│   ├── test_phase3.py        # Phase-3 tests
+│   └── test_phase4.py        # [NEW] Phase-4 unit tests
+├── main.py                   # Main entry point
 ├── requirements.txt          # Python package manifest
-├── setup.bat                 # Environment setup script
-├── install.bat               # Package dependency installer
-└── run.bat                   # App launcher script
+├── setup.bat                 # Setup script
+├── install.bat               # Dependency installer
+└── run.bat                   # App launcher
 ```
 
 ---
@@ -102,43 +82,39 @@ c:\voice command\
 ## 🛠️ Step-by-Step Installation Guide (Windows)
 
 ### Step 1: Prerequisites
-1. **Python 3.10+**: Installed and added to System PATH.
-2. **Ollama**: Installed from [ollama.com](https://ollama.com) with model pulled:
-   ```cmd
-   ollama pull gemma2:2b
-   ```
+1. **Python 3.10+**: Download & install Python from [python.org](https://www.python.org/downloads/).
+2. **Ollama**: Installed with model pulled (`ollama pull gemma2:2b`).
+3. **Arduino IDE (Optional)**: Download from [arduino.cc](https://www.arduino.cc) to flash firmware to your Arduino board.
 
-### Step 2: Automatic Setup
-1. Double click **`setup.bat`** to create virtual environment `venv`.
-2. Double click **`install.bat`** to install dependencies.
+### Step 2: Flash Arduino Firmware
+1. Open `firmware/x_assistant_arduino.ino` in Arduino IDE.
+2. Select your board (Uno / Nano / Mega) and COM port.
+3. Click **Upload**.
 
 ### Step 3: Launch Assistant
-1. Ensure Ollama server is running.
-2. Double-click **`run.bat`** or run `python main.py` in terminal.
-3. Say **"Hey X"** or **"X"** to wake up your AI Agent!
+1. Run **`setup.bat`** and **`install.bat`**.
+2. Double-click **`run.bat`** or execute `python main.py` in terminal.
+3. Say **"Hey X"** to control your Smart Home!
 
 ---
 
 ## 🗣️ Voice Command Examples
 
-- *"Hey X, minimize Chrome"*
-- *"X, maximize VS Code"*
-- *"X, switch to Spotify"*
-- *"X, compress zip folder notes"*
-- *"X, record voice note"*
-- *"X, record screen"*
-- *"X, start pomodoro"*
-- *"X, show clipboard history"*
-- *"X, show audit logs"*
-- *"X, scan wifi networks"*
-- *"X, open bluetooth settings"*
-- *"X, take a screenshot and check weather"* (Multi-step reasoning plan)
+- *"Hey X, turn on the room light"*
+- *"X, turn off the fan"*
+- *"X, read the room temperature"*
+- *"X, show humidity"*
+- *"X, detect motion"*
+- *"X, rotate the servo to 90 degrees"*
+- *"X, blink LED 5 times"*
+- *"X, turn on all relays"*
+- *"X, minimize Chrome and check room temperature"* (Multi-step agent reasoning)
 
 ---
 
 ## 🧪 Running Unit Test Suite
 
-Run full Phase-1, Phase-2, and Phase-3 test suites:
+Run complete Phase 1 to Phase 4 test suite:
 ```cmd
 $env:PYTHONPATH="." ; .\venv\Scripts\python.exe -m unittest discover tests
 ```

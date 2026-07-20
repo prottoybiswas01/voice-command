@@ -279,3 +279,119 @@
 [2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
 [2026-07-20 22:54:47] [INFO] [XAssistant]: Audit Logged: DELETE_FILE -> temp.txt [SUCCESS]
 [2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:59:19] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:19] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 22:59:19] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 22:59:19] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 22:59:19] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-20 22:59:19] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:20] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:21] [INFO] [XAssistant]: Here are today's top live news headlines: 1. The new PM has big ideas - but what will they cost?; 2. Burnham promises help with your money. How could it affect you?; 3. Burnham's policy choices reveal what kind of PM he wants to be
+[2026-07-20 22:59:21] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 22:59:24] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:25] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: The current room temperature is 29.1°C.
+[2026-07-20 22:59:25] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-20 22:59:25] [INFO] [XAssistant]: The current room humidity is 65.2%.
+[2026-07-20 23:00:10] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:10] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 23:00:10] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 23:00:10] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 23:00:10] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-20 23:00:10] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Here are today's top live news headlines: 1. The new PM has big ideas - but what will they cost?; 2. Burnham promises help with your money. How could it affect you?; 3. Burnham's policy choices reveal what kind of PM he wants to be
+[2026-07-20 23:00:11] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:13] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Phase-4 Database schema initialized successfully.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: The current room temperature is 29.1°C.
+[2026-07-20 23:00:13] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-20 23:00:13] [INFO] [XAssistant]: The current room humidity is 64.7%.

@@ -1,7 +1,7 @@
-# X Assistant Configuration File (Phase 3 Upgrade)
+# X Assistant Configuration File (Phase 4 Upgrade)
 assistant:
   name: "X Assistant"
-  version: "3.0.0"
+  version: "4.0.0"
   wake_words:
     - "x"
     - "hey x"
@@ -23,8 +23,8 @@ ollama:
   timeout: 45
   max_context_length: 4096
   system_prompt: >
-    You are X Assistant Phase 3, an autonomous AI Agent with full Windows computer control.
-    You plan multi-step execution, verify completion, auto-retry on errors, and communicate fluently in Bangla, English, and Banglish.
+    You are X Assistant Phase 4, a Smart Home and IoT AI Assistant.
+    You manage Arduino hardware, sensors, relays, automation rules, and Windows computer control.
 
 browser:
   preferred_browser: "chrome"
@@ -42,6 +42,12 @@ agent:
   auto_retry_attempts: 2
   pomodoro_focus_minutes: 25
   pomodoro_break_minutes: 5
+
+iot:
+  baud_rate: 9600
+  auto_detect_com: true
+  simulation_mode_if_disconnected: true
+  default_room: "Living Room"
 
 paths:
   db_path: "data/x_assistant.db"
