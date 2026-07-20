@@ -1,6 +1,6 @@
 """
-Speech-To-Text (STT) Engine for X Assistant (Phase 6 Debugged & Upgraded).
-Handles Audio Input Capture from Microphone via PyAudio / sounddevice,
+Speech-To-Text (STT) Engine for X Assistant (Phase 6 Final Upgrade).
+Handles Audio Input Capture from Microphone via PyAudio / sounddevice with Voice Activity Detection (VAD),
 initializes ambient noise thresholds, and converts speech to text using SpeechRecognition.
 """
 
@@ -25,7 +25,7 @@ except ImportError:
 
 
 class STTEngine:
-    """Speech-To-Text engine supporting PyAudio & sounddevice microphone audio capture."""
+    """Speech-To-Text engine supporting PyAudio & sounddevice microphone audio capture with VAD."""
 
     def __init__(self) -> None:
         self.recognizer = sr.Recognizer() if sr else None
@@ -57,7 +57,6 @@ class STTEngine:
         # Attempt 2: sounddevice + numpy microphone audio capture
         if sd and np:
             try:
-                # Query default input audio device
                 dev_info = sd.query_devices(kind='input')
                 dev_name = dev_info.get('name', 'Default Microphone')
                 self.is_available = True
@@ -71,7 +70,62 @@ class STTEngine:
         print("[Voice System] WARNING: Microphone hardware not available. Voice STT operating in fallback prompt mode.")
         logger.warning("Microphone hardware not available.")
 
-    def listen_and_recognize(self, timeout: int = 5, phrase_time_limit: int = 8, language: Optional[str] = None) -> Optional[str]:
+    def _record_audio_sounddevice(self, timeout: int = 4, phrase_time_limit: int = 8) -> Optional[sr.AudioData]:
+        """
+        Record audio from default microphone using sounddevice with RMS Energy Voice Activity Detection (VAD).
+        Automatically detects speech start and stops recording when speech ends.
+        """
+        sample_rate = 16000
+        chunk_duration = 0.1  # 100ms chunks
+        chunk_samples = int(sample_rate * chunk_duration)
+        silence_threshold = 250  # RMS energy threshold for speech
+        max_silence_duration = 1.0  # Stop 1.0s after speech ends
+
+        audio_frames = []
+        speech_started = False
+        silence_start_time = None
+        start_time = time.time()
+
+        try:
+            with sd.InputStream(samplerate=sample_rate, channels=1, dtype='int16') as stream:
+                while True:
+                    elapsed = time.time() - start_time
+                    if not speech_started and elapsed > timeout:
+                        return None
+                    if speech_started and (time.time() - start_time) > phrase_time_limit:
+                        break
+
+                    data, _ = stream.read(chunk_samples)
+                    samples = np.frombuffer(data, dtype=np.int16)
+                    if len(samples) == 0:
+                        continue
+
+                    # RMS energy calculation
+                    rms = np.sqrt(np.mean(samples.astype(np.float32)**2))
+
+                    if rms > silence_threshold:
+                        if not speech_started:
+                            speech_started = True
+                            start_time = time.time()
+                        audio_frames.append(data.tobytes())
+                        silence_start_time = None
+                    else:
+                        if speech_started:
+                            audio_frames.append(data.tobytes())
+                            if silence_start_time is None:
+                                silence_start_time = time.time()
+                            elif time.time() - silence_start_time >= max_silence_duration:
+                                break
+
+            if speech_started and audio_frames:
+                raw_bytes = b"".join(audio_frames)
+                return sr.AudioData(raw_bytes, sample_rate, 2)
+        except Exception as err:
+            logger.error(f"sounddevice VAD capture error: {err}")
+
+        return None
+
+    def listen_and_recognize(self, timeout: int = 4, phrase_time_limit: int = 8, language: Optional[str] = None) -> Optional[str]:
         """
         Listen to microphone input and convert to text.
         
@@ -103,18 +157,9 @@ class STTEngine:
                 logger.error(f"PyAudio capture error: {err}")
                 return None
 
-        # B. Capture via sounddevice Microphone Buffer
+        # B. Capture via sounddevice Microphone Stream with VAD
         elif self.backend == "sounddevice" and sd and np:
-            try:
-                sample_rate = 16000
-                channels = 1
-                recording = sd.rec(int(phrase_time_limit * sample_rate), samplerate=sample_rate, channels=channels, dtype='int16')
-                sd.wait()
-                raw_bytes = recording.tobytes()
-                audio_data = sr.AudioData(raw_bytes, sample_rate, 2)
-            except Exception as err:
-                logger.error(f"sounddevice capture error: {err}")
-                return None
+            audio_data = self._record_audio_sounddevice(timeout=timeout, phrase_time_limit=phrase_time_limit)
 
         if not audio_data:
             return None
@@ -153,7 +198,7 @@ class STTEngine:
 
     def listen_once(self) -> Optional[str]:
         """Convenience single listening cycle."""
-        return self.listen_and_recognize(timeout=5, phrase_time_limit=10)
+        return self.listen_and_recognize(timeout=4, phrase_time_limit=8)
 
 
 # Global STT Engine instance

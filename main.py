@@ -1,5 +1,5 @@
 """
-Main Application Entry Point for X Assistant (Phase 6 Ecosystem & Diagnostic Upgrade).
+Main Application Entry Point for X Assistant (Phase 6 Ecosystem & Execution Pipeline Upgrade).
 Runs 11-step System Diagnostics Check on launch, verifies Microphone, Speaker, Ollama Server,
 AI Model, Configuration, Folders, Database, and Debug Logs.
 Orchestrates Autonomous AI Agent, Voice Listener, Multimodal Vision AI, Local RAG Knowledge Base,
@@ -388,18 +388,27 @@ class XAssistantController:
         """Background thread listening for Wake Word and processing voice input."""
         logger.info("[Voice Listener Thread] Background voice listener thread active.")
 
-        def on_wake_detected():
-            tts_engine.speak("Yes? I am listening.")
-            if self.dashboard:
-                self.dashboard.append_transcript("Assistant", "Yes? I am listening.")
-
-            print("[Voice System] Listening for command...")
-            voice_prompt = stt_engine.listen_and_recognize(timeout=5, phrase_time_limit=10)
-            if voice_prompt:
-                print(f"[Voice System] Recognized prompt: \"{voice_prompt}\"")
+        def on_wake_detected(command_payload: str = ""):
+            if command_payload and command_payload.strip():
+                # Command was spoken in the same utterance as wake word (e.g., "Hey X open Chrome")
+                print(f"\n[Voice System] Executing command payload: \"{command_payload}\"")
+                logger.info(f"[Voice System] Executing command payload: '{command_payload}'")
                 if self.dashboard:
-                    self.dashboard.append_transcript("User", voice_prompt)
-                self.process_command(voice_prompt)
+                    self.dashboard.append_transcript("User", command_payload)
+                self.process_command(command_payload)
+            else:
+                # User spoke only wake word ("Hey X"), prompt and listen for command
+                tts_engine.speak("Yes? I am listening.")
+                if self.dashboard:
+                    self.dashboard.append_transcript("Assistant", "Yes? I am listening.")
+
+                print("[Voice System] Listening for command...")
+                voice_prompt = stt_engine.listen_and_recognize(timeout=5, phrase_time_limit=10)
+                if voice_prompt:
+                    print(f"[Voice System] Recognized prompt: \"{voice_prompt}\"")
+                    if self.dashboard:
+                        self.dashboard.append_transcript("User", voice_prompt)
+                    self.process_command(voice_prompt)
 
         wake_word_detector.start_loop(on_wake_detected)
 
