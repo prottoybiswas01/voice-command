@@ -81,10 +81,20 @@ class XAssistantController:
     """Central Phase-6 Personal AI Ecosystem Orchestrator."""
 
     def __init__(self) -> None:
-        logger.info(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
-        
-        # Execute Full 11-Step Startup Diagnostics Checklist
+        from core.logger import log_startup, log_system
+        log_startup(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
+
+        # 1. Configuration Validation
+        config_warnings = settings.validate_and_log_config()
+        for warn in config_warnings:
+            log_startup(f"[Config Warning] {warn}")
+
+        # 2. Plugin Status Report
+        plugin_manager.generate_plugin_status_report()
+
+        # 3. Execute Full 11-Step Startup Diagnostics Checklist
         self.diagnostic_results = system_checker.run_all_checks()
+        log_startup("11-Step Startup Diagnostics Check completed successfully.")
 
         self.dashboard: Optional[AssistantDashboard] = None
         self.is_running = True
@@ -93,6 +103,7 @@ class XAssistantController:
         # Start Background Daemons
         automation_rule_engine.start_engine()
         diagnostics_monitor.start_monitoring(interval_sec=30)
+        log_system("Background daemons (automation_rule_engine, diagnostics_monitor) started successfully.")
 
     def process_command(self, user_text: str) -> str:
         """

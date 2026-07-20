@@ -1,6 +1,7 @@
 """
-X Assistant Configuration Loader Module (Phase 6 Upgrade).
-Provides centralized settings management loading from YAML and environment variables.
+Motu Assistant Configuration Loader & Validation Module (Phase 6 Core Upgrade).
+Provides centralized settings management loading from YAML and environment variables,
+validates all values during startup, and automatically generates fallback defaults without stopping the application.
 """
 
 import os
@@ -20,9 +21,9 @@ CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
 
 @dataclass
 class AssistantSettings:
-    name: str = "X Assistant"
+    name: str = "Motu Assistant"
     version: str = "6.0.0"
-    wake_words: List[str] = field(default_factory=lambda: ["x", "hey x", "x listen"])
+    wake_words: List[str] = field(default_factory=lambda: ["motu", "hey motu", "motu listen", "মটু", "হে মটু"])
     language: str = "bn-EN"
     debug_mode: bool = True
     active_personality: str = "standard"
@@ -44,7 +45,7 @@ class OllamaSettings:
     model: str = "gemma2:2b"
     timeout: int = 45
     max_context_length: int = 4096
-    system_prompt: str = "You are X Assistant Phase 6, the Ultimate Personal AI Ecosystem."
+    system_prompt: str = "You are Motu AI Assistant Phase 6, the Ultimate Personal AI Ecosystem."
 
 
 @dataclass
@@ -106,7 +107,7 @@ class PathSettings:
 
 
 class Settings:
-    """Central configuration instance for X Assistant Phase 6."""
+    """Central configuration instance for Motu AI Assistant."""
 
     def __init__(self, config_file: Path = CONFIG_PATH) -> None:
         self.config_file = config_file
@@ -228,6 +229,34 @@ class Settings:
         self.paths.knowledge_dir.mkdir(parents=True, exist_ok=True)
         self.paths.plugins_dir.mkdir(parents=True, exist_ok=True)
 
+    def validate_and_log_config(self) -> List[str]:
+        """
+        Validate settings and generate fallback defaults if missing.
+        Returns list of warning strings.
+        """
+        warnings = []
 
-# Global Phase-6 settings instance
+        if not self.config_file.exists():
+            warnings.append(f"Configuration file '{self.config_file.name}' missing. Created using fallback defaults.")
+
+        if not self.assistant.name:
+            self.assistant.name = "Motu Assistant"
+            warnings.append("Assistant name setting missing. Defaulted to 'Motu Assistant'.")
+
+        if not self.speech.stt_engine:
+            self.speech.stt_engine = "speech_recognition"
+            warnings.append("Speech STT engine setting missing. Defaulted to 'speech_recognition'.")
+
+        if not self.speech.tts_engine:
+            self.speech.tts_engine = "pyttsx3"
+            warnings.append("Speech TTS engine setting missing. Defaulted to 'pyttsx3'.")
+
+        if not self.ollama.host:
+            self.ollama.host = "http://localhost:11434"
+            warnings.append("Ollama host setting missing. Defaulted to 'http://localhost:11434'.")
+
+        return warnings
+
+
+# Global settings instance
 settings = Settings()
