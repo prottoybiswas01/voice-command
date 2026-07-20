@@ -1,0 +1,31 @@
+# X Assistant Configuration File
+assistant:
+  name: "X Assistant"
+  wake_words:
+    - "x"
+    - "hey x"
+    - "x listen"
+  language: "bn-EN" # Default language setting (Bangla + English support)
+  debug_mode: true
+
+speech:
+  stt_engine: "speech_recognition" # speech_recognition, vosk, whisper
+  stt_language_primary: "bn-BD"
+  stt_language_secondary: "en-US"
+  tts_engine: "pyttsx3" # pyttsx3 or piper
+  tts_rate: 175
+  tts_volume: 1.0
+
+ollama:
+  host: "http://localhost:11434"
+  model: "gemma2:2b" # gemma2:2b, llama3.2, mistral
+  timeout: 30
+  system_prompt: >
+    You are X Assistant, a helpful, polite, and intelligent AI personal assistant.
+    You communicate fluently in Bangla, English, and mixed Bangla-English (Banglish).
+    Keep your answers concise, clear, natural, and helpful for voice interaction.
+
+paths:
+  db_path: "data/x_assistant.db"
+  logs_dir: "logs"
+  notes_dir: "data/notes"
