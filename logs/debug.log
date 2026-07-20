@@ -6691,3 +6691,725 @@ Once I have that information, I can either create the folder for you or direct y
 [2026-07-21 01:24:33] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
 [2026-07-21 01:24:33] [CHECK] Log files verified successfully.
 [2026-07-21 01:24:33] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:25:13] [INFO] [XAssistant]: [Voice System] Initializing Microphone...
+[2026-07-21 01:25:13] [DEBUG] [XAssistant]: PyAudio microphone init failed: Could not find PyAudio; check installation. Attempting sounddevice backend...
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Microphone initialized successfully via sounddevice (Headset Microphone (Realtek(R) ).
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:25:13] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:25:13] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:25:13] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:25:14] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:25:14] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:25:14] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'VoiceService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'AIBrainService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'OllamaService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MemoryService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'BrowserService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'ArduinoService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MusicService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'DatabaseService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'WebSearchService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'LoggingService'
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Initializing Motu Assistant (v6.0.0) Core...
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] ==================================================
+ Dependency & Environment Health Report
+==================================================
+
+[Python Libraries]
+  [✓] pyttsx3
+  [✓] speech_recognition
+  [✓] requests
+  [✓] yaml
+  [✓] PIL
+  [✓] mss
+  [✓] pyautogui
+
+[External Binaries & Executables]
+  [✓] Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe)
+  [✓] Ollama LLM Server (C:\Users\USER\AppData\Local\Programs\Ollama\ollama.exe)
+  [⚠ (Optional / Fallback)] Tesseract OCR
+
+[SQLite Database Schema]: [✓] Active at 'x_assistant.db'
+==================================================
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] Plugin Manager Status Report: 1 plugin(s) active.
+  - [ACTIVE] example_plugin
+[2026-07-21 01:25:14] [INFO] [XAssistant]: [STARTUP] System Services Status Report (10 registered):
+  - [STOPPED] VoiceService (Restarts: 0)
+  - [STOPPED] AIBrainService (Restarts: 0)
+  - [STOPPED] OllamaService (Restarts: 0)
+  - [STOPPED] MemoryService (Restarts: 0)
+  - [STOPPED] BrowserService (Restarts: 0)
+  - [STOPPED] ArduinoService (Restarts: 0)
+  - [STOPPED] MusicService (Restarts: 0)
+  - [STOPPED] DatabaseService (Restarts: 0)
+  - [STOPPED] WebSearchService (Restarts: 0)
+  - [STOPPED] LoggingService (Restarts: 0)
+[2026-07-21 01:25:14] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:25:14] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:25:14] [CHECK] Missing optional packages: opencv-python, pywin32, pyserial. Run: pip install opencv-python pywin32 pyserial
+[2026-07-21 01:25:14] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (10 installed, 3 fallback mode)
+[2026-07-21 01:25:14] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:25:14] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:25:14] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:25:14] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:25:14] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:25:14] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:25:16] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:25:16] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:25:18] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:25:18] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:25:18] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:25:18] [CHECK] All 8 system directories ready.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:25:18] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:25:18] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:25:18] [CHECK] Log files verified successfully.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:25:18] [INFO] [XAssistant]: [STARTUP] 11-Step Startup Diagnostics Check completed successfully.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: Rule-Based Automation Engine active. Background monitoring ready.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: System Self-Diagnostics daemon active.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: [SYSTEM] Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: Starting Motu Assistant Phase-6 application...
+[2026-07-21 01:25:18] [INFO] [XAssistant]: Assistant Speech: Motu Assistant Phase 6 ready. Personal AI Ecosystem online.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: [Voice Listener Thread] Background voice listener thread active.
+[2026-07-21 01:25:18] [INFO] [XAssistant]: [Voice System] Wake word detector active.
+[2026-07-21 01:25:18] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:25:18] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:18] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 66.2% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:25:21] [INFO] [XAssistant]: System Info (all): CPU usage is at 31.1%. RAM usage is at 67.4% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:22] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:25] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:27] [INFO] [XAssistant]: System Info (all): CPU usage is at 14.4%. RAM usage is at 66.9% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:31] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:25:32] [INFO] [XAssistant]: Recognized speech (bn-BD): "এ মটু বাংলাদেশে এখন ওয়েদার কেমন"
+[2026-07-21 01:25:32] [INFO] [XAssistant]: [Voice System] Wake word detected: 'এ মটু বাংলাদেশে এখন ওয়েদার কেমন' -> payload: 'এ বাংলাদেশে এখন ওয়েদার কেমন'
+[2026-07-21 01:25:32] [INFO] [XAssistant]: System Info (all): CPU usage is at 2.9%. RAM usage is at 66.0% (10.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:32] [INFO] [XAssistant]: [Voice System] Executing command payload: 'এ বাংলাদেশে এখন ওয়েদার কেমন'
+[2026-07-21 01:25:32] [INFO] [XAssistant]: Processing command: 'এ বাংলাদেশে এখন ওয়েদার কেমন'
+[2026-07-21 01:25:32] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:25:32] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:25:32] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'এ বাংলাদেশে এখন ওয়েদার কেমন'
+[2026-07-21 01:25:38] [INFO] [XAssistant]: System Info (all): CPU usage is at 1.6%. RAM usage is at 66.1% (10.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:43] [INFO] [XAssistant]: System Info (all): CPU usage is at 15.3%. RAM usage is at 66.6% (10.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:48] [INFO] [XAssistant]: Assistant Speech: I can give you an overview of the current situation in Bangladesh regarding the weather! 
+
+**Here's what we know about the weather:**
+
+* **Overall:**  Bangladesh is experiencing [state general weather pattern - e.g., a warm and humid monsoon season, or a dry period with occasional showers]. 
+* **Specific Locations:** You can get very precise information by looking at local weather forecasts for specific areas within Bangladesh (e.g., Dhaka, Chittagong).
+
+ **Where to Find More Information:**
+*  **Local Weather Services:** Websites like [insert reliable Bangladesh weather website] often have good forecasts. 
+*  **Weather Apps:** Use a weather app on your smartphone - it's usually the easiest way to get localized and updated information!
+
+
+Let me know if you have other questions about Bangladesh! 😊
+[2026-07-21 01:25:48] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:25:48] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:48] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 12.5% - RAM Usage: 67.5% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:25:49] [INFO] [XAssistant]: System Info (all): CPU usage is at 14.7%. RAM usage is at 67.5% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:51] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:54] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:25:54] [INFO] [XAssistant]: System Info (all): CPU usage is at 10.9%. RAM usage is at 67.2% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:25:57] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:00] [INFO] [XAssistant]: System Info (all): CPU usage is at 6.3%. RAM usage is at 67.5% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:01] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:04] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:26:04] [INFO] [XAssistant]: Recognized speech (bn-BD): "হে মটু"
+[2026-07-21 01:26:04] [INFO] [XAssistant]: [Voice System] Wake word detected: 'হে মটু' -> payload: 'হে মটু'
+[2026-07-21 01:26:04] [INFO] [XAssistant]: [Voice System] Executing command payload: 'হে মটু'
+[2026-07-21 01:26:04] [INFO] [XAssistant]: Processing command: 'হে মটু'
+[2026-07-21 01:26:04] [INFO] [XAssistant]: Parsed Intent: greeting (Category: system)
+[2026-07-21 01:26:04] [INFO] [XAssistant]: Assistant Speech: Good morning! I am Motu AI Assistant Phase 6. How can I help you today?
+[2026-07-21 01:26:04] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:26:04] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:05] [INFO] [XAssistant]: System Info (all): CPU usage is at 12.9%. RAM usage is at 67.5% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:07] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:26:07] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:11] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:11] [INFO] [XAssistant]: System Info (all): CPU usage is at 17.4%. RAM usage is at 67.6% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:16] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:26:17] [INFO] [XAssistant]: System Info (all): CPU usage is at 12.5%. RAM usage is at 67.3% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:17] [INFO] [XAssistant]: Recognized speech (bn-BD): "এ মটু চীনের ওয়েদার টা কেমন"
+[2026-07-21 01:26:17] [INFO] [XAssistant]: [Voice System] Wake word detected: 'এ মটু চীনের ওয়েদার টা কেমন' -> payload: 'এ চীনের ওয়েদার টা কেমন'
+[2026-07-21 01:26:17] [INFO] [XAssistant]: [Voice System] Executing command payload: 'এ চীনের ওয়েদার টা কেমন'
+[2026-07-21 01:26:17] [INFO] [XAssistant]: Processing command: 'এ চীনের ওয়েদার টা কেমন'
+[2026-07-21 01:26:17] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:26:17] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'এ চীনের ওয়েদার টা কেমন'
+[2026-07-21 01:26:18] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 13.0% - RAM Usage: 67.0% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:26:22] [INFO] [XAssistant]: System Info (all): CPU usage is at 1.8%. RAM usage is at 67.1% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:28] [INFO] [XAssistant]: System Info (all): CPU usage is at 10.1%. RAM usage is at 67.9% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:33] [INFO] [XAssistant]: System Info (all): CPU usage is at 15.0%. RAM usage is at 67.8% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:33] [INFO] [XAssistant]: Assistant Speech: Let's talk about the weather in China!  
+
+Here's a general overview of what's happening:
+
+* **Overall:**  China is experiencing [state general weather pattern - e.g., a mix of summer heatwaves and cooler, rainy periods depending on location]. 
+* **Specific Locations:**  Weather can vary wildly across the country, so you'll get more specific information if you tell me where in China you're interested in (e.g., Beijing, Shanghai).
+
+**Where to Find More Information:**
+
+* **Local Weather Services:**   Check out websites like [insert reliable weather website for China] for accurate forecasts tailored to the area you need. 
+* **Weather Apps:**  Download a good weather app on your smartphone – it's usually the quickest way to get localized and updated information! 
+
+
+
+Let me know if you have any specific questions about China's weather conditions, or what kind of information you are looking for! 😊
+[2026-07-21 01:26:33] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:26:33] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:37] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:39] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.3%. RAM usage is at 68.3% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:40] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:43] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:44] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.4%. RAM usage is at 68.1% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:47] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:48] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 12.9% - RAM Usage: 67.9% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:26:50] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:50] [INFO] [XAssistant]: System Info (all): CPU usage is at 29.3%. RAM usage is at 67.4% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:53] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:26:55] [INFO] [XAssistant]: System Info (all): CPU usage is at 8.1%. RAM usage is at 68.0% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:26:56] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:00] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:01] [INFO] [XAssistant]: System Info (all): CPU usage is at 19.2%. RAM usage is at 68.1% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:03] [INFO] [XAssistant]: Processing command: 'start pomodoro'
+[2026-07-21 01:27:03] [INFO] [XAssistant]: Parsed Intent: pomodoro_control (Category: productivity_hub)
+[2026-07-21 01:27:03] [INFO] [XAssistant]: Pomodoro Focus session started! Work focused for 25 minutes.
+[2026-07-21 01:27:03] [INFO] [XAssistant]: Assistant Speech: Pomodoro Focus session started! Work focused for 25 minutes.
+[2026-07-21 01:27:03] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:27:11] [INFO] [XAssistant]: [Voice System] Initializing Microphone...
+[2026-07-21 01:27:11] [DEBUG] [XAssistant]: PyAudio microphone init failed: Could not find PyAudio; check installation. Attempting sounddevice backend...
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Microphone initialized successfully via sounddevice (Headset Microphone (Realtek(R) ).
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:27:11] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:27:11] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:27:11] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:27:11] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:27:11] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:27:12] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'VoiceService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'AIBrainService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'OllamaService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MemoryService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'BrowserService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'ArduinoService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MusicService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'DatabaseService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'WebSearchService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'LoggingService'
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Initializing Motu Assistant (v6.0.0) Core...
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] ==================================================
+ Dependency & Environment Health Report
+==================================================
+
+[Python Libraries]
+  [✓] pyttsx3
+  [✓] speech_recognition
+  [✓] requests
+  [✓] yaml
+  [✓] PIL
+  [✓] mss
+  [✓] pyautogui
+
+[External Binaries & Executables]
+  [✓] Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe)
+  [✓] Ollama LLM Server (C:\Users\USER\AppData\Local\Programs\Ollama\ollama.exe)
+  [⚠ (Optional / Fallback)] Tesseract OCR
+
+[SQLite Database Schema]: [✓] Active at 'x_assistant.db'
+==================================================
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] Plugin Manager Status Report: 1 plugin(s) active.
+  - [ACTIVE] example_plugin
+[2026-07-21 01:27:12] [INFO] [XAssistant]: [STARTUP] System Services Status Report (10 registered):
+  - [STOPPED] VoiceService (Restarts: 0)
+  - [STOPPED] AIBrainService (Restarts: 0)
+  - [STOPPED] OllamaService (Restarts: 0)
+  - [STOPPED] MemoryService (Restarts: 0)
+  - [STOPPED] BrowserService (Restarts: 0)
+  - [STOPPED] ArduinoService (Restarts: 0)
+  - [STOPPED] MusicService (Restarts: 0)
+  - [STOPPED] DatabaseService (Restarts: 0)
+  - [STOPPED] WebSearchService (Restarts: 0)
+  - [STOPPED] LoggingService (Restarts: 0)
+[2026-07-21 01:27:12] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:27:12] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:27:12] [CHECK] Missing optional packages: opencv-python, pywin32, pyserial. Run: pip install opencv-python pywin32 pyserial
+[2026-07-21 01:27:12] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (10 installed, 3 fallback mode)
+[2026-07-21 01:27:12] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:27:12] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:27:12] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:27:12] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:27:12] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:27:12] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:27:14] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:27:14] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:27:16] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:27:16] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:27:16] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:27:16] [CHECK] All 8 system directories ready.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:27:16] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:27:16] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:27:16] [CHECK] Log files verified successfully.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:27:16] [INFO] [XAssistant]: [STARTUP] 11-Step Startup Diagnostics Check completed successfully.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: Rule-Based Automation Engine active. Background monitoring ready.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: System Self-Diagnostics daemon active.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: [SYSTEM] Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: Starting Motu Assistant Phase-6 application...
+[2026-07-21 01:27:16] [INFO] [XAssistant]: Assistant Speech: Motu Assistant Phase 6 ready. Personal AI Ecosystem online.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: [Voice Listener Thread] Background voice listener thread active.
+[2026-07-21 01:27:16] [INFO] [XAssistant]: [Voice System] Wake word detector active.
+[2026-07-21 01:27:16] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:27:16] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:16] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 67.2% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:27:19] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.6%. RAM usage is at 68.2% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:19] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:23] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:24] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.9%. RAM usage is at 67.8% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:29] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:27:30] [INFO] [XAssistant]: System Info (all): CPU usage is at 7.5%. RAM usage is at 67.2% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:30] [INFO] [XAssistant]: Recognized speech (bn-BD): "আমি এই মুহূর্তে ঝিনাইদহ তে আছি এই ঝিনাইদহ ওয়েদার কেমন"
+[2026-07-21 01:27:30] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:33] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:36] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.8%. RAM usage is at 67.9% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:37] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:40] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:41] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.5%. RAM usage is at 67.8% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:43] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:46] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 16.5% - RAM Usage: 67.6% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:27:47] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.7%. RAM usage is at 67.4% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:47] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:50] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:52] [INFO] [XAssistant]: System Info (all): CPU usage is at 15.2%. RAM usage is at 67.7% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:27:53] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:56] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:27:58] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.2%. RAM usage is at 67.7% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:01] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:28:02] [INFO] [XAssistant]: Recognized speech (bn-BD): "হে মটু"
+[2026-07-21 01:28:02] [INFO] [XAssistant]: [Voice System] Wake word detected: 'হে মটু' -> payload: 'হে মটু'
+[2026-07-21 01:28:02] [INFO] [XAssistant]: [Voice System] Executing command payload: 'হে মটু'
+[2026-07-21 01:28:02] [INFO] [XAssistant]: Processing command: 'হে মটু'
+[2026-07-21 01:28:02] [INFO] [XAssistant]: Parsed Intent: greeting (Category: system)
+[2026-07-21 01:28:02] [INFO] [XAssistant]: Assistant Speech: Good morning! I am Motu AI Assistant Phase 6. How can I help you today?
+[2026-07-21 01:28:02] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:28:02] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:03] [INFO] [XAssistant]: System Info (all): CPU usage is at 23.3%. RAM usage is at 68.0% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:05] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:28:06] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:09] [INFO] [XAssistant]: System Info (all): CPU usage is at 12.7%. RAM usage is at 68.0% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:13] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:28:14] [INFO] [XAssistant]: Recognized speech (bn-BD): "বাংলাদেশ ঢাকা এর ওয়েদার কেমন"
+[2026-07-21 01:28:14] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:14] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.2%. RAM usage is at 67.7% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:16] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 13.5% - RAM Usage: 67.7% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:28:17] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:20] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.1%. RAM usage is at 67.8% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:21] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:24] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:26] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.4%. RAM usage is at 67.7% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:29] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:28:29] [INFO] [XAssistant]: Recognized speech (bn-BD): "হে মটু"
+[2026-07-21 01:28:29] [INFO] [XAssistant]: [Voice System] Wake word detected: 'হে মটু' -> payload: 'হে মটু'
+[2026-07-21 01:28:29] [INFO] [XAssistant]: [Voice System] Executing command payload: 'হে মটু'
+[2026-07-21 01:28:29] [INFO] [XAssistant]: Processing command: 'হে মটু'
+[2026-07-21 01:28:29] [INFO] [XAssistant]: Parsed Intent: greeting (Category: system)
+[2026-07-21 01:28:29] [INFO] [XAssistant]: Assistant Speech: Good morning! I am Motu AI Assistant Phase 6. How can I help you today?
+[2026-07-21 01:28:29] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:28:29] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:31] [INFO] [XAssistant]: System Info (all): CPU usage is at 14.4%. RAM usage is at 68.1% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:33] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:36] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:37] [INFO] [XAssistant]: System Info (all): CPU usage is at 26.4%. RAM usage is at 67.9% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:42] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:28:42] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.8%. RAM usage is at 67.6% (10.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:43] [INFO] [XAssistant]: Recognized speech (bn-BD): "মটু হট আয়ু টিমন"
+[2026-07-21 01:28:43] [INFO] [XAssistant]: [Voice System] Wake word detected: 'মটু হট আয়ু টিমন' -> payload: 'হট আয়ু টিমন'
+[2026-07-21 01:28:43] [INFO] [XAssistant]: [Voice System] Executing command payload: 'হট আয়ু টিমন'
+[2026-07-21 01:28:43] [INFO] [XAssistant]: Processing command: 'হট আয়ু টিমন'
+[2026-07-21 01:28:43] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:28:43] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:28:43] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'হট আয়ু টিমন'
+[2026-07-21 01:28:46] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 13.6% - RAM Usage: 67.3% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:28:48] [INFO] [XAssistant]: System Info (all): CPU usage is at 3.8%. RAM usage is at 67.2% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:53] [INFO] [XAssistant]: System Info (all): CPU usage is at 10.0%. RAM usage is at 68.1% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:28:57] [INFO] [XAssistant]: Assistant Speech: আমি তোমাকে  **এই সময়ের জিজ্ঞাসা answer দিতে পারব না। **  আপনি কি কোন স্পষ্টত বিষয়গুলোতে ভাবেন?  
+
+For example, I can help with: 
+
+* **Information:** Finding information about the weather in Bangladesh.
+* **Planning:** Helping you plan a trip to Bangladesh.
+* **Content generation:** Writing different types of content, like articles, poems, or even scripts!
+
+
+Please tell me what you'd like to talk about and how I can help! 😊
+[2026-07-21 01:28:57] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:28:57] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:28:59] [INFO] [XAssistant]: System Info (all): CPU usage is at 25.3%. RAM usage is at 69.0% (10.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:01] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:04] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:04] [INFO] [XAssistant]: System Info (all): CPU usage is at 16.2%. RAM usage is at 69.0% (10.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:07] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:10] [INFO] [XAssistant]: System Info (all): CPU usage is at 12.9%. RAM usage is at 69.3% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:11] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:14] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:16] [INFO] [XAssistant]: System Info (all): CPU usage is at 16.0%. RAM usage is at 69.7% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:16] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 15.8% - RAM Usage: 69.6% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:29:17] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:20] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:21] [INFO] [XAssistant]: System Info (all): CPU usage is at 15.6%. RAM usage is at 69.7% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:24] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:25] [INFO] [XAssistant]: Processing command: 'good night'
+[2026-07-21 01:29:25] [INFO] [XAssistant]: Executing Macro Workflow [Good Night Scene] with 3 steps.
+[2026-07-21 01:29:25] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:29:25] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:29:27] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.7%. RAM usage is at 69.3% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Processing command: 'good night'
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Executing Macro Workflow [Good Night Scene] with 3 steps.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Processing command: 'start work mode'
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Parsed Intent: open_app (Category: system)
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Opening Vscode.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Assistant Speech: Opening Vscode.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Parsed Intent: open_app (Category: system)
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Opening Chrome.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Assistant Speech: Opening Chrome.
+[2026-07-21 01:29:27] [INFO] [XAssistant]: Parsed Intent: open_browser_site (Category: browser_auto)
+[2026-07-21 01:29:30] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:31] [WARNING] [XAssistant]: Failed to launch Playwright browser: BrowserType.launch: Executable doesn't exist at C:\Users\USER\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝. Falling back to default browser.
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Opened github in system browser.
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Assistant Speech: Opened github in system browser.
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Parsed Intent: pomodoro_control (Category: productivity_hub)
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Pomodoro Focus session started! Work focused for 25 minutes.
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Assistant Speech: Pomodoro Focus session started! Work focused for 25 minutes.
+[2026-07-21 01:29:31] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:29:32] [INFO] [XAssistant]: Assistant Speech: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:29:32] [INFO] [XAssistant]: System Info (all): CPU usage is at 84.4%. RAM usage is at 78.3% (12.3GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:34] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:37] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:38] [INFO] [XAssistant]: System Info (all): CPU usage is at 89.4%. RAM usage is at 74.4% (11.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:39] [INFO] [XAssistant]: Assistant Speech: I need a bit more information to assist with this request. 
+
+**Please tell me:**
+
+* **Which specific relays are you referring to?**  (For example, is it the HVAC relays, lighting relays, or something else?)
+* **What system do these relays belong to?** (e.g., Home automation system, car, industrial machine)
+
+
+The more details you provide, the better I can understand your request and help you turn off the relays accordingly!
+[2026-07-21 01:29:39] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:29:39] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:29:40] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:43] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:43] [INFO] [XAssistant]: System Info (all): CPU usage is at 43.3%. RAM usage is at 72.6% (11.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:44] [INFO] [XAssistant]: Assistant Speech: Let's turn off the relays.  I need you to be a bit more specific though so I can give you the most accurate assistance. 
+
+To proceed, please tell me:
+
+* **Which relays?** Do you have a list of the relay names or model numbers? Are you referring to home automation devices? 
+* **Are there any specific instructions for turning them off?** Is it via a smart home system, control panel, or manual process?
+
+
+The more details you provide, the better I can understand your request and help!
+[2026-07-21 01:29:44] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:29:44] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:29:46] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 47.3% - RAM Usage: 73.2% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:29:47] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:49] [INFO] [XAssistant]: System Info (all): CPU usage is at 35.2%. RAM usage is at 73.9% (11.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:50] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Assistant Speech: To assist with this request, please tell me:
+
+* **What system are these servos part of?** (e.g., robotics project, drone control)
+* **Which specific servo do you want to rotate?**  (I need the model name or designation) 
+
+
+The more information you give me, the better I can understand your request and adjust the servo accordingly! 😊
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'off'}
+[2026-07-21 01:29:51] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_off", "pin": 8}
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Device 'relay_fan' state updated to: OFF.
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Turned OFF the room fan.
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room fan.
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:29:51] [INFO] [XAssistant]: Assistant Speech: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:29:53] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:55] [INFO] [XAssistant]: System Info (all): CPU usage is at 30.4%. RAM usage is at 74.6% (11.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:29:56] [INFO] [XAssistant]: Processing command: 'good night'
+[2026-07-21 01:29:56] [INFO] [XAssistant]: Executing Macro Workflow [Good Night Scene] with 3 steps.
+[2026-07-21 01:29:56] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:29:56] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:29:56] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Assistant Speech: I'll need some more information to assist with that request.  
+
+To properly execute the "rotate servo to 90 degrees" command, please tell me:
+
+* **Which servo are you referring to?** (e.g., Servo on a robot arm, camera mount, etc.)
+* **What system do these servos belong to?**  (Is it a robotics project, an experimental setup, or something else?) 
+
+
+The more details you provide about the servo's location and its function, the better I can understand your request.
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'off'}
+[2026-07-21 01:29:57] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_off", "pin": 8}
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Device 'relay_fan' state updated to: OFF.
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Turned OFF the room fan.
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room fan.
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:29:57] [INFO] [XAssistant]: Assistant Speech: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:30:00] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:00] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.0%. RAM usage is at 74.5% (11.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:02] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:02] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:03] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:06] [INFO] [XAssistant]: System Info (all): CPU usage is at 23.6%. RAM usage is at 75.1% (11.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:06] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:09] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:10] [INFO] [XAssistant]: Assistant Speech: Let's turn off the relays.  I need you to be a bit more specific though so I can give you the most accurate assistance. 
+
+To proceed, please tell me:
+
+* **Which specific relays are you referring to?** (For example, is it the HVAC relays, lighting relays, or something else?)
+* **What system do these relays belong to?** (e.g., Home automation system, car, industrial machine)
+
+
+The more details you provide, the better I can understand your request and help you turn off the relays accordingly!
+[2026-07-21 01:30:10] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:10] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:11] [INFO] [XAssistant]: System Info (all): CPU usage is at 14.5%. RAM usage is at 74.8% (11.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:13] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:13] [INFO] [XAssistant]: Processing command: 'turn off all relays'
+[2026-07-21 01:30:13] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:13] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:30:15] [INFO] [XAssistant]: Processing command: 'turn off all relays'
+[2026-07-21 01:30:15] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:15] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:30:16] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:16] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 27.9% - RAM Usage: 74.6% - Disk Usage: 51.5% - Database Size: 0.26 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:30:17] [INFO] [XAssistant]: System Info (all): CPU usage is at 35.7%. RAM usage is at 74.7% (11.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Processing command: 'turn on room light'
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-21 01:30:17] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-21 01:30:17] [INFO] [XAssistant]: Assistant Speech: Turned ON the room light.
+[2026-07-21 01:30:19] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:21] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:21] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:22] [INFO] [XAssistant]: System Info (all): CPU usage is at 36.6%. RAM usage is at 75.2% (11.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Processing command: 'turn on fan'
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'on'}
+[2026-07-21 01:30:22] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_on", "pin": 8}
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Processing command: 'turn on all relays'
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Device 'relay_fan' state updated to: ON.
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Turned ON the room fan.
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Assistant Speech: Turned ON the room fan.
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn on all relays'
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Processing command: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:22] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:23] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Processing command: 'turn on all relays'
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:23] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn on all relays'
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Assistant Speech: I'll need some more information to assist with that request. 
+
+To properly execute the "rotate servo to 90 degrees" command, please tell me:
+
+* **Which servo are you referring to?** (e.g., Servo on a robot arm, camera mount, etc.)
+* **What system do these servos belong to?**  (Is it a robotics project, an experimental setup, or something else?) 
+
+
+The more details you provide about the servo's location and its function, the better I can understand your request.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'off'}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_off", "pin": 8}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Device 'relay_fan' state updated to: OFF.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Turned OFF the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Assistant Speech: Executed macro workflow 'Good Night Scene' (3 actions completed).
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Processing command: 'turn on fan'
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'on'}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_on", "pin": 8}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Device 'relay_fan' state updated to: ON.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Turned ON the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Assistant Speech: Turned ON the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Processing command: 'turn off fan'
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Parsed Intent: control_fan (Category: smart_home)
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Smart Home Action: control_fan with params: {'state': 'off'}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_fan_off", "pin": 8}
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Device 'relay_fan' state updated to: OFF.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Turned OFF the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room fan.
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Processing command: 'turn off all relays'
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:24] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn off all relays'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Processing command: 'turn on all relays'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn on all relays'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Processing command: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:25] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:25] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Processing command: 'turn on room light'
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-21 01:30:26] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Assistant Speech: Turned ON the room light.
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Processing command: 'blink led'
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'blink led'
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Processing command: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:26] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:27] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Processing command: 'turn on all relays'
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'turn on all relays'
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Processing command: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-21 01:30:27] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'rotate servo to 90 degrees'
+[2026-07-21 01:30:28] [INFO] [XAssistant]: System Info (all): CPU usage is at 27.7%. RAM usage is at 75.8% (11.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Processing command: 'turn off room light'
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Parsed Intent: control_light (Category: smart_home)
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:30:28] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:30:28] [INFO] [XAssistant]: Assistant Speech: Turned OFF the room light.
+[2026-07-21 01:30:29] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:30] [INFO] [XAssistant]: Assistant Speech: Let's turn off the relays.  I need you to be a bit more specific though so I can give you the most accurate assistance. 
+
+To proceed, please tell me:
+
+* **Which specific relays are you referring to?** (For example, is it the HVAC relays, lighting relays, or something else?)
+* **What system do these relays belong to?** (e.g., Home automation system, car, industrial machine)
+
+
+The more details you provide, the better I can understand your request and help you turn off the relays accordingly!
+[2026-07-21 01:30:32] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:33] [INFO] [XAssistant]: System Info (all): CPU usage is at 50.5%. RAM usage is at 76.4% (12.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Processing command: 'start work mode'
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Parsed Intent: open_app (Category: system)
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Opening Vscode.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Assistant Speech: Opening Vscode.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Parsed Intent: open_app (Category: system)
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Opening Chrome.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Assistant Speech: Opening Chrome.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Parsed Intent: open_browser_site (Category: browser_auto)
+[2026-07-21 01:30:34] [WARNING] [XAssistant]: Failed to launch Playwright browser: BrowserType.launch: Executable doesn't exist at C:\Users\USER\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝. Falling back to default browser.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Opened github in system browser.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Assistant Speech: Opened github in system browser.
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Parsed Intent: pomodoro_control (Category: productivity_hub)
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Assistant Speech: Pomodoro session already running (23 minutes remaining).
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:30:34] [INFO] [XAssistant]: Assistant Speech: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:30:36] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:36] [INFO] [XAssistant]: Assistant Speech: Let's turn off the relays. 
+
+To give me the most accurate information to proceed, could you tell me:
+
+* **Which specific relays are you referring to?** (For example, is it the HVAC relays, lighting relays, or something else?)
+* **What system do these relays belong to?** (e.g., Home automation system, car, industrial machine) 
+
+
+The more details you provide, the better I can understand your request and help you turn off the relays accordingly!
+[2026-07-21 01:30:39] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:39] [INFO] [XAssistant]: System Info (all): CPU usage is at 89.9%. RAM usage is at 79.7% (12.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:40] [INFO] [XAssistant]: Assistant Speech: Let's turn on your relays, but I need a bit more information first!  To proceed safely and efficiently, please tell me:
+
+* **Which specific relays are you referring to?** (For example, is it the HVAC relays, lighting relays, or something else?) 
+* **What system do these relays belong to?** (e.g., Home automation system, car, industrial machine)
+
+
+The more details you provide, the better I can understand your request and help you turn on the relays accordingly!
+[2026-07-21 01:30:42] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:44] [INFO] [XAssistant]: Assistant Speech: I need some more information about this request!  Could you please tell me:
+
+* **What device is the servo attached to?** (e.g., a robot arm, drone, camera mount)
+* **Which program or platform do you want to control the servo with?** (e.g., Arduino, ROS, custom software) 
+
+
+The more context you give me, the better I can understand and help you rotate that servo!
+[2026-07-21 01:30:44] [INFO] [XAssistant]: System Info (all): CPU usage is at 30.2%. RAM usage is at 78.8% (12.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:30:45] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:46] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 52.9% - RAM Usage: 78.4% - Disk Usage: 51.5% - Database Size: 0.27 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:30:48] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:30:49] [INFO] [XAssistant]: Assistant Speech: Please be more specific!  I need to know which relays you want me to turn on so I can help. 
+
+**To proceed, please tell me:**
+
+* **Which relays are you referring to?** (e.g., HVAC relays, lighting relays, etc.)
+* **What system do these relays belong to?** (For example, is it your home automation system, a car's electrical system, or something else?)
+
+The more details you provide, the better I can understand your request and help you turn on the correct relays. 
+
+
+Let me know! 👍
+[2026-07-21 01:30:50] [INFO] [XAssistant]: System Info (all): CPU usage is at 32.3%. RAM usage is at 74.0% (11.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
