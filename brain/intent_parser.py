@@ -261,26 +261,26 @@ class IntentParser:
             return Intent(name="search_files", action_type="system_control", params={"query": query}, raw_prompt=text)
 
         # 20. Basic System App Launchers & Greetings
-        if any(w in clean for w in ["hello", "hi", "hey", "good morning", "good evening", "সালাম", "হ্যালো"]):
+        if any(w in clean for w in ["hello", "hi", "hey", "good morning", "good evening", "সালাম", "হ্যালো", "আসসালামু আলাইকুম"]):
             return Intent(name="greeting", action_type="system", params={"type": "greeting"}, raw_prompt=text)
-        if any(w in clean for w in ["time", "what time", "কয়টা বাজে", "সময়"]):
+        if any(w in clean for w in ["time", "what time", "কয়টা বাজে", "সময়", "সময়"]):
             return Intent(name="get_time", action_type="system", params={"type": "time"}, raw_prompt=text)
         if any(w in clean for w in ["date", "what date", "today's date", "আজকের তারিখ", "তারিখ"]):
             return Intent(name="get_date", action_type="system", params={"type": "date"}, raw_prompt=text)
 
-        if "chrome" in clean:
+        if any(w in clean for w in ["chrome", "ক্রোম", "ক্রোমিয়াম", "ব্রাউজার"]):
             return Intent(name="open_app", action_type="system", params={"app": "chrome"}, raw_prompt=text)
-        if "edge" in clean:
+        if any(w in clean for w in ["edge", "এজ", "মাইক্রোসফট এজ"]):
             return Intent(name="open_app", action_type="system", params={"app": "edge"}, raw_prompt=text)
-        if "vs code" in clean or "vscode" in clean:
+        if any(w in clean for w in ["vs code", "vscode", "ভিএস কোড", "কোড"]):
             return Intent(name="open_app", action_type="system", params={"app": "vscode"}, raw_prompt=text)
-        if "notepad" in clean:
+        if any(w in clean for w in ["notepad", "নোটপ্যাড"]):
             return Intent(name="open_app", action_type="system", params={"app": "notepad"}, raw_prompt=text)
-        if "calculator" in clean or "calc" in clean:
+        if any(w in clean for w in ["calculator", "calc", "ক্যালকুলেটর"]):
             return Intent(name="open_app", action_type="system", params={"app": "calculator"}, raw_prompt=text)
-        if "explorer" in clean or "my computer" in clean:
+        if any(w in clean for w in ["explorer", "my computer", "মাই কম্পিউটার", "ফাইল এক্সপ্লোরার"]):
             return Intent(name="open_app", action_type="system", params={"app": "explorer"}, raw_prompt=text)
-        if "task manager" in clean:
+        if any(w in clean for w in ["task manager", "টাস্ক ম্যানেজার"]):
             return Intent(name="open_app", action_type="system", params={"app": "task_manager"}, raw_prompt=text)
 
         # 21. Productivity
