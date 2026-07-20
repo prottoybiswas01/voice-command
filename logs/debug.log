@@ -6073,3 +6073,479 @@ Once I have that information, I can either create the folder for you or direct y
 [2026-07-21 01:19:10] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
 [2026-07-21 01:19:10] [CHECK] Log files verified successfully.
 [2026-07-21 01:19:10] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [Voice System] Initializing Microphone...
+[2026-07-21 01:20:21] [DEBUG] [XAssistant]: PyAudio microphone init failed: Could not find PyAudio; check installation. Attempting sounddevice backend...
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Microphone initialized successfully via sounddevice (Headset Microphone (Realtek(R) ).
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:20:21] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:20:21] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:21] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:20:21] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:20:21] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'VoiceService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'AIBrainService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'OllamaService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MemoryService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'BrowserService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'ArduinoService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MusicService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'DatabaseService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'WebSearchService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'LoggingService'
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Initializing Motu Assistant (v6.0.0) Core...
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] ==================================================
+ Dependency & Environment Health Report
+==================================================
+
+[Python Libraries]
+  [✓] pyttsx3
+  [✓] speech_recognition
+  [✓] requests
+  [✓] yaml
+  [✓] PIL
+  [✓] mss
+  [✓] pyautogui
+
+[External Binaries & Executables]
+  [✓] Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe)
+  [✓] Ollama LLM Server (C:\Users\USER\AppData\Local\Programs\Ollama\ollama.exe)
+  [⚠ (Optional / Fallback)] Tesseract OCR
+
+[SQLite Database Schema]: [✓] Active at 'x_assistant.db'
+==================================================
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] Plugin Manager Status Report: 1 plugin(s) active.
+  - [ACTIVE] example_plugin
+[2026-07-21 01:20:21] [INFO] [XAssistant]: [STARTUP] System Services Status Report (10 registered):
+  - [STOPPED] VoiceService (Restarts: 0)
+  - [STOPPED] AIBrainService (Restarts: 0)
+  - [STOPPED] OllamaService (Restarts: 0)
+  - [STOPPED] MemoryService (Restarts: 0)
+  - [STOPPED] BrowserService (Restarts: 0)
+  - [STOPPED] ArduinoService (Restarts: 0)
+  - [STOPPED] MusicService (Restarts: 0)
+  - [STOPPED] DatabaseService (Restarts: 0)
+  - [STOPPED] WebSearchService (Restarts: 0)
+  - [STOPPED] LoggingService (Restarts: 0)
+[2026-07-21 01:20:21] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:20:21] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:20:21] [CHECK] Missing optional packages: opencv-python, pywin32, pypdf, python-docx, pyserial. Run: pip install opencv-python pywin32 pypdf python-docx pyserial
+[2026-07-21 01:20:21] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (8 installed, 5 fallback mode)
+[2026-07-21 01:20:21] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:20:21] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:20:21] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:20:21] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:20:22] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:20:22] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:20:24] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:20:24] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:20:26] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:20:26] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:20:26] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:20:26] [CHECK] All 8 system directories ready.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:26] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:20:26] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:20:26] [CHECK] Log files verified successfully.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:20:26] [INFO] [XAssistant]: [STARTUP] 11-Step Startup Diagnostics Check completed successfully.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: Rule-Based Automation Engine active. Background monitoring ready.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: System Self-Diagnostics daemon active.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: [SYSTEM] Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: Starting Motu Assistant Phase-6 application...
+[2026-07-21 01:20:26] [INFO] [XAssistant]: Assistant Speech: Motu Assistant Phase 6 ready. Personal AI Ecosystem online.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: [Voice Listener Thread] Background voice listener thread active.
+[2026-07-21 01:20:26] [INFO] [XAssistant]: [Voice System] Wake word detector active.
+[2026-07-21 01:20:26] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:20:26] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:20:26] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 68.8% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:20:28] [INFO] [XAssistant]: System Info (all): CPU usage is at 28.6%. RAM usage is at 69.7% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:20:29] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:20:47] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:47] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:20:47] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:20:47] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:20:47] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:20:47] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:47] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:20:47] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:20:47] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:47] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: No files matching 'test' were found in Documents.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Who's in the cabinet?; 2. Faisal Islam: The new PM has big ideas - but what will they cost?; 3. Burnham promises help with your money. How could it affect you?
+[2026-07-21 01:20:48] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Live weather for Dhaka: Light rain shower, 25°C (feels like 18°C), Humidity 92%, Wind 13 km/h.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:49] [INFO] [XAssistant]: Screenshot captured successfully and saved to: screenshot_20260721_012049.png
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:50] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: The current room temperature is 29.7°C.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-21 01:20:50] [INFO] [XAssistant]: The current room humidity is 65.2%.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Virtual photo capture recorded: 'capture_20260721_012050.jpg'.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'What is the room temperature and what do you see?'
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:50] [INFO] [XAssistant]: Screenshot captured successfully and saved to: screenshot_20260721_012050.png
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Screen OCR triggered. Screenshot: Screenshot captured successfully and saved to: screenshot_20260721_012050.png
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Executing Vision Action: 'describe_scene' with params: {}
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Scene Description: I see 1 person in the frame along with laptop, desk, chair.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Executing Vision Action: 'count_people' with params: {}
+[2026-07-21 01:20:51] [INFO] [XAssistant]: I detected 1 person in front of the camera.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 69.4% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Switched AI personality to 'Professional Engineer'.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Executing plugin handler for keyword: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Successfully imported 'test_doc.txt' into Local RAG Knowledge Base (1 chunks indexed).
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Retrieved 1 RAG knowledge chunks for query: 'Phase 6 RAG'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-21 01:20:51] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:20:51] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:20:51] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:20:51] [CHECK] Missing optional packages: opencv-python, pywin32, pypdf, python-docx, pyserial. Run: pip install opencv-python pywin32 pypdf python-docx pyserial
+[2026-07-21 01:20:51] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (8 installed, 5 fallback mode)
+[2026-07-21 01:20:51] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:20:51] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:20:51] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:20:51] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:20:51] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:20:51] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:20:53] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:20:53] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:20:55] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:20:55] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:20:55] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:20:55] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:20:55] [CHECK] All 8 system directories ready.
+[2026-07-21 01:20:55] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:20:55] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:20:55] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:20:55] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:20:55] [CHECK] Log files verified successfully.
+[2026-07-21 01:20:55] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:21:05] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [Voice System] Initializing Microphone...
+[2026-07-21 01:21:06] [DEBUG] [XAssistant]: PyAudio microphone init failed: Could not find PyAudio; check installation. Attempting sounddevice backend...
+[2026-07-21 01:21:06] [INFO] [XAssistant]: Microphone initialized successfully via sounddevice (Headset Microphone (Realtek(R) ).
+[2026-07-21 01:21:06] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:21:06] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:21:06] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:21:06] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:06] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:21:06] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:21:06] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:21:06] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'VoiceService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'AIBrainService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'OllamaService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MemoryService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'BrowserService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'ArduinoService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'MusicService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'DatabaseService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'WebSearchService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Registered System Service: 'LoggingService'
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Initializing Motu Assistant (v6.0.0) Core...
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] ==================================================
+ Dependency & Environment Health Report
+==================================================
+
+[Python Libraries]
+  [✓] pyttsx3
+  [✓] speech_recognition
+  [✓] requests
+  [✓] yaml
+  [✓] PIL
+  [✓] mss
+  [✓] pyautogui
+
+[External Binaries & Executables]
+  [✓] Google Chrome (C:\Program Files\Google\Chrome\Application\chrome.exe)
+  [✓] Ollama LLM Server (C:\Users\USER\AppData\Local\Programs\Ollama\ollama.exe)
+  [⚠ (Optional / Fallback)] Tesseract OCR
+
+[SQLite Database Schema]: [✓] Active at 'x_assistant.db'
+==================================================
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] Plugin Manager Status Report: 1 plugin(s) active.
+  - [ACTIVE] example_plugin
+[2026-07-21 01:21:06] [INFO] [XAssistant]: [STARTUP] System Services Status Report (10 registered):
+  - [STOPPED] VoiceService (Restarts: 0)
+  - [STOPPED] AIBrainService (Restarts: 0)
+  - [STOPPED] OllamaService (Restarts: 0)
+  - [STOPPED] MemoryService (Restarts: 0)
+  - [STOPPED] BrowserService (Restarts: 0)
+  - [STOPPED] ArduinoService (Restarts: 0)
+  - [STOPPED] MusicService (Restarts: 0)
+  - [STOPPED] DatabaseService (Restarts: 0)
+  - [STOPPED] WebSearchService (Restarts: 0)
+  - [STOPPED] LoggingService (Restarts: 0)
+[2026-07-21 01:21:06] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:21:06] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:21:06] [CHECK] Missing optional packages: opencv-python, pywin32, pypdf, python-docx, pyserial. Run: pip install opencv-python pywin32 pypdf python-docx pyserial
+[2026-07-21 01:21:06] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (8 installed, 5 fallback mode)
+[2026-07-21 01:21:06] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:21:06] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:21:06] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:21:06] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:21:06] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:21:06] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:21:08] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:21:08] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:21:10] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:21:10] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:21:10] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:21:10] [CHECK] All 8 system directories ready.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:10] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:21:10] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:21:10] [CHECK] Log files verified successfully.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
+[2026-07-21 01:21:10] [INFO] [XAssistant]: [STARTUP] 11-Step Startup Diagnostics Check completed successfully.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: Rule-Based Automation Engine active. Background monitoring ready.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: System Self-Diagnostics daemon active.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: [SYSTEM] Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: Starting Motu Assistant Phase-6 application...
+[2026-07-21 01:21:10] [INFO] [XAssistant]: Assistant Speech: Motu Assistant Phase 6 ready. Personal AI Ecosystem online.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: [Voice Listener Thread] Background voice listener thread active.
+[2026-07-21 01:21:10] [INFO] [XAssistant]: [Voice System] Wake word detector active.
+[2026-07-21 01:21:10] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:21:10] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:10] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 69.4% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:21:13] [INFO] [XAssistant]: System Info (all): CPU usage is at 30.2%. RAM usage is at 70.3% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:14] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:17] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:19] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.4%. RAM usage is at 70.1% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:20] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:24] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:24] [INFO] [XAssistant]: System Info (all): CPU usage is at 26.5%. RAM usage is at 70.4% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:27] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:30] [INFO] [XAssistant]: System Info (all): CPU usage is at 8.5%. RAM usage is at 70.1% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:31] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:21:32] [INFO] [XAssistant]: Recognized speech (bn-BD): "ফটো কেমন আছো"
+[2026-07-21 01:21:32] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:35] [INFO] [XAssistant]: System Info (all): CPU usage is at 24.4%. RAM usage is at 70.6% (11.1GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:37] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:21:38] [INFO] [XAssistant]: Recognized speech (bn-BD): "কেমন আছো"
+[2026-07-21 01:21:38] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:40] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 23.0% - RAM Usage: 70.2% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:21:41] [INFO] [XAssistant]: System Info (all): CPU usage is at 31.7%. RAM usage is at 70.3% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:41] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:46] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:21:46] [INFO] [XAssistant]: System Info (all): CPU usage is at 23.3%. RAM usage is at 69.6% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:47] [INFO] [XAssistant]: Recognized speech (bn-BD): "হে মটো আমার কথা শুনতে পাও"
+[2026-07-21 01:21:47] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:50] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:52] [INFO] [XAssistant]: System Info (all): CPU usage is at 46.3%. RAM usage is at 69.3% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:54] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:55] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:55] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-21 01:21:55] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-21 01:21:55] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-21 01:21:55] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-21 01:21:55] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:55] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-21 01:21:55] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: No files matching 'test' were found in Documents.
+[2026-07-21 01:21:56] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:57] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Who's in the cabinet?; 2. Faisal Islam: The new PM has big ideas - but what will they cost?; 3. Burnham promises help with your money. How could it affect you?
+[2026-07-21 01:21:57] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:57] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:21:57] [INFO] [XAssistant]: System Info (all): CPU usage is at 31.4%. RAM usage is at 56.3% (8.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Live weather for Dhaka: Light rain shower, 25°C (feels like 18°C), Humidity 92%, Wind 13 km/h.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:58] [DEBUG] [XAssistant]: mss screenshot failed: Windows graphics function failed: BitBlt: Access is denied.
+[2026-07-21 01:21:58] [DEBUG] [XAssistant]: PIL ImageGrab screenshot failed: screen grab failed
+[2026-07-21 01:21:58] [DEBUG] [XAssistant]: PyAutoGUI screenshot failed: screen grab failed
+[2026-07-21 01:21:58] [INFO] [XAssistant]: Screenshot captured successfully and saved to: screenshot_20260721_012158.png
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:59] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: The current room temperature is 29.2°C.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-21 01:21:59] [INFO] [XAssistant]: The current room humidity is 65.6%.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Virtual photo capture recorded: 'capture_20260721_012159.jpg'.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'What is the room temperature and what do you see?'
+[2026-07-21 01:21:59] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:21:59] [DEBUG] [XAssistant]: mss screenshot failed: Windows graphics function failed: BitBlt: Access is denied.
+[2026-07-21 01:21:59] [DEBUG] [XAssistant]: PIL ImageGrab screenshot failed: screen grab failed
+[2026-07-21 01:21:59] [DEBUG] [XAssistant]: PyAutoGUI screenshot failed: screen grab failed
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Screenshot captured successfully and saved to: screenshot_20260721_012159.png
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Screen OCR triggered. Screenshot: Screenshot captured successfully and saved to: screenshot_20260721_012159.png
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Executing Vision Action: 'describe_scene' with params: {}
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Scene Description: I see 1 person in the frame along with laptop, desk, chair.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Executing Vision Action: 'count_people' with params: {}
+[2026-07-21 01:22:00] [INFO] [XAssistant]: I detected 1 person in front of the camera.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: [Voice System] Processing speech recognition...
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 56.7% - Disk Usage: 51.5% - Database Size: 0.25 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Switched AI personality to 'Professional Engineer'.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Executing plugin handler for keyword: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Successfully imported 'test_doc.txt' into Local RAG Knowledge Base (1 chunks indexed).
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Retrieved 1 RAG knowledge chunks for query: 'Phase 6 RAG'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-21 01:22:00] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-21 01:22:00] [CHECK] Python Version OK (3.14.3)
+[2026-07-21 01:22:00] [INFO] [XAssistant]: 1. Python Version: Python Version OK (3.14.3)
+[2026-07-21 01:22:01] [CHECK] Missing optional packages: opencv-python, pywin32, pyserial. Run: pip install opencv-python pywin32 pyserial
+[2026-07-21 01:22:01] [INFO] [XAssistant]: 2. Dependencies: Dependencies OK (10 installed, 3 fallback mode)
+[2026-07-21 01:22:01] [CHECK] Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:22:01] [INFO] [XAssistant]: 3. Microphone: Microphone detected: 'Headset Microphone (Realtek(R) '
+[2026-07-21 01:22:01] [CHECK] Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:22:01] [INFO] [XAssistant]: 4. Speaker / TTS: Speaker & TTS OK (2 audio output voice(s) available)
+[2026-07-21 01:22:01] [CHECK] Internet Status: Online & Connected
+[2026-07-21 01:22:01] [INFO] [XAssistant]: 5. Internet Status: Internet Status: Online & Connected
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Recognized speech (bn-BD): "স্ক্রিনশট নাও"
+[2026-07-21 01:22:01] [INFO] [XAssistant]: [Voice System] Direct action command recognized: 'স্ক্রিনশট নাও' -> Intent: take_screenshot
+[2026-07-21 01:22:01] [INFO] [XAssistant]: [Voice System] Executing command payload: 'স্ক্রিনশট নাও'
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Processing command: 'স্ক্রিনশট নাও'
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Parsed Intent: take_screenshot (Category: system_control)
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Screenshot captured successfully and saved to: screenshot_20260721_012201.png
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Assistant Speech: Screenshot captured successfully and saved to: screenshot_20260721_012201.png
+[2026-07-21 01:22:01] [DEBUG] [XAssistant]: Waiting for wake word or command...
+[2026-07-21 01:22:01] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:22:03] [CHECK] Ollama Server Online at http://localhost:11434
+[2026-07-21 01:22:03] [INFO] [XAssistant]: 6. Ollama Server: Ollama Server Online at http://localhost:11434
+[2026-07-21 01:22:03] [INFO] [XAssistant]: System Info (all): CPU usage is at 47.8%. RAM usage is at 57.3% (9.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-21 01:22:04] [INFO] [XAssistant]: Listening...
+[2026-07-21 01:22:05] [CHECK] AI Model 'gemma2:2b' ready.
+[2026-07-21 01:22:05] [INFO] [XAssistant]: 7. AI Model: AI Model 'gemma2:2b' ready.
+[2026-07-21 01:22:05] [CHECK] Configuration file OK (config.yaml)
+[2026-07-21 01:22:05] [INFO] [XAssistant]: 8. Configuration: Configuration file OK (config.yaml)
+[2026-07-21 01:22:05] [CHECK] All 8 system directories ready.
+[2026-07-21 01:22:05] [INFO] [XAssistant]: 9. Directories: All 8 system directories ready.
+[2026-07-21 01:22:05] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-21 01:22:05] [CHECK] SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:22:05] [INFO] [XAssistant]: 10. Database Schema: SQLite Database Schema OK (x_assistant.db)
+[2026-07-21 01:22:05] [CHECK] Log files verified successfully.
+[2026-07-21 01:22:05] [INFO] [XAssistant]: 11. Debug Logs: System Debug Log active at 'C:\voice command\logs\debug.log'
