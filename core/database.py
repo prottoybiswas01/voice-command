@@ -1,11 +1,13 @@
 """
-SQLite Database Layer for X Assistant (Phase 5 Upgrade).
+SQLite Database Layer for X Assistant (Phase 6 Upgrade).
 Provides persistent storage for conversations, commands, todos, notes, reminders, user preferences,
 memory buffer, command stats, audit logs, clipboard, calendar, pomodoro, IoT hardware devices,
-sensor logs, automation rules, vision captures, OCR history, and detected objects.
+sensor logs, automation rules, vision captures, OCR history, detected objects,
+RAG knowledge documents, knowledge chunks, plugins registry, user workflows, and system health logs.
 """
 
 import sqlite3
+import json
 from datetime import datetime
 from typing import List, Dict, Any, Optional
 from config.settings import settings
@@ -13,7 +15,7 @@ from core.logger import logger
 
 
 class DatabaseManager:
-    """Manages SQLite connections and Phase-5 CRUD operations."""
+    """Manages SQLite connections and Phase-6 CRUD operations."""
 
     def __init__(self, db_path: Optional[str] = None) -> None:
         self.db_path = str(db_path or settings.paths.db_path)
@@ -26,12 +28,12 @@ class DatabaseManager:
         return conn
 
     def init_db(self) -> None:
-        """Initialize database schema tables for Phase-1, 2, 3, 4 & Phase-5."""
+        """Initialize database schema tables for Phase-1 to Phase-6."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
 
-                # Phase 1 - 4 Tables
+                # Phase 1 - 5 Tables
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS conversation_history (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -190,7 +192,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-5: Vision Captures Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS vision_captures (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -201,7 +202,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-5: OCR History Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS ocr_history (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -211,7 +211,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-5: Detected Objects Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS detected_objects (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -221,38 +220,201 @@ class DatabaseManager:
                     )
                 """)
 
+                # Phase-6: Knowledge Base RAG Documents & Chunks
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS knowledge_documents (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        filename TEXT NOT NULL,
+                        filepath TEXT NOT NULL,
+                        doc_type TEXT NOT NULL,
+                        total_chunks INTEGER DEFAULT 0,
+                        imported_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS knowledge_chunks (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        doc_id INTEGER NOT NULL,
+                        chunk_index INTEGER NOT NULL,
+                        content TEXT NOT NULL,
+                        FOREIGN KEY (doc_id) REFERENCES knowledge_documents(id) ON DELETE CASCADE
+                    )
+                """)
+
+                # Phase-6: Plugins Registry
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS plugins_registry (
+                        plugin_id TEXT PRIMARY KEY,
+                        name TEXT NOT NULL,
+                        version TEXT DEFAULT '1.0.0',
+                        status TEXT DEFAULT 'ACTIVE',
+                        installed_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-6: User Macro Workflows
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS user_workflows (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        workflow_name TEXT NOT NULL,
+                        trigger_keyword TEXT NOT NULL,
+                        actions_json TEXT NOT NULL,
+                        is_enabled BOOLEAN DEFAULT 1
+                    )
+                """)
+
+                # Phase-6: System Self-Diagnostics Health Logs
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS system_health_logs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        cpu_percent REAL NOT NULL,
+                        ram_percent REAL NOT NULL,
+                        disk_percent REAL NOT NULL,
+                        details TEXT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
                 conn.commit()
-                logger.info("Phase-5 Database schema initialized successfully.")
+                logger.info("Phase-6 Database schema initialized successfully.")
 
         except Exception as err:
             logger.error(f"Database initialization error: {err}")
 
-    # Phase-5: Vision Captures CRUD
-    def log_vision_capture(self, image_name: str, filepath: str, summary: str = "") -> None:
-        """Record image capture event to SQLite."""
+    # Phase-6: Knowledge RAG CRUD
+    def add_knowledge_document(self, filename: str, filepath: str, doc_type: str, chunks: List[str]) -> int:
+        """Register document and save chunks to SQLite."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute(
+                    "INSERT INTO knowledge_documents (filename, filepath, doc_type, total_chunks) VALUES (?, ?, ?, ?)",
+                    (filename, filepath, doc_type, len(chunks))
+                )
+                doc_id = cursor.lastrowid or 0
+                for idx, chunk_text in enumerate(chunks):
+                    conn.execute(
+                        "INSERT INTO knowledge_chunks (doc_id, chunk_index, content) VALUES (?, ?, ?)",
+                        (doc_id, idx, chunk_text)
+                    )
+                conn.commit()
+                return doc_id
+        except Exception as err:
+            logger.error(f"Failed to add knowledge document {filename}: {err}")
+            return 0
+
+    def search_knowledge_chunks(self, query: str, limit: int = 3) -> List[Dict[str, Any]]:
+        """Search knowledge chunks by query keyword matching."""
+        try:
+            query_clean = f"%{query.lower().strip()}%"
+            with self.get_connection() as conn:
+                cursor = conn.execute("""
+                    SELECT d.filename, c.chunk_index, c.content
+                    FROM knowledge_chunks c
+                    JOIN knowledge_documents d ON c.doc_id = d.id
+                    WHERE LOWER(c.content) LIKE ? OR LOWER(d.filename) LIKE ?
+                    ORDER BY c.id DESC LIMIT ?
+                """, (query_clean, query_clean, limit))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to search knowledge chunks: {err}")
+            return []
+
+    def get_all_knowledge_documents(self) -> List[Dict[str, Any]]:
+        """Fetch list of imported knowledge documents."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT id, filename, filepath, doc_type, total_chunks, imported_at FROM knowledge_documents ORDER BY id DESC")
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            return []
+
+    # Phase-6: Plugins CRUD
+    def register_plugin(self, plugin_id: str, name: str, version: str = "1.0.0", status: str = "ACTIVE") -> None:
+        """Register or update installed plugin record."""
+        try:
+            with self.get_connection() as conn:
+                conn.execute("""
+                    INSERT INTO plugins_registry (plugin_id, name, version, status)
+                    VALUES (?, ?, ?, ?)
+                    ON CONFLICT(plugin_id) DO UPDATE SET
+                    name = excluded.name, version = excluded.version, status = excluded.status
+                """, (plugin_id, name, version, status))
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to register plugin {plugin_id}: {err}")
+
+    def get_installed_plugins(self) -> List[Dict[str, Any]]:
+        """Retrieve registered plugins."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT plugin_id, name, version, status, installed_at FROM plugins_registry ORDER BY plugin_id ASC")
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            return []
+
+    # Phase-6: Macro Workflows CRUD
+    def add_user_workflow(self, workflow_name: str, trigger_keyword: str, actions_list: List[str]) -> int:
+        """Register custom user workflow macro."""
+        try:
+            actions_json = json.dumps(actions_list)
+            with self.get_connection() as conn:
+                cursor = conn.execute(
+                    "INSERT INTO user_workflows (workflow_name, trigger_keyword, actions_json) VALUES (?, ?, ?)",
+                    (workflow_name, trigger_keyword.lower().strip(), actions_json)
+                )
+                conn.commit()
+                return cursor.lastrowid or 0
+        except Exception as err:
+            logger.error(f"Failed to add user workflow {workflow_name}: {err}")
+            return 0
+
+    def get_all_workflows(self) -> List[Dict[str, Any]]:
+        """Fetch all user workflows."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT id, workflow_name, trigger_keyword, actions_json, is_enabled FROM user_workflows WHERE is_enabled = 1")
+                rows = cursor.fetchall()
+                result = []
+                for r in rows:
+                    item = dict(r)
+                    item["actions"] = json.loads(item["actions_json"])
+                    result.append(item)
+                return result
+        except Exception as err:
+            return []
+
+    # Phase-6: System Health Diagnostics CRUD
+    def log_health_metrics(self, cpu_percent: float, ram_percent: float, disk_percent: float, details: str = "") -> None:
+        """Record system health metrics."""
         try:
             with self.get_connection() as conn:
                 conn.execute(
-                    "INSERT INTO vision_captures (image_name, filepath, recognized_summary) VALUES (?, ?, ?)",
-                    (image_name, filepath, summary)
+                    "INSERT INTO system_health_logs (cpu_percent, ram_percent, disk_percent, details) VALUES (?, ?, ?, ?)",
+                    (cpu_percent, ram_percent, disk_percent, details)
                 )
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to log vision capture: {err}")
+            pass
+
+    # Phase 1 - 5 Table methods...
+    def log_vision_capture(self, image_name: str, filepath: str, summary: str = "") -> None:
+        try:
+            with self.get_connection() as conn:
+                conn.execute("INSERT INTO vision_captures (image_name, filepath, recognized_summary) VALUES (?, ?, ?)", (image_name, filepath, summary))
+                conn.commit()
+        except Exception as err:
+            pass
 
     def get_recent_captures(self, limit: int = 5) -> List[Dict[str, Any]]:
-        """Retrieve recent image capture records."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("SELECT image_name, filepath, recognized_summary, captured_at FROM vision_captures ORDER BY id DESC LIMIT ?", (limit,))
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
-            logger.error(f"Failed to fetch vision captures: {err}")
             return []
 
-    # Phase-5: OCR History CRUD
     def save_ocr_result(self, source_type: str, text: str) -> None:
-        """Record extracted OCR text to SQLite."""
         if not text or not text.strip():
             return
         try:
@@ -260,29 +422,24 @@ class DatabaseManager:
                 conn.execute("INSERT INTO ocr_history (source_type, extracted_text) VALUES (?, ?)", (source_type, text.strip()))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to save OCR result: {err}")
+            pass
 
     def get_recent_ocr_records(self, limit: int = 10) -> List[Dict[str, Any]]:
-        """Retrieve recent extracted OCR text snippets."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("SELECT id, source_type, extracted_text, timestamp FROM ocr_history ORDER BY id DESC LIMIT ?", (limit,))
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
-            logger.error(f"Failed to fetch OCR records: {err}")
             return []
 
-    # Phase-5: Detected Objects CRUD
     def log_detected_object(self, label: str, confidence: float = 0.9) -> None:
-        """Record recognized object label to database."""
         try:
             with self.get_connection() as conn:
                 conn.execute("INSERT INTO detected_objects (label, confidence) VALUES (?, ?)", (label, confidence))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to log detected object: {err}")
+            pass
 
-    # Phase 1 - 4 Table methods...
     def register_iot_device(self, device_id: str, name: str, room: str, pin: int, device_type: str, state: str = "OFF") -> None:
         try:
             with self.get_connection() as conn:
@@ -573,5 +730,5 @@ class DatabaseManager:
             pass
 
 
-# Global Phase-5 database instance
+# Global Phase-6 database instance
 db = DatabaseManager()

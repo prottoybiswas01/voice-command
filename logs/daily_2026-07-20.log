@@ -562,3 +562,2137 @@
 [2026-07-20 23:05:15] [INFO] [XAssistant]: Executing Vision Action: 'count_people' with params: {}
 [2026-07-20 23:05:15] [INFO] [XAssistant]: I detected 1 person in front of the camera.
 [2026-07-20 23:05:15] [INFO] [XAssistant]: Phase-5 Database schema initialized successfully.
+[2026-07-20 23:11:17] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:17] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 23:11:18] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 23:11:18] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:18] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-20 23:11:18] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:18] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:18] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:19] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:19] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:20] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Faisal Islam: The new PM has big ideas - but what will they cost?; 2. Burnham promises help with your money. How could it affect you?; 3. Burnham's policy choices reveal what kind of PM he wants to be
+[2026-07-20 23:11:20] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:11:21] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:21] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:22] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: The current room temperature is 29.6°C.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: The current room humidity is 65.7%.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Virtual photo capture recorded: 'capture_20260720_231122.jpg'.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'What is the room temperature and what do you see?'
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Screen OCR triggered. Screenshot: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Executing Vision Action: 'describe_scene' with params: {}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Scene Description: I see 1 person in the frame along with laptop, desk, chair.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Executing Vision Action: 'count_people' with params: {}
+[2026-07-20 23:11:22] [INFO] [XAssistant]: I detected 1 person in front of the camera.
+[2026-07-20 23:11:22] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:23] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 69.6% - Disk Usage: 50.6% - Database Size: 0.14 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Switched AI personality to 'Professional Engineer'.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:23] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Executing plugin handler for keyword: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Successfully imported 'test_doc.txt' into Local RAG Knowledge Base (1 chunks indexed).
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Retrieved 1 RAG knowledge chunks for query: 'Phase 6 RAG'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-20 23:11:24] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).
+[2026-07-20 23:11:37] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:37] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 23:11:37] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 23:11:38] [WARNING] [XAssistant]: pyserial library not installed. Arduino bridge operating in Virtual Simulation mode.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:38] [WARNING] [XAssistant]: OpenCV (cv2) library unavailable. Camera engine operating in Virtual Simulation mode.
+[2026-07-20 23:11:38] [WARNING] [XAssistant]: pytesseract library unavailable. OCR Engine operating in fallback mode.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Faisal Islam: The new PM has big ideas - but what will they cost?; 2. Burnham promises help with your money. How could it affect you?; 3. Burnham's policy choices reveal what kind of PM he wants to be
+[2026-07-20 23:11:38] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:11:39] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:39] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:40] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "ping"}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'on'}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_on", "pin": 7}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Device 'relay_light' state updated to: ON.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Turned ON the room light.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Smart Home Action: control_light with params: {'state': 'off'}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: [Virtual IoT Simulation] Executed command: {"cmd": "relay_light_off", "pin": 7}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Device 'relay_light' state updated to: OFF.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Turned OFF the room light.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Arduino Bridge active in Virtual Simulation Mode (pyserial library unavailable).
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Smart Home Action: read_temperature with params: {}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: The current room temperature is 29.2°C.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Smart Home Action: read_humidity with params: {}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: The current room humidity is 65.6%.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Virtual photo capture recorded: 'capture_20260720_231140.jpg'.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Camera active in Virtual Simulation mode.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Multimodal Context Synthesized for prompt: 'What is the room temperature and what do you see?'
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Screen OCR triggered. Screenshot: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Executing Vision Action: 'describe_scene' with params: {}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Scene Description: I see 1 person in the frame along with laptop, desk, chair.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Executing Vision Action: 'count_people' with params: {}
+[2026-07-20 23:11:40] [INFO] [XAssistant]: I detected 1 person in front of the camera.
+[2026-07-20 23:11:40] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: System Health Status: [HEALTHY] - CPU Usage: 0.0% - RAM Usage: 69.9% - Disk Usage: 50.6% - Database Size: 0.14 MB - Diagnostics Summary: All subsystems nominal.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Switched AI personality to 'Professional Engineer'.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Executing plugin handler for keyword: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Successfully imported 'test_doc.txt' into Local RAG Knowledge Base (1 chunks indexed).
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Retrieved 1 RAG knowledge chunks for query: 'Phase 6 RAG'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Phase-6 Database schema initialized successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Registered plugin command: 'test plugin'
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Loaded Plugin: 'example_plugin' successfully.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Executing Macro Workflow [Work Mode Routine] with 4 steps.
+[2026-07-20 23:11:41] [INFO] [XAssistant]: Executed macro workflow 'Work Mode Routine' (4 actions completed).

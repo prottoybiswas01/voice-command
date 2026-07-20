@@ -1,8 +1,9 @@
 """
-Intent Parser for X Assistant (Phase 5 Upgrade).
+Intent Parser for X Assistant (Phase 6 Upgrade).
 Classifies user prompts into actionable intents covering System, Window Management,
 File/ZIP operations, Screen/Audio Recording, Network/Settings, Playwright Browser Agent,
-Pomodoro & Productivity Hub, Security Audit, Smart Music, Smart Home IoT, Vision AI & Multimodal Intelligence, and LLM Chat.
+Pomodoro & Productivity Hub, Security Audit, Smart Music, Smart Home IoT, Vision AI,
+Local RAG Knowledge Base, Macro Workflows, AI Personalities, System Diagnostics, Plugins, and LLM Chat.
 """
 
 import re
@@ -15,13 +16,13 @@ from core.logger import logger
 class Intent:
     """Structure representing classified user intent."""
     name: str
-    action_type: str  # 'system', 'media', 'web', 'productivity', 'power', 'smart_music', 'browser_auto', 'internet', 'system_control', 'memory', 'window', 'file_system', 'recording', 'network_settings', 'productivity_hub', 'security', 'smart_home', 'vision', 'llm'
+    action_type: str  # 'system', 'media', 'web', 'productivity', 'power', 'smart_music', 'browser_auto', 'internet', 'system_control', 'memory', 'window', 'file_system', 'recording', 'network_settings', 'productivity_hub', 'security', 'smart_home', 'vision', 'rag', 'workflow', 'personality', 'diagnostics', 'plugin', 'llm'
     params: Dict[str, Any] = field(default_factory=dict)
     raw_prompt: str = ""
 
 
 class IntentParser:
-    """Classifies incoming text commands into Phase-5 actionable intents."""
+    """Classifies incoming text commands into Phase-6 actionable intents."""
 
     def parse(self, text: str) -> Intent:
         """Classify input prompt string to Intent object."""
@@ -51,7 +52,32 @@ class IntentParser:
         if any(w in clean for w in ["sleep computer", "put to sleep", "পিসি স্লিপ"]):
             return Intent(name="sleep_confirm", action_type="power", params={"action": "sleep"}, raw_prompt=text)
 
-        # 3. Phase-5 Vision AI Commands
+        # 3. Phase-6 Macro Workflows & Scenes ("start work mode", "good night")
+        if any(w in clean for w in ["start work mode", "work mode", "ওয়ার্ক মোড"]):
+            return Intent(name="run_workflow", action_type="workflow", params={"keyword": "start work mode"}, raw_prompt=text)
+
+        if any(w in clean for w in ["good night", "night mode", "নাইট মোড", "শুভ রাত্রি"]):
+            return Intent(name="run_workflow", action_type="workflow", params={"keyword": "good night"}, raw_prompt=text)
+
+        # 4. Phase-6 RAG Knowledge Base Queries
+        if "knowledge base" in clean or "read document" in clean or "import document" in clean or "জ্ঞান ভাণ্ডার" in clean:
+            query = re.sub(r".*(knowledge base|read document|import document|জ্ঞান ভাণ্ডার)", "", clean).strip()
+            return Intent(name="query_rag", action_type="rag", params={"query": query}, raw_prompt=text)
+
+        # 5. Phase-6 System Health Diagnostics
+        if any(w in clean for w in ["system health", "diagnostics scan", "health check", "হেলথ চেক"]):
+            return Intent(name="system_diagnostics", action_type="diagnostics", params={}, raw_prompt=text)
+
+        # 6. Phase-6 AI Personalities & Ollama Model Switching
+        if "personality" in clean or "পার্সোনালিটি" in clean:
+            p_name = re.sub(r".*(personality to|personality|পার্সোনালিটি)", "", clean).strip() or "standard"
+            return Intent(name="switch_personality", action_type="personality", params={"personality": p_name}, raw_prompt=text)
+
+        if "switch model" in clean or "change model" in clean:
+            m_name = re.sub(r".*(switch model to|change model to|switch model|change model)", "", clean).strip() or "gemma2:2b"
+            return Intent(name="switch_model", action_type="personality", params={"model": m_name}, raw_prompt=text)
+
+        # 7. Phase-5 Vision AI Commands
         if any(w in clean for w in ["what do you see", "what is in front of camera", "কী দেখছ", "সামনে কী আছে", "ক্যামেরায় কি আছে"]):
             return Intent(name="describe_scene", action_type="vision", params={}, raw_prompt=text)
 
@@ -67,16 +93,16 @@ class IntentParser:
         if any(w in clean for w in ["is someone standing at the door", "someone at the door", "door camera", "দরজায় কি কেউ আছে"]):
             return Intent(name="check_door_vision", action_type="vision", params={}, raw_prompt=text)
 
-        if any(w in clean for w in ["take a picture", "take photo", "take picture", "ছবি তোলো", "ছবি তোল"]):
+        if any(w in clean for w in ["take a picture", "take photo", "take picture", "ছবি তোলো"]):
             return Intent(name="take_picture", action_type="vision", params={}, raw_prompt=text)
 
-        if any(w in clean for w in ["start recording video", "start video recording", "start camera recording", "ক্যামেরা রেকর্ড শুরু"]):
+        if any(w in clean for w in ["start recording video", "start video recording", "start camera recording"]):
             return Intent(name="start_camera_recording", action_type="vision", params={"duration": 5}, raw_prompt=text)
 
-        if any(w in clean for w in ["stop recording video", "stop video recording", "stop camera recording", "ক্যামেরা রেকর্ড বন্ধ"]):
+        if any(w in clean for w in ["stop recording video", "stop video recording", "stop camera recording"]):
             return Intent(name="stop_camera_recording", action_type="vision", params={}, raw_prompt=text)
 
-        # 4. Phase-4 Smart Home IoT Commands
+        # 8. Phase-4 Smart Home IoT Commands
         if "light" in clean or "আলো" in clean or "লাইটিং" in clean:
             state = "off" if any(w in clean for w in ["off", "disable", "বন্ধ"]) else "on"
             return Intent(name="control_light", action_type="smart_home", params={"state": state}, raw_prompt=text)
@@ -91,7 +117,7 @@ class IntentParser:
         if "humidity" in clean or "আর্দ্রতা" in clean:
             return Intent(name="read_humidity", action_type="smart_home", params={}, raw_prompt=text)
 
-        if any(w in clean for w in ["detect motion", "check motion", "moition"]):
+        if any(w in clean for w in ["detect motion", "check motion"]):
             return Intent(name="check_motion", action_type="smart_home", params={}, raw_prompt=text)
 
         if "all relays on" in clean or "turn on all relays" in clean or "সব রিলে অন" in clean:
@@ -114,7 +140,7 @@ class IntentParser:
                 angle = int(nums[0])
             return Intent(name="rotate_servo", action_type="smart_home", params={"angle": angle}, raw_prompt=text)
 
-        # 5. Phase-3 Win32 Application Window Controls
+        # 9. Phase-3 Win32 Application Window Controls
         if "minimize" in clean or "মিনিমাইজ" in clean:
             app = re.sub(r".*(minimize|মিনিমাইজ)", "", clean).strip()
             return Intent(name="minimize_window", action_type="window", params={"app": app}, raw_prompt=text)
@@ -128,7 +154,7 @@ class IntentParser:
             app = re.sub(r".*(close window|বন্ধ করো উইন্ডো)", "", clean).strip()
             return Intent(name="close_window", action_type="window", params={"app": app}, raw_prompt=text)
 
-        # 6. Phase-3 File System & Archive Operations
+        # 10. Phase-3 File System & Archive Operations
         if "create folder" in clean or "create directory" in clean or "ফোল্ডার বানাও" in clean:
             path = re.sub(r".*(create folder|create directory|ফোল্ডার বানাও)", "", clean).strip()
             return Intent(name="create_dir", action_type="file_system", params={"path": path}, raw_prompt=text)
@@ -144,13 +170,13 @@ class IntentParser:
             path = re.sub(r".*(delete file|delete folder|ফাইল মুছে ফেলো)", "", clean).strip()
             return Intent(name="delete_item_confirm", action_type="file_system", params={"path": path}, raw_prompt=text)
 
-        # 7. Screen & Audio Recording
+        # 11. Screen & Audio Recording
         if any(w in clean for w in ["record audio", "record voice note", "ভয়েস রেকর্ড"]):
             return Intent(name="record_audio", action_type="recording", params={"duration": 10}, raw_prompt=text)
         if any(w in clean for w in ["record screen", "screen recording", "স্ক্রিন রেকর্ড"]):
             return Intent(name="record_screen", action_type="recording", params={"duration": 5}, raw_prompt=text)
 
-        # 8. Network & Windows Settings
+        # 12. Network & Windows Settings
         if "wifi" in clean or "ওয়াইফাই" in clean:
             if "on" in clean or "enable" in clean or "চালু" in clean:
                 return Intent(name="wifi_control", action_type="network_settings", params={"action": "on"}, raw_prompt=text)
@@ -164,7 +190,7 @@ class IntentParser:
         if "startup apps" in clean or "স্টার্টআপ অ্যাপস" in clean:
             return Intent(name="get_startup_apps", action_type="network_settings", params={}, raw_prompt=text)
 
-        # 9. Pomodoro & Productivity Hub
+        # 13. Pomodoro & Productivity Hub
         if "pomodoro" in clean or "পমোডোরো" in clean:
             if "stop" in clean or "বন্ধ" in clean:
                 return Intent(name="pomodoro_control", action_type="productivity_hub", params={"action": "stop"}, raw_prompt=text)
@@ -174,11 +200,11 @@ class IntentParser:
         if "calendar" in clean or "ক্যালেন্ডার" in clean:
             return Intent(name="show_calendar", action_type="productivity_hub", params={}, raw_prompt=text)
 
-        # 10. Security Audit Logs
+        # 14. Security Audit Logs
         if "audit log" in clean or "audit logs" in clean or "সিকিউরিটি লগ" in clean:
             return Intent(name="show_audit_logs", action_type="security", params={}, raw_prompt=text)
 
-        # 11. Volume Controls
+        # 15. Volume Controls
         if "volume up" in clean or "increase volume" in clean or "সাউন্ড বাড়াও" in clean:
             return Intent(name="volume_control", action_type="media", params={"command": "up"}, raw_prompt=text)
         if "volume down" in clean or "decrease volume" in clean or "সাউন্ড কমাও" in clean:
@@ -186,12 +212,12 @@ class IntentParser:
         if "mute" in clean or "unmute" in clean or "সাউন্ড মিউট" in clean:
             return Intent(name="volume_control", action_type="media", params={"command": "mute"}, raw_prompt=text)
 
-        # 12. Smart Music Playback
+        # 16. Smart Music Playback
         if any(w in clean for w in ["play music", "play song", "গান চালাও", "প্লে মিউজিক"]):
             query = re.sub(r".*(play music|play song|গান চালাও|প্লে মিউজিক)", "", clean).strip()
             return Intent(name="play_smart_music", action_type="smart_music", params={"query": query}, raw_prompt=text)
 
-        # 13. Playwright Browser Automation
+        # 17. Playwright Browser Automation
         browser_sites = {
             "facebook": ["facebook", "fb"],
             "messenger": ["messenger"],
@@ -206,7 +232,7 @@ class IntentParser:
                 if any(w in clean for w in ["open", "go to", "খুলো"]):
                     return Intent(name="open_browser_site", action_type="browser_auto", params={"site": site_key}, raw_prompt=text)
 
-        # 14. Live Internet Data
+        # 18. Live Internet Data
         if "weather" in clean or "আবহাওয়া" in clean:
             location = re.sub(r".*(weather in|weather for|আবহাওয়া)", "", clean).strip() or "Dhaka"
             return Intent(name="get_live_weather", action_type="internet", params={"location": location}, raw_prompt=text)
@@ -216,7 +242,7 @@ class IntentParser:
             query = re.sub(r".*(wikipedia search|wikipedia|wiki|উইকিপিডিয়া)", "", clean).strip()
             return Intent(name="search_wikipedia", action_type="internet", params={"query": query}, raw_prompt=text)
 
-        # 15. System Controls
+        # 19. System Controls
         if "restart explorer" in clean or "explorer restart" in clean:
             return Intent(name="restart_explorer", action_type="system_control", params={}, raw_prompt=text)
         if any(w in clean for w in ["take screenshot", "screenshot", "স্ক্রিনশট"]):
@@ -234,7 +260,7 @@ class IntentParser:
             query = re.sub(r".*(search file|find file|ফাইল খোঁজো)", "", clean).strip()
             return Intent(name="search_files", action_type="system_control", params={"query": query}, raw_prompt=text)
 
-        # 16. Basic System App Launchers & Greetings
+        # 20. Basic System App Launchers & Greetings
         if any(w in clean for w in ["hello", "hi", "hey", "good morning", "good evening", "সালাম", "হ্যালো"]):
             return Intent(name="greeting", action_type="system", params={"type": "greeting"}, raw_prompt=text)
         if any(w in clean for w in ["time", "what time", "কয়টা বাজে", "সময়"]):
@@ -257,7 +283,7 @@ class IntentParser:
         if "task manager" in clean:
             return Intent(name="open_app", action_type="system", params={"app": "task_manager"}, raw_prompt=text)
 
-        # 17. Productivity
+        # 21. Productivity
         if any(w in clean for w in ["battery", "cpu", "ram", "internet", "system info"]):
             return Intent(name="system_info", action_type="productivity", params={"metric": "all"}, raw_prompt=text)
 
@@ -281,5 +307,5 @@ class IntentParser:
         return Intent(name="llm_chat", action_type="llm", params={"prompt": clean}, raw_prompt=text)
 
 
-# Global Phase-5 IntentParser instance
+# Global Phase-6 IntentParser instance
 intent_parser = IntentParser()

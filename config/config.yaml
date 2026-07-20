@@ -1,13 +1,14 @@
-# X Assistant Configuration File (Phase 5 Upgrade)
+# X Assistant Configuration File (Phase 6 Upgrade)
 assistant:
   name: "X Assistant"
-  version: "5.0.0"
+  version: "6.0.0"
   wake_words:
     - "x"
     - "hey x"
     - "x listen"
   language: "bn-EN"
   debug_mode: true
+  active_personality: "standard"
 
 speech:
   stt_engine: "speech_recognition"
@@ -23,8 +24,8 @@ ollama:
   timeout: 45
   max_context_length: 4096
   system_prompt: >
-    You are X Assistant Phase 5, a multimodal AI Assistant that can SEE, LISTEN, UNDERSTAND, and RESPOND.
-    You synthesize voice input, camera vision, desktop screen OCR, memory preferences, and IoT sensor telemetry.
+    You are X Assistant Phase 6, the Ultimate Personal AI Ecosystem.
+    You manage Voice, Vision, Long-term Memory, Local RAG Knowledge Base, Custom Workflows, Plugins, and IoT Devices.
 
 browser:
   preferred_browser: "chrome"
@@ -57,6 +58,11 @@ vision:
   privacy_default_off: true
   tesseract_cmd: "tesseract"
 
+rag:
+  knowledge_dir: "data/knowledge"
+  chunk_size: 500
+  top_k_results: 3
+
 paths:
   db_path: "data/x_assistant.db"
   logs_dir: "logs"
@@ -65,3 +71,5 @@ paths:
   recordings_dir: "data/recordings"
   audio_dir: "data/audio"
   captures_dir: "data/captures"
+  knowledge_dir: "data/knowledge"
+  plugins_dir: "plugins"

@@ -8,3 +8,13 @@
 [2026-07-20 23:04:55] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
 [2026-07-20 23:05:15] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
 [2026-07-20 23:05:15] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:18] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:21] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:22] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:23] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:23] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:24] [ERROR] [XAssistant]: Failed to load plugin plugin_manager.py: maximum recursion depth exceeded
+[2026-07-20 23:11:39] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 23:11:40] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.

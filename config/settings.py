@@ -1,5 +1,5 @@
 """
-X Assistant Configuration Loader Module (Phase 5 Upgrade).
+X Assistant Configuration Loader Module (Phase 6 Upgrade).
 Provides centralized settings management loading from YAML and environment variables.
 """
 
@@ -21,10 +21,11 @@ CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
 @dataclass
 class AssistantSettings:
     name: str = "X Assistant"
-    version: str = "5.0.0"
+    version: str = "6.0.0"
     wake_words: List[str] = field(default_factory=lambda: ["x", "hey x", "x listen"])
     language: str = "bn-EN"
     debug_mode: bool = True
+    active_personality: str = "standard"
 
 
 @dataclass
@@ -43,7 +44,7 @@ class OllamaSettings:
     model: str = "gemma2:2b"
     timeout: int = 45
     max_context_length: int = 4096
-    system_prompt: str = "You are X Assistant Phase 5, a multimodal AI Assistant."
+    system_prompt: str = "You are X Assistant Phase 6, the Ultimate Personal AI Ecosystem."
 
 
 @dataclass
@@ -85,6 +86,13 @@ class VisionSettings:
 
 
 @dataclass
+class RagSettings:
+    knowledge_dir: Path = BASE_DIR / "data" / "knowledge"
+    chunk_size: int = 500
+    top_k_results: int = 3
+
+
+@dataclass
 class PathSettings:
     db_path: Path = BASE_DIR / "data" / "x_assistant.db"
     logs_dir: Path = BASE_DIR / "logs"
@@ -93,10 +101,12 @@ class PathSettings:
     recordings_dir: Path = BASE_DIR / "data" / "recordings"
     audio_dir: Path = BASE_DIR / "data" / "audio"
     captures_dir: Path = BASE_DIR / "data" / "captures"
+    knowledge_dir: Path = BASE_DIR / "data" / "knowledge"
+    plugins_dir: Path = BASE_DIR / "plugins"
 
 
 class Settings:
-    """Central configuration instance for X Assistant Phase 5."""
+    """Central configuration instance for X Assistant Phase 6."""
 
     def __init__(self, config_file: Path = CONFIG_PATH) -> None:
         self.config_file = config_file
@@ -108,6 +118,7 @@ class Settings:
         self.agent = AgentSettings()
         self.iot = IoTSettings()
         self.vision = VisionSettings()
+        self.rag = RagSettings()
         self.paths = PathSettings()
         self.load_config()
 
@@ -130,6 +141,7 @@ class Settings:
                 ]
                 self.assistant.language = data["assistant"].get("language", self.assistant.language)
                 self.assistant.debug_mode = data["assistant"].get("debug_mode", self.assistant.debug_mode)
+                self.assistant.active_personality = data["assistant"].get("active_personality", self.assistant.active_personality)
 
             if "speech" in data:
                 self.speech.stt_engine = data["speech"].get("stt_engine", self.speech.stt_engine)
@@ -176,6 +188,12 @@ class Settings:
                 self.vision.privacy_default_off = data["vision"].get("privacy_default_off", self.vision.privacy_default_off)
                 self.vision.tesseract_cmd = data["vision"].get("tesseract_cmd", self.vision.tesseract_cmd)
 
+            if "rag" in data:
+                if "knowledge_dir" in data["rag"]:
+                    self.rag.knowledge_dir = BASE_DIR / data["rag"]["knowledge_dir"]
+                self.rag.chunk_size = data["rag"].get("chunk_size", self.rag.chunk_size)
+                self.rag.top_k_results = data["rag"].get("top_k_results", self.rag.top_k_results)
+
             if "paths" in data:
                 if "db_path" in data["paths"]:
                     self.paths.db_path = BASE_DIR / data["paths"]["db_path"]
@@ -191,6 +209,10 @@ class Settings:
                     self.paths.audio_dir = BASE_DIR / data["paths"]["audio_dir"]
                 if "captures_dir" in data["paths"]:
                     self.paths.captures_dir = BASE_DIR / data["paths"]["captures_dir"]
+                if "knowledge_dir" in data["paths"]:
+                    self.paths.knowledge_dir = BASE_DIR / data["paths"]["knowledge_dir"]
+                if "plugins_dir" in data["paths"]:
+                    self.paths.plugins_dir = BASE_DIR / data["paths"]["plugins_dir"]
 
         except Exception as err:
             print(f"[Warning] Failed to parse config file: {err}. Using default settings.")
@@ -203,7 +225,9 @@ class Settings:
         self.paths.recordings_dir.mkdir(parents=True, exist_ok=True)
         self.paths.audio_dir.mkdir(parents=True, exist_ok=True)
         self.paths.captures_dir.mkdir(parents=True, exist_ok=True)
+        self.paths.knowledge_dir.mkdir(parents=True, exist_ok=True)
+        self.paths.plugins_dir.mkdir(parents=True, exist_ok=True)
 
 
-# Global Phase-5 settings instance
+# Global Phase-6 settings instance
 settings = Settings()
