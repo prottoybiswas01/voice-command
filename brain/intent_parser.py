@@ -32,7 +32,7 @@ class IntentParser:
         clean = text.lower().strip()
 
         # Clean leading wake words
-        for wake in ["x listen", "hey x", "x", "হে এক্স", "হেই এক্স", "এক্স শোনো", "এক্স শোন", "এক্সে", "এক্স"]:
+        for wake in ["motu listen", "hey motu", "motu", "হে মটু", "হেই মটু", "মটু শোনো", "মটু শোন", "মটু", "x listen", "hey x", "x", "হে এক্স", "হেই এক্স", "এক্স শোনো", "এক্স শোন", "এক্সে", "এক্স"]:
             if clean.startswith(wake):
                 clean = clean[len(wake):].strip()
                 break

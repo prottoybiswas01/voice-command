@@ -1,11 +1,15 @@
-# X Assistant Configuration File (Phase 6 Upgrade)
+# Motu AI Assistant Configuration File (Phase 6 Upgrade)
 assistant:
-  name: "X Assistant"
+  name: "Motu Assistant"
   version: "6.0.0"
   wake_words:
-    - "x"
-    - "hey x"
-    - "x listen"
+    - "motu"
+    - "hey motu"
+    - "motu listen"
+    - "মটু"
+    - "হে মটু"
+    - "হেই মটু"
+    - "মটু শোনো"
   language: "bn-EN"
   debug_mode: true
   active_personality: "standard"
@@ -24,7 +28,7 @@ ollama:
   timeout: 45
   max_context_length: 4096
   system_prompt: >
-    You are X Assistant Phase 6, the Ultimate Personal AI Ecosystem.
+    You are Motu AI Assistant Phase 6, the Ultimate Personal AI Ecosystem.
     You manage Voice, Vision, Long-term Memory, Local RAG Knowledge Base, Custom Workflows, Plugins, and IoT Devices.
 
 browser:

@@ -20,6 +20,8 @@ class WakeWordDetector:
     def __init__(self, wake_words: Optional[List[str]] = None) -> None:
         self.wake_words = [w.lower() for w in (wake_words or settings.assistant.wake_words)]
         self.wake_words.extend([
+            "হে মটু", "হেই মটু", "মটু শোনো", "মটু শোন", "মটু",
+            "hey motu", "motu listen", "motu",
             "হে এক্স", "হেই এক্স", "এক্স শোনো", "এক্স শোন", "এক্সে", "এক্স",
             "hey x", "x listen", "x"
         ])

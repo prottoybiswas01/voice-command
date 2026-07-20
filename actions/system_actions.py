@@ -134,7 +134,7 @@ class SystemActionsHandler:
         else:
             time_greeting = "Good evening"
             
-        return f"{time_greeting}! I am X Assistant Phase 6. How can I help you today?"
+        return f"{time_greeting}! I am Motu AI Assistant Phase 6. How can I help you today?"
 
     def confirm_power_action(self, action: str) -> str:
         """Request user confirmation for critical power commands."""
