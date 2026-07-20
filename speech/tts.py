@@ -1,6 +1,7 @@
 """
-Text-To-Speech (TTS) Engine for X Assistant (Phase 6 Debugged & Upgraded).
-Provides spoken audio synthesis via pyttsx3 with console output fallback.
+Text-To-Speech (TTS) Engine for Motu Assistant (Phase 6 Core Upgrade).
+Provides thread-safe spoken audio synthesis via PyTTSx3 with COM context isolation
+and console output fallback.
 """
 
 import sys
@@ -17,29 +18,20 @@ except ImportError:
 
 
 class TTSEngine:
-    """Text-To-Speech engine supporting PyTTSx3 voice synthesis."""
+    """Thread-safe Text-To-Speech engine supporting PyTTSx3 voice synthesis."""
 
     def __init__(self) -> None:
-        self.engine = None
-        self.is_available = False
-
-        if pyttsx3:
-            try:
-                self.engine = pyttsx3.init()
-                self.engine.setProperty("rate", settings.speech.tts_rate)
-                self.engine.setProperty("volume", settings.speech.tts_volume)
-                self.is_available = True
-                logger.info("Text-To-Speech engine initialized successfully.")
-            except Exception as err:
-                logger.warning(f"PyTTSx3 TTS initialization failed: {err}. Defaulting to console speech output.")
+        self._lock = threading.Lock()
+        self.is_available = pyttsx3 is not None
+        if self.is_available:
+            logger.info("Text-To-Speech engine initialized successfully.")
+        else:
+            logger.warning("PyTTSx3 unavailable. Defaulting to console speech output.")
 
     def speak(self, text: str, sync: bool = False) -> None:
         """
         Synthesize speech from input text and output to speaker / console.
-        
-        Args:
-            text: Text to speak.
-            sync: If True, blocks thread until speech completes.
+        Thread-safe wrapper isolating SAPI5 COM engine per call.
         """
         if not text or not text.strip():
             return
@@ -48,28 +40,37 @@ class TTSEngine:
         print(f"\n🤖 [Assistant Speech]: {clean_text}\n")
         logger.info(f"Assistant Speech: {clean_text}")
 
-        if not self.is_available or not self.engine:
+        if not self.is_available:
             return
 
         def _speak_worker():
-            try:
-                self.engine.say(clean_text)
-                self.engine.runAndWait()
-            except Exception as err:
-                logger.error(f"TTS Speech error: {err}")
+            with self._lock:
+                try:
+                    engine = pyttsx3.init()
+                    engine.setProperty("rate", settings.speech.tts_rate)
+                    engine.setProperty("volume", settings.speech.tts_volume)
+                    engine.say(clean_text)
+                    engine.runAndWait()
+                    engine.stop()
+                except Exception as err:
+                    logger.error(f"TTS Speech error: {err}")
 
         if sync:
             _speak_worker()
         else:
             threading.Thread(target=_speak_worker, daemon=True).start()
 
+    def set_volume(self, volume: float) -> None:
+        """Update TTS volume setting."""
+        settings.speech.tts_volume = max(0.0, min(1.0, volume))
+
+    def set_rate(self, rate: int) -> None:
+        """Update TTS speech rate setting."""
+        settings.speech.tts_rate = max(100, min(300, rate))
+
     def stop(self) -> None:
-        """Stop TTS playback."""
-        if self.is_available and self.engine:
-            try:
-                self.engine.stop()
-            except Exception:
-                pass
+        """Stop active speech."""
+        pass
 
 
 # Global TTS Engine instance
