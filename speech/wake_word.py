@@ -1,8 +1,8 @@
 """
-Wake Word Listener for X Assistant (Phase 6 Final Upgrade & Bangla Fix).
-Continuously monitors microphone for wake words ("X", "Hey X", "X Listen", "হে এক্স", "এক্স")
-using boundary regex matching to prevent false substring matches,
-and extracts any command payload spoken after the wake word in a single utterance.
+Wake Word Listener for Motu Assistant (Phase 6 Final Upgrade & Direct Action Fallback).
+Continuously monitors microphone for wake words ("Motu", "Hey Motu", "মটু", "হে মটু", "X", "Hey X")
+or direct actionable commands ("আমার জন্য একটা রোমান্টিক গান প্লে করো", "ক্রোম খুলো", "সময় কত").
+Guarantees the assistant responds immediately whether wake word is spoken or omitted.
 """
 
 import re
@@ -10,12 +10,13 @@ import time
 from typing import Callable, Optional, List, Tuple
 from config.settings import settings
 from speech.stt import stt_engine
+from brain.intent_parser import intent_parser
 from core.logger import logger
 from core.event_bus import event_bus
 
 
 class WakeWordDetector:
-    """Wake Word Detector monitoring microphone for activation trigger words with regex boundary matching."""
+    """Wake Word Detector monitoring microphone with direct command action execution fallback."""
 
     def __init__(self, wake_words: Optional[List[str]] = None) -> None:
         self.wake_words = [w.lower() for w in (wake_words or settings.assistant.wake_words)]
@@ -42,15 +43,12 @@ class WakeWordDetector:
             return False, ""
 
         clean_text = text.lower().strip()
-        # Sort wake words by length descending so multi-word wake phrases ("hey x", "x listen") match before single "x"
         sorted_words = sorted(self.wake_words, key=len, reverse=True)
 
         for word in sorted_words:
-            # Use boundary matching suitable for ASCII and Unicode Bangla scripts
             pattern = r'(?:^|\s|\b)' + re.escape(word) + r'(?:$|\s|\b)'
             match = re.search(pattern, clean_text)
             if match:
-                # Extract command text remaining after removing the wake word
                 command_remainder = re.sub(pattern, " ", clean_text, count=1).strip()
                 return True, command_remainder
 
@@ -58,40 +56,54 @@ class WakeWordDetector:
 
     def listen_for_wake_word(self, on_detected_callback: Optional[Callable[[str], None]] = None) -> Tuple[bool, str]:
         """
-        Perform a single listening iteration for wake word.
+        Perform a single listening iteration for wake word or direct action command.
         
         Args:
-            on_detected_callback: Function executed when wake word is detected, passing command payload.
+            on_detected_callback: Function executed when wake word or direct command is detected.
             
         Returns:
-            Tuple of (wake_word_detected_bool, command_payload).
+            Tuple of (detected_bool, command_payload).
         """
         if not self._waiting_logged:
-            print("Waiting for wake word...")
-            logger.debug("Waiting for wake word...")
+            print("Waiting for wake word or command...")
+            logger.debug("Waiting for wake word or command...")
             self._waiting_logged = True
 
         recognized_text = stt_engine.listen_and_recognize(timeout=3, phrase_time_limit=8)
         if recognized_text:
             print(f"[Voice System] Recognized speech: \"{recognized_text}\"")
             is_present, command_payload = self.is_wake_word_present(recognized_text)
+            
+            # Case A: Explicit Wake Word detected
             if is_present:
-                print(f"[Voice System] Wake word detected in phrase: \"{recognized_text}\" (Command payload: '{command_payload}')")
-                logger.info(f"[Voice System] Wake word detected: '{recognized_text}' -> payload: '{command_payload}'")
+                target_payload = command_payload if command_payload else recognized_text
+                print(f"[Voice System] Wake word detected in phrase: \"{recognized_text}\" (Command payload: '{target_payload}')")
+                logger.info(f"[Voice System] Wake word detected: '{recognized_text}' -> payload: '{target_payload}'")
                 event_bus.publish("wake_word_detected", text=recognized_text)
                 self._waiting_logged = False
                 if on_detected_callback:
-                    on_detected_callback(command_payload)
-                return True, command_payload
+                    on_detected_callback(target_payload)
+                return True, target_payload
+
+            # Case B: Direct Action Command recognized even if wake word was omitted
+            intent = intent_parser.parse(recognized_text)
+            if intent and intent.action_type not in ["none", "llm"]:
+                print(f"[Voice System] Direct action command recognized: \"{recognized_text}\" (Intent: {intent.name})")
+                logger.info(f"[Voice System] Direct action command recognized: '{recognized_text}' -> Intent: {intent.name}")
+                event_bus.publish("wake_word_detected", text=recognized_text)
+                self._waiting_logged = False
+                if on_detected_callback:
+                    on_detected_callback(recognized_text)
+                return True, recognized_text
 
         return False, ""
 
     def start_loop(self, on_detected_callback: Callable[[str], None]) -> None:
-        """Run continuous wake word listening loop in background thread."""
+        """Run continuous wake word / command listening loop in background thread."""
         self.is_listening = True
         self._waiting_logged = False
-        print("\n[Voice System] Wake word detector active.")
-        print("[Voice System] Listening for 'X', 'Hey X', 'X Listen', 'এক্স'...")
+        print("\n[Voice System] Wake word and voice command detector active.")
+        print("[Voice System] Listening for 'Motu', 'Hey Motu', 'মটু' or direct commands...")
         logger.info("[Voice System] Wake word detector active.")
 
         while self.is_listening:
