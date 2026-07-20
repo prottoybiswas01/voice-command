@@ -62,3 +62,34 @@
 [2026-07-20 22:33:10] [INFO] [XAssistant]: Database schema initialized successfully.
 [2026-07-20 22:33:10] [INFO] [XAssistant]: Database schema initialized successfully.
 [2026-07-20 22:33:10] [INFO] [XAssistant]: Database schema initialized successfully.
+[2026-07-20 22:33:16] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:33:26] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:33:36] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:33:46] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:33:56] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:06] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:16] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:19] [INFO] [XAssistant]: Processing command: 'good job'
+[2026-07-20 22:34:19] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-20 22:34:23] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
+[2026-07-20 22:34:23] [INFO] [XAssistant]: Speaking: I processed your request: 'good job'. Start Ollama locally for deep conversational responses.
+[2026-07-20 22:34:26] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:36] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:46] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:53] [INFO] [XAssistant]: Processing command: 'what is your name'
+[2026-07-20 22:34:53] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-20 22:34:56] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:34:57] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
+[2026-07-20 22:34:57] [INFO] [XAssistant]: Speaking: I am X Assistant, your personal local AI assistant built with open-source tools.
+[2026-07-20 22:35:06] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:35:10] [INFO] [XAssistant]: Processing command: 'stop'
+[2026-07-20 22:35:10] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-20 22:35:14] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
+[2026-07-20 22:35:14] [INFO] [XAssistant]: Speaking: I processed your request: 'stop'. Start Ollama locally for deep conversational responses.
+[2026-07-20 22:35:16] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:35:26] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
+[2026-07-20 22:35:28] [INFO] [XAssistant]: Processing command: 'all system off now'
+[2026-07-20 22:35:28] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-20 22:35:32] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
+[2026-07-20 22:35:32] [INFO] [XAssistant]: Speaking: I processed your request: 'all system off now'. Start Ollama locally for deep conversational responses.
+[2026-07-20 22:35:36] [INFO] [XAssistant]: System Info (all): CPU usage is at N/A%. RAM info N/A. Battery info N/A. Internet status: Online and connected.
