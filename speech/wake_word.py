@@ -1,6 +1,7 @@
 """
-Wake Word Listener for X Assistant.
-Continuously listens for wake words ("X", "Hey X", "X Listen") to trigger assistant activation.
+Wake Word Listener for X Assistant (Phase 6 Debugged & Upgraded).
+Continuously monitors microphone for wake words ("X", "Hey X", "X Listen", "হে এক্স")
+and notifies orchestrator when activation triggers are spoken.
 """
 
 import time
@@ -16,25 +17,15 @@ class WakeWordDetector:
 
     def __init__(self, wake_words: Optional[List[str]] = None) -> None:
         self.wake_words = [w.lower() for w in (wake_words or settings.assistant.wake_words)]
-        # Add phonetic/transliterated variants for Bangla speech matching
-        self.wake_words.extend(["এক্স", "হে এক্স", "এক্স শোনো", "এক্স শোন", "hey x", "x listen"])
+        self.wake_words.extend(["엑스", "হে এক্স", "এক্স শোনো", "এক্স শোন", "hey x", "x listen", "x"])
         self.is_listening = False
 
     def is_wake_word_present(self, text: str) -> bool:
-        """
-        Check if input text contains any configured wake word.
-        
-        Args:
-            text: Input phrase recognized by STT engine.
-            
-        Returns:
-            True if wake word matches, False otherwise.
-        """
+        """Check if input text contains any configured wake word."""
         if not text:
             return False
 
         clean_text = text.lower().strip()
-
         for word in self.wake_words:
             if word in clean_text:
                 return True
@@ -45,26 +36,34 @@ class WakeWordDetector:
         Perform a single listening iteration for wake word.
         
         Args:
-            on_detected_callback: Optional function executed when wake word is detected.
+            on_detected_callback: Function executed when wake word is detected.
             
         Returns:
             True if wake word heard, False otherwise.
         """
+        print("Waiting for wake word...")
+        logger.debug("Waiting for wake word...")
+
         recognized_text = stt_engine.listen_and_recognize(timeout=3, phrase_time_limit=4)
-        if recognized_text and self.is_wake_word_present(recognized_text):
-            logger.info(f"Wake word detected from voice input: '{recognized_text}'")
-            event_bus.publish("wake_word_detected", text=recognized_text)
-            if on_detected_callback:
-                on_detected_callback()
-            return True
+        if recognized_text:
+            print(f"[Voice System] Recognized speech: \"{recognized_text}\"")
+            if self.is_wake_word_present(recognized_text):
+                print(f"[Voice System] Wake word detected: \"{recognized_text}\"")
+                logger.info(f"[Voice System] Wake word detected: '{recognized_text}'")
+                event_bus.publish("wake_word_detected", text=recognized_text)
+                if on_detected_callback:
+                    on_detected_callback()
+                return True
 
         return False
 
     def start_loop(self, on_detected_callback: Callable[[], None]) -> None:
-        """Run continuous wake word listening loop in background."""
+        """Run continuous wake word listening loop in background thread."""
         self.is_listening = True
-        logger.info("Wake word detector active. Listening for 'X', 'Hey X', 'X Listen'...")
-        
+        print("\n[Voice System] Wake word detector active.")
+        print("[Voice System] Listening for 'X', 'Hey X', 'X Listen'...")
+        logger.info("[Voice System] Wake word detector active.")
+
         while self.is_listening:
             try:
                 self.listen_for_wake_word(on_detected_callback)

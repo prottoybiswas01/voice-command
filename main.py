@@ -1,6 +1,6 @@
 """
-Main Application Entry Point for X Assistant (Phase 6 Upgrade).
-Orchestrates Autonomous AI Agent, Multimodal Vision AI, Local RAG Knowledge Base,
+Main Application Entry Point for X Assistant (Phase 6 Debugged & Upgraded).
+Orchestrates Autonomous AI Agent, Voice Listener Thread, Multimodal Vision AI, Local RAG Knowledge Base,
 Extensible Plugin Framework, Macro Workflows, Self-Diagnostics Monitor, Arduino Serial Bridge,
 Win32 Window Manager, Ollama LLM, TTS, and GUI Dashboard.
 """
@@ -67,17 +67,20 @@ class XAssistantController:
 
     def __init__(self) -> None:
         logger.info(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
+        print(f"\n===================================================")
+        print(f"  Starting {settings.assistant.name} (v{settings.assistant.version}) Ecosystem")
+        print(f"===================================================\n")
         self.dashboard: Optional[AssistantDashboard] = None
         self.is_running = True
         self.pending_confirmation: Optional[dict] = None
 
-        # Start Background Daemons (Rule Automation Engine & Self-Diagnostics Monitor)
+        # Start Background Daemons
         automation_rule_engine.start_engine()
         diagnostics_monitor.start_monitoring(interval_sec=30)
 
     def process_command(self, user_text: str) -> str:
         """
-        Main Phase-6 Multimodal Ecosystem Pipeline:
+        Main Multimodal Ecosystem Pipeline:
         Input -> Memory -> Security -> Workflows -> Plugins -> RAG Knowledge -> Intent -> Actions -> LLM -> Speech.
         """
         if not user_text or not user_text.strip():
@@ -347,8 +350,6 @@ class XAssistantController:
         # U. Multimodal LLM Conversation Synthesis with RAG Search Check
         elif intent.action_type == "llm":
             prompt = intent.params.get("prompt", prompt_text)
-            
-            # First check if local RAG knowledge base has relevant document facts
             rag_match = rag_knowledge_base.query_knowledge_base(prompt)
             if rag_match:
                 prompt = f"{prompt}\n\n[LOCAL DOCUMENT FACTS]\n{rag_match}"
@@ -369,15 +370,18 @@ class XAssistantController:
 
     def _voice_listener_loop(self) -> None:
         """Background thread listening for Wake Word and processing voice input."""
-        logger.info("Voice Listener thread active. Continuous monitoring ready.")
+        print("\n[Voice Listener Thread] Background voice listener thread active.")
+        logger.info("[Voice Listener Thread] Background voice listener thread active.")
 
         def on_wake_detected():
             tts_engine.speak("Yes? I am listening.")
             if self.dashboard:
                 self.dashboard.append_transcript("Assistant", "Yes? I am listening.")
 
+            print("[Voice System] Listening for command...")
             voice_prompt = stt_engine.listen_and_recognize(timeout=5, phrase_time_limit=10)
             if voice_prompt:
+                print(f"[Voice System] Recognized prompt: \"{voice_prompt}\"")
                 if self.dashboard:
                     self.dashboard.append_transcript("User", voice_prompt)
                 self.process_command(voice_prompt)
@@ -387,10 +391,13 @@ class XAssistantController:
     def start(self) -> None:
         """Launch X Assistant Phase-6 controller and GUI Dashboard."""
         logger.info(f"Starting {settings.assistant.name} Phase-6 application...")
+        print(f"[Voice System] Starting VoiceListener background thread...")
         tts_engine.speak(f"{settings.assistant.name} Phase 6 ready. Personal AI Ecosystem online.")
 
+        # Automatically start VoiceListener Thread on launch
         listener_thread = threading.Thread(target=self._voice_listener_loop, daemon=True)
         listener_thread.start()
+        print("[Voice System] VoiceListener active. Automatic wake word monitoring started.\n")
 
         self.dashboard = AssistantDashboard(on_user_submit_callback=self.process_command)
         self.dashboard.append_transcript("Assistant", "X Assistant Phase 6 online. Personal AI Ecosystem active!")

@@ -1,11 +1,11 @@
 @echo off
-TITLE X Assistant - Launcher
+TITLE X Assistant Phase 6 - Launcher
 echo ===================================================
-echo Starting X Assistant (Phase-1)...
+echo Starting X Assistant Phase 6 Personal AI Ecosystem...
 echo ===================================================
 
 IF NOT EXIST "venv" (
-    echo Error: Virtual environment not found! Please run setup.bat and install.bat first.
+    echo Error: Virtual environment not found! Please run setup.bat first.
     pause
     exit /b 1
 )
@@ -14,6 +14,6 @@ echo Activating virtual environment...
 call venv\Scripts\activate.bat
 
 echo Starting X Assistant main process...
-python main.py
+.\venv\Scripts\python.exe main.py
 
 pause
