@@ -1,7 +1,7 @@
-# X Assistant Configuration File (Phase 2 Upgrade)
+# X Assistant Configuration File (Phase 3 Upgrade)
 assistant:
   name: "X Assistant"
-  version: "2.0.0"
+  version: "3.0.0"
   wake_words:
     - "x"
     - "hey x"
@@ -10,25 +10,24 @@ assistant:
   debug_mode: true
 
 speech:
-  stt_engine: "speech_recognition" # speech_recognition, vosk, whisper
+  stt_engine: "speech_recognition"
   stt_language_primary: "bn-BD"
   stt_language_secondary: "en-US"
-  tts_engine: "pyttsx3" # pyttsx3 or piper
+  tts_engine: "pyttsx3"
   tts_rate: 175
   tts_volume: 1.0
 
 ollama:
   host: "http://localhost:11434"
-  model: "gemma2:2b" # gemma2:2b, llama3.2, mistral
+  model: "gemma2:2b"
   timeout: 45
   max_context_length: 4096
   system_prompt: >
-    You are X Assistant Phase 2, a highly intelligent, polite, and context-aware AI personal assistant.
-    You communicate fluently in Bangla, English, and mixed Bangla-English (Banglish).
-    You possess long-term memory of user preferences and multi-step reasoning capabilities.
+    You are X Assistant Phase 3, an autonomous AI Agent with full Windows computer control.
+    You plan multi-step execution, verify completion, auto-retry on errors, and communicate fluently in Bangla, English, and Banglish.
 
 browser:
-  preferred_browser: "chrome" # chrome, edge, firefox
+  preferred_browser: "chrome"
   headless: false
   slow_mo: 500
 
@@ -39,8 +38,15 @@ music:
     - "local"
   local_music_dir: "~/Music"
 
+agent:
+  auto_retry_attempts: 2
+  pomodoro_focus_minutes: 25
+  pomodoro_break_minutes: 5
+
 paths:
   db_path: "data/x_assistant.db"
   logs_dir: "logs"
   notes_dir: "data/notes"
   screenshots_dir: "data/screenshots"
+  recordings_dir: "data/recordings"
+  audio_dir: "data/audio"

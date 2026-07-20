@@ -1,7 +1,7 @@
 """
-GUI Dashboard Module for X Assistant (Phase 2 Upgrade).
-Provides a modern dark-themed Tkinter interface displaying assistant state, speech transcripts,
-system diagnostics, memory buffer inspector, and smart automation shortcuts.
+GUI Dashboard Module for X Assistant (Phase 3 Upgrade).
+Provides a modern dark-themed Tkinter interface displaying autonomous AI agent status, speech transcripts,
+hardware diagnostics (CPU, RAM, Battery, Disk), Pomodoro timer, Audit logs, and desktop automation controls.
 """
 
 import sys
@@ -14,17 +14,19 @@ from core.logger import logger
 from core.database import db
 from core.event_bus import event_bus
 from actions.productivity_actions import productivity_actions
+from brain.pomodoro import pomodoro_timer
+from actions.security_auditor import security_auditor
 
 
 class AssistantDashboard:
-    """Tkinter Desktop Dashboard Interface for X Assistant Phase 2."""
+    """Tkinter Desktop Dashboard Interface for X Assistant Phase 3."""
 
     def __init__(self, on_user_submit_callback: Optional[Callable[[str], None]] = None) -> None:
         self.on_user_submit_callback = on_user_submit_callback
         self.root = tk.Tk()
-        self.root.title(f"{settings.assistant.name} Phase 2 - Control Dashboard")
-        self.root.geometry("900x650")
-        self.root.minsize(750, 550)
+        self.root.title(f"{settings.assistant.name} Phase 3 - Autonomous AI Agent Dashboard")
+        self.root.geometry("950x680")
+        self.root.minsize(800, 580)
 
         # Apply dark theme styling
         self.bg_color = "#1E1E2E"
@@ -46,8 +48,8 @@ class AssistantDashboard:
 
         title_label = tk.Label(
             header_frame,
-            text=f"🤖 {settings.assistant.name} (v{settings.assistant.version})",
-            font=("Segoe UI", 16, "bold"),
+            text=f"🤖 {settings.assistant.name} (v{settings.assistant.version}) - Autonomous AI Agent",
+            font=("Segoe UI", 15, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
         )
@@ -72,7 +74,7 @@ class AssistantDashboard:
 
         log_title = tk.Label(
             left_frame,
-            text="Live AI Reasoning & Transcript Log",
+            text="Live Autonomous Reasoning & Task Log",
             font=("Segoe UI", 11, "bold"),
             fg=self.fg_color,
             bg=self.bg_color
@@ -108,7 +110,7 @@ class AssistantDashboard:
 
         send_btn = tk.Button(
             input_frame,
-            text="Execute",
+            text="Execute Agent",
             font=("Segoe UI", 10, "bold"),
             bg=self.accent_color,
             fg="#000000",
@@ -120,13 +122,13 @@ class AssistantDashboard:
         send_btn.pack(side=tk.RIGHT)
 
         # Right Column: Quick Stats & Controls Sidebar
-        right_frame = tk.Frame(main_container, bg=self.card_bg, width=250, padx=15, pady=15)
+        right_frame = tk.Frame(main_container, bg=self.card_bg, width=260, padx=15, pady=15)
         right_frame.pack(side=tk.RIGHT, fill=tk.Y)
         right_frame.pack_propagate(False)
 
         sidebar_title = tk.Label(
             right_frame,
-            text="System & AI Status",
+            text="Hardware Diagnostics",
             font=("Segoe UI", 11, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
@@ -141,11 +143,11 @@ class AssistantDashboard:
             bg=self.card_bg,
             justify=tk.LEFT
         )
-        self.metrics_label.pack(anchor="w", pady=(0, 15))
+        self.metrics_label.pack(anchor="w", pady=(0, 10))
 
         btn_title = tk.Label(
             right_frame,
-            text="Phase-2 Automation",
+            text="Phase-3 Computer Control",
             font=("Segoe UI", 11, "bold"),
             fg=self.accent_color,
             bg=self.card_bg
@@ -153,12 +155,13 @@ class AssistantDashboard:
         btn_title.pack(anchor="w", pady=(0, 5))
 
         quick_cmds = [
+            ("🍅 Start Pomodoro", "start pomodoro"),
+            ("📋 Clipboard History", "__clipboard__"),
+            ("🎙️ Record Voice Note", "record voice note"),
+            ("🖥️ Record Screen", "record screen"),
+            ("🔒 Security Audit Logs", "__audit__"),
             ("🎵 Play Music", "play music"),
             ("⛅ Live Weather", "get live weather"),
-            ("📰 Live News", "get live news"),
-            ("📸 Take Screenshot", "take screenshot"),
-            ("🌐 Open GitHub", "open github"),
-            ("🧠 Inspect Memory", "__memory__"),
             ("🧹 Clear Log", "__clear__")
         ]
 
@@ -173,7 +176,7 @@ class AssistantDashboard:
                 relief=tk.FLAT,
                 anchor="w",
                 padx=10,
-                pady=4,
+                pady=3,
                 command=lambda c=cmd: self._handle_quick_cmd(c)
             )
             btn.pack(fill=tk.X, pady=2)
@@ -213,10 +216,15 @@ class AssistantDashboard:
             self.transcript_box.config(state=tk.DISABLED)
             return
 
-        if cmd == "__memory__":
-            prefs = db.get_all_preferences()
-            pref_text = "\n".join([f"{k}: {v}" for k, v in prefs.items()]) if prefs else "No user preferences stored yet."
-            messagebox.showinfo("Memory Buffer Inspector", f"Stored User Preferences:\n\n{pref_text}")
+        if cmd == "__clipboard__":
+            history = db.get_clipboard_history(limit=10)
+            text = "\n\n".join([f"{i+1}. {item['content']}" for i, item in enumerate(history)]) if history else "Clipboard history empty."
+            messagebox.showinfo("Clipboard History", text)
+            return
+
+        if cmd == "__audit__":
+            summary = security_auditor.get_audit_trail_summary(limit=10)
+            messagebox.showinfo("Security Audit Logs", summary)
             return
 
         self.append_transcript("User", cmd)
@@ -226,7 +234,9 @@ class AssistantDashboard:
     def _start_metrics_timer(self) -> None:
         def _update_metrics():
             info = productivity_actions.get_system_info("all")
-            self.metrics_label.config(text=info.replace(". ", "\n"))
+            pomo_status = pomodoro_timer.get_status()
+            full_status = f"{info.replace('. ', '\n')}\n\n{pomo_status}"
+            self.metrics_label.config(text=full_status)
             self.root.after(10000, _update_metrics)
 
         self.root.after(1000, _update_metrics)

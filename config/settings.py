@@ -1,5 +1,5 @@
 """
-X Assistant Configuration Loader Module (Phase 2).
+X Assistant Configuration Loader Module (Phase 3 Upgrade).
 Provides centralized settings management loading from YAML and environment variables.
 """
 
@@ -21,7 +21,7 @@ CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
 @dataclass
 class AssistantSettings:
     name: str = "X Assistant"
-    version: str = "2.0.0"
+    version: str = "3.0.0"
     wake_words: List[str] = field(default_factory=lambda: ["x", "hey x", "x listen"])
     language: str = "bn-EN"
     debug_mode: bool = True
@@ -43,7 +43,7 @@ class OllamaSettings:
     model: str = "gemma2:2b"
     timeout: int = 45
     max_context_length: int = 4096
-    system_prompt: str = "You are X Assistant Phase 2, a context-aware local AI assistant."
+    system_prompt: str = "You are X Assistant Phase 3, an autonomous AI Agent with full Windows control."
 
 
 @dataclass
@@ -60,15 +60,24 @@ class MusicSettings:
 
 
 @dataclass
+class AgentSettings:
+    auto_retry_attempts: int = 2
+    pomodoro_focus_minutes: int = 25
+    pomodoro_break_minutes: int = 5
+
+
+@dataclass
 class PathSettings:
     db_path: Path = BASE_DIR / "data" / "x_assistant.db"
     logs_dir: Path = BASE_DIR / "logs"
     notes_dir: Path = BASE_DIR / "data" / "notes"
     screenshots_dir: Path = BASE_DIR / "data" / "screenshots"
+    recordings_dir: Path = BASE_DIR / "data" / "recordings"
+    audio_dir: Path = BASE_DIR / "data" / "audio"
 
 
 class Settings:
-    """Central configuration instance for X Assistant Phase 2."""
+    """Central configuration instance for X Assistant Phase 3."""
 
     def __init__(self, config_file: Path = CONFIG_PATH) -> None:
         self.config_file = config_file
@@ -77,6 +86,7 @@ class Settings:
         self.ollama = OllamaSettings()
         self.browser = BrowserSettings()
         self.music = MusicSettings()
+        self.agent = AgentSettings()
         self.paths = PathSettings()
         self.load_config()
 
@@ -126,6 +136,11 @@ class Settings:
                 if dir_str:
                     self.music.local_music_dir = Path(os.path.expanduser(dir_str))
 
+            if "agent" in data:
+                self.agent.auto_retry_attempts = data["agent"].get("auto_retry_attempts", self.agent.auto_retry_attempts)
+                self.agent.pomodoro_focus_minutes = data["agent"].get("pomodoro_focus_minutes", self.agent.pomodoro_focus_minutes)
+                self.agent.pomodoro_break_minutes = data["agent"].get("pomodoro_break_minutes", self.agent.pomodoro_break_minutes)
+
             if "paths" in data:
                 if "db_path" in data["paths"]:
                     self.paths.db_path = BASE_DIR / data["paths"]["db_path"]
@@ -135,6 +150,10 @@ class Settings:
                     self.paths.notes_dir = BASE_DIR / data["paths"]["notes_dir"]
                 if "screenshots_dir" in data["paths"]:
                     self.paths.screenshots_dir = BASE_DIR / data["paths"]["screenshots_dir"]
+                if "recordings_dir" in data["paths"]:
+                    self.paths.recordings_dir = BASE_DIR / data["paths"]["recordings_dir"]
+                if "audio_dir" in data["paths"]:
+                    self.paths.audio_dir = BASE_DIR / data["paths"]["audio_dir"]
 
         except Exception as err:
             print(f"[Warning] Failed to parse config file: {err}. Using default settings.")
@@ -144,7 +163,9 @@ class Settings:
         self.paths.logs_dir.mkdir(parents=True, exist_ok=True)
         self.paths.notes_dir.mkdir(parents=True, exist_ok=True)
         self.paths.screenshots_dir.mkdir(parents=True, exist_ok=True)
+        self.paths.recordings_dir.mkdir(parents=True, exist_ok=True)
+        self.paths.audio_dir.mkdir(parents=True, exist_ok=True)
 
 
-# Global settings instance
+# Global Phase-3 settings instance
 settings = Settings()

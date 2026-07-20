@@ -127,3 +127,155 @@
 [2026-07-20 22:38:33] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
 [2026-07-20 22:38:33] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
 [2026-07-20 22:38:33] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:44:44] [INFO] [XAssistant]: Phase-2 Database schema initialized successfully.
+[2026-07-20 22:44:44] [WARNING] [XAssistant]: Microphone initialization failed: Could not find PyAudio; check installation. Speech input disabled.
+[2026-07-20 22:44:46] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 22:44:47] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 22:44:47] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 22:44:47] [INFO] [XAssistant]: Initializing X Assistant (v2.0.0) Core...
+[2026-07-20 22:44:47] [INFO] [XAssistant]: Starting X Assistant Phase-2 application...
+[2026-07-20 22:44:47] [INFO] [XAssistant]: Speaking: X Assistant Phase 2 ready.
+[2026-07-20 22:44:47] [INFO] [XAssistant]: Voice Listener thread active. Continuous monitoring ready.
+[2026-07-20 22:44:47] [INFO] [XAssistant]: Wake word detector active. Listening for 'X', 'Hey X', 'X Listen'...
+[2026-07-20 22:44:50] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.5%. RAM usage is at 62.8% (9.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:00] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.0%. RAM usage is at 62.7% (9.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:07] [INFO] [XAssistant]: Processing command: 'play music'
+[2026-07-20 22:45:07] [INFO] [XAssistant]: Parsed Intent: play_smart_music (Category: smart_music)
+[2026-07-20 22:45:07] [INFO] [XAssistant]: Smart Music request for: 'Default Music'
+[2026-07-20 22:45:07] [INFO] [XAssistant]: Playing 'music' on Spotify.
+[2026-07-20 22:45:07] [INFO] [XAssistant]: Speaking: Playing 'music' on Spotify.
+[2026-07-20 22:45:11] [INFO] [XAssistant]: System Info (all): CPU usage is at 61.4%. RAM usage is at 67.1% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:21] [INFO] [XAssistant]: System Info (all): CPU usage is at 32.3%. RAM usage is at 71.4% (11.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:32] [INFO] [XAssistant]: System Info (all): CPU usage is at 56.2%. RAM usage is at 73.7% (11.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:42] [INFO] [XAssistant]: System Info (all): CPU usage is at 42.7%. RAM usage is at 73.0% (11.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:45:53] [INFO] [XAssistant]: System Info (all): CPU usage is at 38.4%. RAM usage is at 71.7% (11.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:04] [INFO] [XAssistant]: System Info (all): CPU usage is at 25.7%. RAM usage is at 71.0% (11.1GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:14] [INFO] [XAssistant]: System Info (all): CPU usage is at 31.7%. RAM usage is at 70.4% (11.0GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:25] [INFO] [XAssistant]: System Info (all): CPU usage is at 39.1%. RAM usage is at 73.0% (11.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:35] [INFO] [XAssistant]: System Info (all): CPU usage is at 37.0%. RAM usage is at 61.5% (9.6GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:36] [INFO] [XAssistant]: Processing command: 'get live weather'
+[2026-07-20 22:46:36] [INFO] [XAssistant]: Parsed Intent: get_live_weather (Category: internet)
+[2026-07-20 22:46:38] [WARNING] [XAssistant]: Live wttr.in weather fetch error for get live weather: HTTP Error 500: Internal Server Error
+[2026-07-20 22:46:38] [INFO] [XAssistant]: Speaking: Weather for Get live weather: 28°C, Partly Cloudy with 75% humidity.
+[2026-07-20 22:46:41] [INFO] [XAssistant]: Processing command: 'open github'
+[2026-07-20 22:46:41] [INFO] [XAssistant]: Parsed Intent: open_browser_site (Category: browser_auto)
+[2026-07-20 22:46:46] [INFO] [XAssistant]: System Info (all): CPU usage is at 46.8%. RAM usage is at 65.5% (10.3GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:46:46] [WARNING] [XAssistant]: Failed to launch Playwright browser: BrowserType.launch: Executable doesn't exist at C:\Users\USER\AppData\Local\ms-playwright\chromium-1228\chrome-win64\chrome.exe
+╔════════════════════════════════════════════════════════════╗
+║ Looks like Playwright was just installed or updated.       ║
+║ Please run the following command to download new browsers: ║
+║                                                            ║
+║     playwright install                                     ║
+║                                                            ║
+║ <3 Playwright Team                                         ║
+╚════════════════════════════════════════════════════════════╝. Falling back to default browser.
+[2026-07-20 22:46:46] [INFO] [XAssistant]: Opened github in system browser.
+[2026-07-20 22:46:46] [INFO] [XAssistant]: Speaking: Opened github in system browser.
+[2026-07-20 22:46:56] [INFO] [XAssistant]: System Info (all): CPU usage is at 42.6%. RAM usage is at 69.7% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:47:07] [INFO] [XAssistant]: System Info (all): CPU usage is at 29.6%. RAM usage is at 69.3% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:47:18] [INFO] [XAssistant]: System Info (all): CPU usage is at 17.7%. RAM usage is at 68.8% (10.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:47:28] [INFO] [XAssistant]: System Info (all): CPU usage is at 16.5%. RAM usage is at 68.0% (10.7GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:47:39] [INFO] [XAssistant]: System Info (all): CPU usage is at 20.5%. RAM usage is at 67.2% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:47:49] [INFO] [XAssistant]: System Info (all): CPU usage is at 23.2%. RAM usage is at 67.1% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:00] [INFO] [XAssistant]: System Info (all): CPU usage is at 16.1%. RAM usage is at 67.0% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:10] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.6%. RAM usage is at 67.1% (10.5GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:21] [INFO] [XAssistant]: System Info (all): CPU usage is at 13.6%. RAM usage is at 68.9% (10.8GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:25] [INFO] [XAssistant]: Processing command: 'take screenshot'
+[2026-07-20 22:48:25] [INFO] [XAssistant]: Parsed Intent: take_screenshot (Category: system_control)
+[2026-07-20 22:48:25] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:48:25] [INFO] [XAssistant]: Speaking: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:48:30] [INFO] [XAssistant]: Processing command: 'play music'
+[2026-07-20 22:48:30] [INFO] [XAssistant]: Parsed Intent: play_smart_music (Category: smart_music)
+[2026-07-20 22:48:30] [INFO] [XAssistant]: Smart Music request for: 'Default Music'
+[2026-07-20 22:48:30] [INFO] [XAssistant]: Playing 'music' on Spotify.
+[2026-07-20 22:48:30] [INFO] [XAssistant]: Speaking: Playing 'music' on Spotify.
+[2026-07-20 22:48:31] [INFO] [XAssistant]: System Info (all): CPU usage is at 42.4%. RAM usage is at 69.5% (10.9GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:42] [INFO] [XAssistant]: System Info (all): CPU usage is at 21.8%. RAM usage is at 72.6% (11.4GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:48:53] [INFO] [XAssistant]: System Info (all): CPU usage is at 15.9%. RAM usage is at 64.5% (10.1GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:03] [INFO] [XAssistant]: System Info (all): CPU usage is at 18.1%. RAM usage is at 65.5% (10.3GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:14] [INFO] [XAssistant]: System Info (all): CPU usage is at 22.7%. RAM usage is at 65.7% (10.3GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:17] [INFO] [XAssistant]: Processing command: 'play now romantic music'
+[2026-07-20 22:49:17] [INFO] [XAssistant]: Parsed Intent: llm_chat (Category: llm)
+[2026-07-20 22:49:21] [WARNING] [XAssistant]: Ollama server connection failed: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>. Utilizing fallback offline generator.
+[2026-07-20 22:49:21] [INFO] [XAssistant]: Speaking: I processed your request: 'play now romantic music'. Start Ollama locally for deep conversational responses.
+[2026-07-20 22:49:24] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.6%. RAM usage is at 64.9% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:35] [INFO] [XAssistant]: System Info (all): CPU usage is at 11.1%. RAM usage is at 64.9% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:45] [INFO] [XAssistant]: System Info (all): CPU usage is at 7.7%. RAM usage is at 64.8% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:49:56] [INFO] [XAssistant]: System Info (all): CPU usage is at 7.5%. RAM usage is at 65.0% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:50:06] [INFO] [XAssistant]: System Info (all): CPU usage is at 7.8%. RAM usage is at 64.9% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:50:17] [INFO] [XAssistant]: System Info (all): CPU usage is at 12.6%. RAM usage is at 65.1% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:50:28] [INFO] [XAssistant]: System Info (all): CPU usage is at 14.4%. RAM usage is at 64.9% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:50:35] [INFO] [XAssistant]: Processing command: 'get live weather'
+[2026-07-20 22:50:35] [INFO] [XAssistant]: Parsed Intent: get_live_weather (Category: internet)
+[2026-07-20 22:50:36] [WARNING] [XAssistant]: Live wttr.in weather fetch error for get live weather: HTTP Error 500: Internal Server Error
+[2026-07-20 22:50:36] [INFO] [XAssistant]: Speaking: Weather for Get live weather: 28°C, Partly Cloudy with 75% humidity.
+[2026-07-20 22:50:38] [INFO] [XAssistant]: System Info (all): CPU usage is at 22.6%. RAM usage is at 65.1% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:50:49] [INFO] [XAssistant]: System Info (all): CPU usage is at 7.7%. RAM usage is at 64.9% (10.2GB used). Battery is at 100% (plugged in). Internet status: Online and connected.
+[2026-07-20 22:54:18] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:18] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 22:54:18] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:19] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:20] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Burnham promises help with your money. How could it affect you?; 2. Burnham's policy choices reveal what kind of PM he wants to be; 3. Key takeaways as Andy Burnham becomes PM
+[2026-07-20 22:54:20] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Audit Logged: DELETE_FILE -> temp.txt [SUCCESS]
+[2026-07-20 22:54:21] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [WARNING] [XAssistant]: wikipedia module not installed. Fallback web Wikipedia search active.
+[2026-07-20 22:54:44] [WARNING] [XAssistant]: screen_brightness_control module not installed. Brightness control fallback active.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Text-To-Speech engine initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:44] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:45] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:45] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:46] [INFO] [XAssistant]: Here are today's top live news headlines: 1. Burnham promises help with your money. How could it affect you?; 2. Burnham's policy choices reveal what kind of PM he wants to be; 3. Key takeaways as Andy Burnham becomes PM
+[2026-07-20 22:54:46] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Live weather for Dhaka: Patchy rain nearby, 25°C (feels like 19°C), Humidity 92%, Wind 14 km/h.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Got it! I will remember that your favorite_song is hotel california.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [ERROR] [XAssistant]: Failed to capture screenshot. Image processing library unavailable.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Decomposed prompt 'Take a screenshot and open Chrome and then check weather' into 3 sub-tasks: ['Take a screenshot', 'open Chrome', 'check weather']
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Autonomous Agent created plan with 3 steps.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Created directory: 'C:\voice command\data\test_p3_dir'.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Compressed 'test_p3_dir' to archive: 'test_p3_dir.zip'.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Audit Logged: DELETE_FILE -> temp.txt [SUCCESS]
+[2026-07-20 22:54:47] [INFO] [XAssistant]: Phase-3 Database schema initialized successfully.

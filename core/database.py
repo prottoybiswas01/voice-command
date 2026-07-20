@@ -1,7 +1,7 @@
 """
-SQLite Database Layer for X Assistant (Phase 2 Upgrade).
-Provides persistent storage for conversation history, command history, todos, notes, reminders,
-user preferences, conversation memory buffer, and command frequency tracking.
+SQLite Database Layer for X Assistant (Phase 3 Upgrade).
+Provides persistent storage for conversations, commands, todos, notes, reminders, user preferences,
+memory buffer, command stats, audit logs, clipboard history, calendar events, and pomodoro sessions.
 """
 
 import sqlite3
@@ -12,7 +12,7 @@ from core.logger import logger
 
 
 class DatabaseManager:
-    """Manages SQLite connections and Phase-2 CRUD operations."""
+    """Manages SQLite connections and Phase-3 CRUD operations."""
 
     def __init__(self, db_path: Optional[str] = None) -> None:
         self.db_path = str(db_path or settings.paths.db_path)
@@ -25,12 +25,12 @@ class DatabaseManager:
         return conn
 
     def init_db(self) -> None:
-        """Initialize database schema tables for Phase-1 & Phase-2."""
+        """Initialize database schema tables for Phase-1, Phase-2 & Phase-3."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
 
-                # Conversation history table
+                # Phase-1 & 2 Tables
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS conversation_history (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -41,7 +41,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Command history table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS command_history (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -52,7 +51,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Todo list table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS todos (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -62,7 +60,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Simple Notes table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS notes (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -72,7 +69,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Reminders table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS reminders (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -83,7 +79,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-2: User Preferences table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS user_preferences (
                         pref_key TEXT PRIMARY KEY,
@@ -92,7 +87,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-2: Memory Buffer table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS memory_buffer (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -102,7 +96,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-2: Command Usage Frequency table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS command_stats (
                         command TEXT PRIMARY KEY,
@@ -111,15 +104,154 @@ class DatabaseManager:
                     )
                 """)
 
+                # Phase-3: Audit Logs table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS audit_logs (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        action_type TEXT NOT NULL,
+                        target_item TEXT NOT NULL,
+                        user_confirmed BOOLEAN DEFAULT 1,
+                        status TEXT DEFAULT 'SUCCESS',
+                        details TEXT,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-3: Clipboard History table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS clipboard_history (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        content TEXT NOT NULL,
+                        copied_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-3: Calendar Events table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS calendar_events (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        title TEXT NOT NULL,
+                        event_date TEXT NOT NULL,
+                        event_time TEXT DEFAULT '09:00 AM',
+                        description TEXT,
+                        created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-3: Pomodoro Sessions table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS pomodoro_sessions (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        focus_minutes INTEGER DEFAULT 25,
+                        break_minutes INTEGER DEFAULT 5,
+                        completed_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
                 conn.commit()
-                logger.info("Phase-2 Database schema initialized successfully.")
+                logger.info("Phase-3 Database schema initialized successfully.")
 
         except Exception as err:
             logger.error(f"Database initialization error: {err}")
 
-    # Conversation History
+    # Phase-3: Audit Logs CRUD
+    def log_audit_event(self, action_type: str, target_item: str, user_confirmed: bool = True, status: str = "SUCCESS", details: str = "") -> None:
+        """Record critical action to security audit logs."""
+        try:
+            with self.get_connection() as conn:
+                conn.execute(
+                    "INSERT INTO audit_logs (action_type, target_item, user_confirmed, status, details) VALUES (?, ?, ?, ?, ?)",
+                    (action_type, target_item, 1 if user_confirmed else 0, status, details)
+                )
+                conn.commit()
+                logger.info(f"Audit Logged: {action_type} -> {target_item} [{status}]")
+        except Exception as err:
+            logger.error(f"Failed to record audit event: {err}")
+
+    def get_recent_audit_logs(self, limit: int = 15) -> List[Dict[str, Any]]:
+        """Retrieve recent security audit logs."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute(
+                    "SELECT action_type, target_item, user_confirmed, status, details, timestamp FROM audit_logs ORDER BY id DESC LIMIT ?",
+                    (limit,)
+                )
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to fetch audit logs: {err}")
+            return []
+
+    # Phase-3: Clipboard History CRUD
+    def save_clipboard_text(self, content: str) -> None:
+        """Save text snippet to clipboard history."""
+        if not content or not content.strip():
+            return
+        try:
+            with self.get_connection() as conn:
+                # Avoid inserting duplicate consecutive text
+                cursor = conn.execute("SELECT content FROM clipboard_history ORDER BY id DESC LIMIT 1")
+                row = cursor.fetchone()
+                if row and row["content"] == content:
+                    return
+
+                conn.execute("INSERT INTO clipboard_history (content) VALUES (?)", (content,))
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to save clipboard content: {err}")
+
+    def get_clipboard_history(self, limit: int = 10) -> List[Dict[str, Any]]:
+        """Get recent clipboard history snippets."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT id, content, copied_at FROM clipboard_history ORDER BY id DESC LIMIT ?", (limit,))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to fetch clipboard history: {err}")
+            return []
+
+    # Phase-3: Calendar Events CRUD
+    def add_calendar_event(self, title: str, event_date: str, event_time: str = "09:00 AM", description: str = "") -> int:
+        """Add calendar event."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute(
+                    "INSERT INTO calendar_events (title, event_date, event_time, description) VALUES (?, ?, ?, ?)",
+                    (title, event_date, event_time, description)
+                )
+                conn.commit()
+                return cursor.lastrowid or 0
+        except Exception as err:
+            logger.error(f"Failed to add calendar event: {err}")
+            return 0
+
+    def get_upcoming_calendar_events(self, limit: int = 5) -> List[Dict[str, Any]]:
+        """Get upcoming calendar events."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute(
+                    "SELECT id, title, event_date, event_time, description FROM calendar_events ORDER BY id DESC LIMIT ?",
+                    (limit,)
+                )
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to fetch calendar events: {err}")
+            return []
+
+    # Phase-3: Pomodoro Sessions CRUD
+    def log_pomodoro_session(self, focus_minutes: int = 25, break_minutes: int = 5) -> None:
+        """Record completed Pomodoro focus session."""
+        try:
+            with self.get_connection() as conn:
+                conn.execute(
+                    "INSERT INTO pomodoro_sessions (focus_minutes, break_minutes) VALUES (?, ?)",
+                    (focus_minutes, break_minutes)
+                )
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to log pomodoro session: {err}")
+
+    # Conversation & Command History
     def log_conversation(self, user_input: str, response: str, language: str = "en") -> None:
-        """Record a conversation exchange."""
         try:
             with self.get_connection() as conn:
                 conn.execute(
@@ -131,7 +263,6 @@ class DatabaseManager:
             logger.error(f"Failed to log conversation: {err}")
 
     def get_recent_conversations(self, limit: int = 10) -> List[Dict[str, Any]]:
-        """Retrieve recent conversation history."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute(
@@ -143,16 +274,13 @@ class DatabaseManager:
             logger.error(f"Failed to retrieve conversation history: {err}")
             return []
 
-    # Command History & Frequency Stats
     def log_command(self, command: str, status: str, details: str = "") -> None:
-        """Record an executed command and update usage count frequency."""
         try:
             with self.get_connection() as conn:
                 conn.execute(
                     "INSERT INTO command_history (command, status, details) VALUES (?, ?, ?)",
                     (command, status, details)
                 )
-                # Update frequency stats
                 conn.execute("""
                     INSERT INTO command_stats (command, usage_count, last_used_at)
                     VALUES (?, 1, CURRENT_TIMESTAMP)
@@ -165,7 +293,6 @@ class DatabaseManager:
             logger.error(f"Failed to log command: {err}")
 
     def get_frequent_commands(self, limit: int = 5) -> List[Dict[str, Any]]:
-        """Retrieve most frequently used commands."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute(
@@ -177,9 +304,8 @@ class DatabaseManager:
             logger.error(f"Failed to get frequent commands: {err}")
             return []
 
-    # Phase-2: User Preferences CRUD
+    # Preferences, Memories, Todos, Notes, Reminders
     def set_user_preference(self, key: str, value: str) -> None:
-        """Save or update user preference key-value pair."""
         try:
             with self.get_connection() as conn:
                 conn.execute("""
@@ -190,18 +316,13 @@ class DatabaseManager:
                     updated_at = CURRENT_TIMESTAMP
                 """, (key.lower().strip(), value.strip()))
                 conn.commit()
-                logger.info(f"User preference saved: {key} = {value}")
         except Exception as err:
             logger.error(f"Failed to set preference {key}: {err}")
 
     def get_user_preference(self, key: str, default: Optional[str] = None) -> Optional[str]:
-        """Get user preference by key."""
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute(
-                    "SELECT pref_value FROM user_preferences WHERE pref_key = ?",
-                    (key.lower().strip(),)
-                )
+                cursor = conn.execute("SELECT pref_value FROM user_preferences WHERE pref_key = ?", (key.lower().strip(),))
                 row = cursor.fetchone()
                 return row["pref_value"] if row else default
         except Exception as err:
@@ -209,7 +330,6 @@ class DatabaseManager:
             return default
 
     def get_all_preferences(self) -> Dict[str, str]:
-        """Fetch all stored user preferences."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("SELECT pref_key, pref_value FROM user_preferences")
@@ -218,33 +338,23 @@ class DatabaseManager:
             logger.error(f"Failed to fetch preferences: {err}")
             return {}
 
-    # Phase-2: Memory Buffer CRUD
     def add_memory(self, key: str, value: str) -> None:
-        """Store long-term memory fact."""
         try:
             with self.get_connection() as conn:
-                conn.execute(
-                    "INSERT INTO memory_buffer (memory_key, memory_value) VALUES (?, ?)",
-                    (key.lower().strip(), value.strip())
-                )
+                conn.execute("INSERT INTO memory_buffer (memory_key, memory_value) VALUES (?, ?)", (key.lower().strip(), value.strip()))
                 conn.commit()
         except Exception as err:
             logger.error(f"Failed to store memory: {err}")
 
     def get_all_memories(self, limit: int = 20) -> List[Dict[str, Any]]:
-        """Retrieve recent stored memories."""
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute(
-                    "SELECT memory_key, memory_value, timestamp FROM memory_buffer ORDER BY id DESC LIMIT ?",
-                    (limit,)
-                )
+                cursor = conn.execute("SELECT memory_key, memory_value, timestamp FROM memory_buffer ORDER BY id DESC LIMIT ?", (limit,))
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
             logger.error(f"Failed to fetch memories: {err}")
             return []
 
-    # Todos, Notes, Reminders CRUD
     def add_todo(self, task: str) -> int:
         try:
             with self.get_connection() as conn:
@@ -285,7 +395,6 @@ class DatabaseManager:
             return 0
 
     def delete_note(self, note_id: int) -> bool:
-        """Delete note by ID."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("DELETE FROM notes WHERE id = ?", (note_id,))
@@ -307,10 +416,7 @@ class DatabaseManager:
     def add_reminder(self, message: str, remind_at: str) -> int:
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute(
-                    "INSERT INTO reminders (message, remind_at) VALUES (?, ?)",
-                    (message, remind_at)
-                )
+                cursor = conn.execute("INSERT INTO reminders (message, remind_at) VALUES (?, ?)", (message, remind_at))
                 conn.commit()
                 return cursor.lastrowid or 0
         except Exception as err:
@@ -321,10 +427,7 @@ class DatabaseManager:
         try:
             now_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             with self.get_connection() as conn:
-                cursor = conn.execute(
-                    "SELECT id, message, remind_at FROM reminders WHERE status = 'pending' AND remind_at <= ?",
-                    (now_str,)
-                )
+                cursor = conn.execute("SELECT id, message, remind_at FROM reminders WHERE status = 'pending' AND remind_at <= ?", (now_str,))
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
             logger.error(f"Failed to fetch due reminders: {err}")
@@ -339,5 +442,5 @@ class DatabaseManager:
             logger.error(f"Failed to update reminder status: {err}")
 
 
-# Global Phase-2 database instance
+# Global Phase-3 database instance
 db = DatabaseManager()
