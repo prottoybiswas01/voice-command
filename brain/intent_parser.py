@@ -54,15 +54,16 @@ class IntentParser:
 
         # 3. Smart Music Playback (Bangla & English - Romantic, Rock, Pop, Songs)
         if any(w in clean for w in ["music", "song", "মিউজিক", "গান", "প্লে", "চালাও", "বাজাও", "রোমান্টিক"]):
-            if any(w in clean for w in ["play", "চালাও", "বাজাও", "প্লে", "শোনো", "শুনব", "মিউজিক", "গান"]):
-                query = clean
-                for term in ["play music", "play song", "play", "গান চালাও", "প্লে মিউজিক", "গান বাজাও", "মিউজিক চালাও", "গান প্লে করো", "প্লে করো", "একটা", "জন্য"]:
-                    query = query.replace(term, "").strip()
-                if not query:
-                    query = "romantic music" if "রোমান্টিক" in clean or "romantic" in clean else "top music"
-                elif "রোমান্টিক" in clean or "romantic" in clean:
-                    query = f"romantic {query}"
-                return Intent(name="play_smart_music", action_type="smart_music", params={"query": query}, raw_prompt=text)
+            if any(w in clean for w in ["play", "চালাও", "বাজাও", "প্লে", "শোনো", "শুনব", "মিউজিক", "গান", "রোমান্টিক"]):
+                is_romantic = "রোমান্টিক" in clean or "romantic" in clean
+                clean_query = clean
+                for term in ["আমার জন্য", "একটি", "একটা", "গান", "মিউজিক", "প্লে করো", "প্লে", "চালাও", "বাজাও", "শুনব", "play", "music", "song"]:
+                    clean_query = clean_query.replace(term, "").strip()
+                if is_romantic:
+                    clean_query = "romantic music"
+                elif not clean_query:
+                    clean_query = "top hits music"
+                return Intent(name="play_smart_music", action_type="smart_music", params={"query": clean_query}, raw_prompt=text)
 
         # 4. Phase-6 Macro Workflows & Scenes ("start work mode", "good night")
         if any(w in clean for w in ["start work mode", "work mode", "ওয়ার্ক মোড"]):

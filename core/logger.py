@@ -1,6 +1,6 @@
 """
-Logging framework for X Assistant.
-Handles daily execution logging, error logging, debug logging, and clean console output.
+Logging framework for X Assistant (Unicode Safe Upgrade).
+Handles daily execution logging, error logging, debug logging, and Unicode-safe console output.
 """
 
 import sys
@@ -10,9 +10,22 @@ from pathlib import Path
 from typing import Optional
 from config.settings import settings
 
+# Ensure Windows stdout/stderr handles UTF-8 Unicode characters without charmap errors
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
+if hasattr(sys.stderr, "reconfigure"):
+    try:
+        sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
+
 
 class DualLogger:
-    """Manages custom daily, debug, and error log file handlers."""
+    """Manages custom daily, debug, and error log file handlers with Unicode safety."""
 
     _logger_instance: Optional[logging.Logger] = None
 
@@ -59,8 +72,22 @@ class DualLogger:
         debug_handler.setFormatter(formatter)
         logger.addHandler(debug_handler)
 
-        # Console handler
-        console_handler = logging.StreamHandler(sys.stdout)
+        # Console handler with Unicode fallback error handling
+        class UnicodeSafeStreamHandler(logging.StreamHandler):
+            def emit(self, record):
+                try:
+                    msg = self.format(record)
+                    stream = self.stream
+                    stream.write(msg + self.terminator)
+                    self.flush()
+                except UnicodeEncodeError:
+                    safe_msg = str(record.getMessage()).encode("ascii", "replace").decode("ascii")
+                    stream.write(f"[{self.formatter.formatTime(record)}] [{record.levelname}] [{record.name}]: {safe_msg}" + self.terminator)
+                    self.flush()
+                except Exception:
+                    self.handleError(record)
+
+        console_handler = UnicodeSafeStreamHandler(sys.stdout)
         console_handler.setLevel(logging.INFO)
         console_handler.setFormatter(formatter)
         logger.addHandler(console_handler)
