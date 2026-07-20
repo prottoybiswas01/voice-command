@@ -119,9 +119,9 @@ class OllamaClient:
         clean = text.lower().strip()
 
         if any(w in clean for w in ["hello", "hi", "hey", "সালাম", "হ্যালো"]):
-            return "Hello! I am X Assistant Phase 6. How can I help you today?"
+            return "Hello! I am Motu AI Assistant Phase 6. How can I help you today?"
         elif any(w in clean for w in ["who are you", "কে তুমি", "তোমার নাম কি", "what is your name"]):
-            return "I am X Assistant Phase 6, your Personal AI Ecosystem built with local open-source tools."
+            return "I am Motu AI Assistant Phase 6, your Personal AI Ecosystem built with local open-source tools."
         elif any(w in clean for w in ["how are you", "কেমন আছো", "কেমন আছেন"]):
             return "I am doing great! All local AI modules and automation systems are ready."
         elif any(w in clean for w in ["thank you", "thanks", "ধন্যবাদ"]):
