@@ -215,7 +215,7 @@ class IntentParser:
             return Intent(name="search_wikipedia", action_type="internet", params={"query": query}, raw_prompt=text)
 
         # 20. System Controls
-        if any(w in clean for w in ["take screenshot", "screenshot", "স্ক্রিনশট"]):
+        if any(w in clean for w in ["take screenshot", "screenshot", "স্ক্রিনশট", "স্ক্রিনশট নাও", "স্ক্রিনশট তোলো", "স্ক্রিনশট তুলে দাও", "স্ক্রিনের ছবি", "স্ক্রিন শট", "স্ক্রিন ক্যাপচার"]):
             return Intent(name="take_screenshot", action_type="system_control", params={}, raw_prompt=text)
 
         # 21. Basic System App Launchers & Greetings

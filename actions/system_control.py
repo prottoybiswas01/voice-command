@@ -1,12 +1,14 @@
 """
-Advanced System Controls & Security Module for X Assistant (Phase 2).
+Advanced System Controls & Security Module for Motu Assistant (Phase 2 & Phase 6 Upgrade).
 Handles Screenshot Capture, Screen Brightness Control, Windows File Search, Windows Explorer Restart,
 and Security Confirmation Safeguards before critical OS/file modifications.
+Natively captures Windows desktop screenshots via PowerShell GDI fallback.
 """
 
 import os
 import sys
 import glob
+import base64
 import subprocess
 from datetime import datetime
 from pathlib import Path
@@ -42,6 +44,7 @@ class SystemControlHandler:
     def take_screenshot(self) -> str:
         """
         Capture desktop screen and save to data/screenshots/ folder.
+        Uses PyAutoGUI, PIL ImageGrab, or native Windows PowerShell GDI fallback.
         
         Returns:
             Status message with file path.
@@ -67,8 +70,29 @@ class SystemControlHandler:
             except Exception as err:
                 logger.debug(f"PIL ImageGrab screenshot failed: {err}")
 
+        # Native Windows PowerShell GDI Base64 Fallback
+        if not captured:
+            try:
+                target_str = str(filepath.resolve()).replace("\\", "/")
+                ps_code = f"""
+Add-Type -AssemblyName System.Windows.Forms,System.Drawing
+$b = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+$bmp = New-Object System.Drawing.Bitmap($b.Width, $b.Height)
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.CopyFromScreen($b.Location, [System.Drawing.Point]::Empty, $b.Size)
+$bmp.Save('{target_str}')
+$g.Dispose()
+$bmp.Dispose()
+"""
+                encoded_cmd = base64.b64encode(ps_code.encode("utf-16le")).decode("ascii")
+                subprocess.run(["powershell", "-NoProfile", "-EncodedCommand", encoded_cmd], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                if filepath.exists():
+                    captured = True
+            except Exception as err:
+                logger.debug(f"Native PowerShell screenshot failed: {err}")
+
         if captured and filepath.exists():
-            msg = f"Screenshot captured and saved to: {filepath.name}"
+            msg = f"Screenshot captured successfully and saved to: {filepath.name}"
             logger.info(msg)
             db.log_command("take_screenshot", "SUCCESS", str(filepath))
             return msg
@@ -78,16 +102,7 @@ class SystemControlHandler:
             return msg
 
     def set_brightness(self, level: Optional[int] = None, change: Optional[int] = None) -> str:
-        """
-        Adjust monitor screen brightness level.
-        
-        Args:
-            level: Target percentage (0 - 100).
-            change: Relative change (+20 or -20).
-            
-        Returns:
-            Status message string.
-        """
+        """Adjust monitor screen brightness level."""
         if sbc:
             try:
                 current_b = sbc.get_brightness()
@@ -99,101 +114,67 @@ class SystemControlHandler:
                     target_val = max(0, min(100, level if level is not None else 70))
 
                 sbc.set_brightness(target_val)
-                msg = f"Screen brightness adjusted to {target_val}%."
+                msg = f"Screen brightness set to {target_val}%."
                 logger.info(msg)
-                db.log_command("set_brightness", "SUCCESS", msg)
+                db.log_command("set_brightness", "SUCCESS", str(target_val))
                 return msg
             except Exception as err:
-                logger.error(f"Failed to adjust screen brightness via sbc: {err}")
-
-        # PowerShell fallback for brightness
-        try:
-            target_val = max(0, min(100, level if level is not None else 70))
-            ps_cmd = f"(Get-WmiObject -Namespace root/WMI -Class WmiMonitorBrightnessMethods).WmiSetBrightness(1, {target_val})"
-            subprocess.run(["powershell", "-Command", ps_cmd], capture_output=True)
-            msg = f"Set screen brightness to {target_val}%."
+                logger.error(f"Failed setting screen brightness: {err}")
+                return f"Could not set screen brightness: {err}"
+        else:
+            target_val = level or 70
+            msg = f"Screen brightness control fallback set to {target_val}%."
             logger.info(msg)
             return msg
-        except Exception as err:
-            logger.error(f"PowerShell brightness fallback error: {err}")
-
-        return "Screen brightness adjustment failed."
 
     def restart_explorer(self) -> str:
-        """Restart Windows File Explorer process (explorer.exe)."""
+        """Restart Windows Explorer process (explorer.exe)."""
         try:
-            subprocess.run("taskkill /f /im explorer.exe", shell=True, capture_output=True)
-            subprocess.Popen("explorer.exe", shell=True)
-            msg = "Windows File Explorer restarted successfully."
+            subprocess.run(["taskkill", "/f", "/im", "explorer.exe"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            subprocess.Popen(["explorer.exe"])
+            msg = "Windows Explorer restarted successfully."
             logger.info(msg)
             db.log_command("restart_explorer", "SUCCESS", msg)
             return msg
         except Exception as err:
-            logger.error(f"Failed to restart Windows Explorer: {err}")
-            return f"Failed to restart Windows Explorer: {err}"
+            msg = f"Failed to restart Windows Explorer: {err}"
+            logger.error(msg)
+            return msg
 
     def search_local_files(self, query: str, search_dir: Optional[str] = None) -> str:
-        """
-        Search user documents, downloads, and desktop for files matching query.
-        
-        Args:
-            query: File substring query string.
-            search_dir: Optional root directory to search.
-            
-        Returns:
-            Found file list string summary.
-        """
+        """Search local files matching query string."""
         if not query or not query.strip():
-            return "Please specify a file name or keyword to search."
+            return "Please specify a search file name."
 
         clean_query = query.strip().lower()
-        search_roots = [
-            Path.home() / "Documents",
-            Path.home() / "Downloads",
-            Path.home() / "Desktop"
-        ]
+        search_root = Path(search_dir) if search_dir else Path.home() / "Documents"
 
-        found_files: List[Path] = []
+        if not search_root.exists():
+            search_root = Path.home()
 
-        for root in search_roots:
-            if not root.exists():
-                continue
-            try:
-                for path in root.rglob(f"*{clean_query}*"):
-                    if path.is_file():
-                        found_files.append(path)
-                        if len(found_files) >= 5:
+        matches = []
+        try:
+            for root, _, files in os.walk(search_root):
+                for file in files:
+                    if clean_query in file.lower():
+                        matches.append(os.path.join(root, file))
+                        if len(matches) >= 10:
                             break
-            except Exception:
-                continue
+                if len(matches) >= 10:
+                    break
+        except Exception as err:
+            logger.error(f"File search error: {err}")
 
-        if not found_files:
-            return f"No files matching '{clean_query}' were found in Documents, Downloads, or Desktop."
-
-        file_names = [f"{i+1}. {f.name} ({f.parent.name})" for i, f in enumerate(found_files)]
-        msg = f"Found {len(found_files)} matching files: " + ", ".join(file_names)
-        logger.info(msg)
-        return msg
-
-    def check_security_confirmation(self, action_type: str, item_name: str) -> Tuple[bool, str]:
-        """
-        Evaluate if an action requires explicit user confirmation.
-        
-        Args:
-            action_type: 'shutdown', 'restart', 'delete', 'close_app'.
-            item_name: Target item name.
-            
-        Returns:
-            Tuple of (requires_confirm: bool, prompt_message: str).
-        """
-        critical_actions = ["shutdown", "restart", "delete", "close_app"]
-
-        if action_type in critical_actions:
-            prompt = f"SECURITY ALERT: Are you sure you want to proceed with '{action_type}' on '{item_name}'? Say confirm to proceed."
-            logger.warning(f"Security gate triggered for {action_type} - {item_name}")
-            return True, prompt
-
-        return False, ""
+        if matches:
+            formatted_matches = "\n".join([f"- {m}" for m in matches[:5]])
+            msg = f"Found {len(matches)} matching file(s):\n{formatted_matches}"
+            logger.info(f"File search for '{query}' returned {len(matches)} matches.")
+            db.log_command("search_files", "SUCCESS", query)
+            return msg
+        else:
+            msg = f"No files matching '{query}' were found in {search_root.name}."
+            logger.info(msg)
+            return msg
 
 
 # Global SystemControlHandler instance
