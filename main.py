@@ -82,6 +82,9 @@ class XAssistantController:
 
     def __init__(self) -> None:
         from core.logger import log_startup, log_system
+        from core.dependency_inspector import dependency_inspector
+        from core.service_manager import service_manager
+
         log_startup(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
 
         # 1. Configuration Validation
@@ -89,10 +92,16 @@ class XAssistantController:
         for warn in config_warnings:
             log_startup(f"[Config Warning] {warn}")
 
-        # 2. Plugin Status Report
+        # 2. Dependency Health Report
+        dependency_inspector.generate_health_report()
+
+        # 3. Plugin Status Report
         plugin_manager.generate_plugin_status_report()
 
-        # 3. Execute Full 11-Step Startup Diagnostics Checklist
+        # 4. Service Manager Status Summary
+        service_manager.print_status_summary()
+
+        # 5. Execute Full 11-Step Startup Diagnostics Checklist
         self.diagnostic_results = system_checker.run_all_checks()
         log_startup("11-Step Startup Diagnostics Check completed successfully.")
 
@@ -103,7 +112,7 @@ class XAssistantController:
         # Start Background Daemons
         automation_rule_engine.start_engine()
         diagnostics_monitor.start_monitoring(interval_sec=30)
-        log_system("Background daemons (automation_rule_engine, diagnostics_monitor) started successfully.")
+        log_system("Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.")
 
     def process_command(self, user_text: str) -> str:
         """
