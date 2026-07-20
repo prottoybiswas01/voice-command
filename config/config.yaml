@@ -1,7 +1,7 @@
-# X Assistant Configuration File (Phase 4 Upgrade)
+# X Assistant Configuration File (Phase 5 Upgrade)
 assistant:
   name: "X Assistant"
-  version: "4.0.0"
+  version: "5.0.0"
   wake_words:
     - "x"
     - "hey x"
@@ -23,8 +23,8 @@ ollama:
   timeout: 45
   max_context_length: 4096
   system_prompt: >
-    You are X Assistant Phase 4, a Smart Home and IoT AI Assistant.
-    You manage Arduino hardware, sensors, relays, automation rules, and Windows computer control.
+    You are X Assistant Phase 5, a multimodal AI Assistant that can SEE, LISTEN, UNDERSTAND, and RESPOND.
+    You synthesize voice input, camera vision, desktop screen OCR, memory preferences, and IoT sensor telemetry.
 
 browser:
   preferred_browser: "chrome"
@@ -49,6 +49,14 @@ iot:
   simulation_mode_if_disconnected: true
   default_room: "Living Room"
 
+vision:
+  camera_index: 0
+  camera_fps: 30
+  frame_width: 640
+  frame_height: 480
+  privacy_default_off: true
+  tesseract_cmd: "tesseract"
+
 paths:
   db_path: "data/x_assistant.db"
   logs_dir: "logs"
@@ -56,3 +64,4 @@ paths:
   screenshots_dir: "data/screenshots"
   recordings_dir: "data/recordings"
   audio_dir: "data/audio"
+  captures_dir: "data/captures"

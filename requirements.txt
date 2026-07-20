@@ -1,4 +1,4 @@
-# Core Dependencies for X Assistant (Phase 4)
+# Core Dependencies for X Assistant (Phase 5)
 pyttsx3>=2.90
 SpeechRecognition>=3.10.0
 # PyAudio (Install prebuilt binary wheel if building from source fails on Python 3.14: pip install pyaudio)
@@ -8,7 +8,10 @@ psutil>=5.9.8
 PyYAML>=6.0.1
 playwright>=1.42.0
 
-# Phase 4 IoT & Smart Home Dependencies
+# Phase 5 Vision AI, Multimodal & OCR Dependencies
+opencv-python>=4.9.0.80
+Pillow>=10.2.0
+pytesseract>=0.3.10
 pyserial>=3.5
 wikipedia>=1.4.0
 screen-brightness-control>=0.22.0

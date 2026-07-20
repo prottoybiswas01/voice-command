@@ -1,8 +1,8 @@
 """
-SQLite Database Layer for X Assistant (Phase 4 Upgrade).
+SQLite Database Layer for X Assistant (Phase 5 Upgrade).
 Provides persistent storage for conversations, commands, todos, notes, reminders, user preferences,
-memory buffer, command stats, audit logs, clipboard, calendar, pomodoro,
-IoT hardware devices, sensor logs, and automation rules.
+memory buffer, command stats, audit logs, clipboard, calendar, pomodoro, IoT hardware devices,
+sensor logs, automation rules, vision captures, OCR history, and detected objects.
 """
 
 import sqlite3
@@ -13,7 +13,7 @@ from core.logger import logger
 
 
 class DatabaseManager:
-    """Manages SQLite connections and Phase-4 CRUD operations."""
+    """Manages SQLite connections and Phase-5 CRUD operations."""
 
     def __init__(self, db_path: Optional[str] = None) -> None:
         self.db_path = str(db_path or settings.paths.db_path)
@@ -26,12 +26,12 @@ class DatabaseManager:
         return conn
 
     def init_db(self) -> None:
-        """Initialize database schema tables for Phase-1, 2, 3 & Phase-4."""
+        """Initialize database schema tables for Phase-1, 2, 3, 4 & Phase-5."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.cursor()
 
-                # Phase 1 - 3 Tables
+                # Phase 1 - 4 Tables
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS conversation_history (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -145,7 +145,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-4: IoT Hardware Devices Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS iot_devices (
                         device_id TEXT PRIMARY KEY,
@@ -158,7 +157,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-4: Sensor Telemetry Logs Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS sensor_logs (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -170,7 +168,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-4: Automation Rules Table
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS automation_rules (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -184,7 +181,6 @@ class DatabaseManager:
                     )
                 """)
 
-                # Phase-4: IoT Event Logs
                 cursor.execute("""
                     CREATE TABLE IF NOT EXISTS iot_logs (
                         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -194,117 +190,172 @@ class DatabaseManager:
                     )
                 """)
 
+                # Phase-5: Vision Captures Table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS vision_captures (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        image_name TEXT NOT NULL,
+                        filepath TEXT NOT NULL,
+                        recognized_summary TEXT,
+                        captured_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-5: OCR History Table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS ocr_history (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        source_type TEXT DEFAULT 'camera',
+                        extracted_text TEXT NOT NULL,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
+                # Phase-5: Detected Objects Table
+                cursor.execute("""
+                    CREATE TABLE IF NOT EXISTS detected_objects (
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                        label TEXT NOT NULL,
+                        confidence REAL DEFAULT 0.9,
+                        timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
+                    )
+                """)
+
                 conn.commit()
-                logger.info("Phase-4 Database schema initialized successfully.")
+                logger.info("Phase-5 Database schema initialized successfully.")
 
         except Exception as err:
             logger.error(f"Database initialization error: {err}")
 
-    # Phase-4: IoT Devices CRUD
+    # Phase-5: Vision Captures CRUD
+    def log_vision_capture(self, image_name: str, filepath: str, summary: str = "") -> None:
+        """Record image capture event to SQLite."""
+        try:
+            with self.get_connection() as conn:
+                conn.execute(
+                    "INSERT INTO vision_captures (image_name, filepath, recognized_summary) VALUES (?, ?, ?)",
+                    (image_name, filepath, summary)
+                )
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to log vision capture: {err}")
+
+    def get_recent_captures(self, limit: int = 5) -> List[Dict[str, Any]]:
+        """Retrieve recent image capture records."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT image_name, filepath, recognized_summary, captured_at FROM vision_captures ORDER BY id DESC LIMIT ?", (limit,))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to fetch vision captures: {err}")
+            return []
+
+    # Phase-5: OCR History CRUD
+    def save_ocr_result(self, source_type: str, text: str) -> None:
+        """Record extracted OCR text to SQLite."""
+        if not text or not text.strip():
+            return
+        try:
+            with self.get_connection() as conn:
+                conn.execute("INSERT INTO ocr_history (source_type, extracted_text) VALUES (?, ?)", (source_type, text.strip()))
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to save OCR result: {err}")
+
+    def get_recent_ocr_records(self, limit: int = 10) -> List[Dict[str, Any]]:
+        """Retrieve recent extracted OCR text snippets."""
+        try:
+            with self.get_connection() as conn:
+                cursor = conn.execute("SELECT id, source_type, extracted_text, timestamp FROM ocr_history ORDER BY id DESC LIMIT ?", (limit,))
+                return [dict(row) for row in cursor.fetchall()]
+        except Exception as err:
+            logger.error(f"Failed to fetch OCR records: {err}")
+            return []
+
+    # Phase-5: Detected Objects CRUD
+    def log_detected_object(self, label: str, confidence: float = 0.9) -> None:
+        """Record recognized object label to database."""
+        try:
+            with self.get_connection() as conn:
+                conn.execute("INSERT INTO detected_objects (label, confidence) VALUES (?, ?)", (label, confidence))
+                conn.commit()
+        except Exception as err:
+            logger.error(f"Failed to log detected object: {err}")
+
+    # Phase 1 - 4 Table methods...
     def register_iot_device(self, device_id: str, name: str, room: str, pin: int, device_type: str, state: str = "OFF") -> None:
-        """Register or update IoT device."""
         try:
             with self.get_connection() as conn:
                 conn.execute("""
                     INSERT INTO iot_devices (device_id, name, room, pin, device_type, state, updated_at)
                     VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
                     ON CONFLICT(device_id) DO UPDATE SET
-                    name = excluded.name,
-                    room = excluded.room,
-                    pin = excluded.pin,
-                    device_type = excluded.device_type,
-                    state = excluded.state,
-                    updated_at = CURRENT_TIMESTAMP
+                    name = excluded.name, room = excluded.room, pin = excluded.pin,
+                    device_type = excluded.device_type, state = excluded.state, updated_at = CURRENT_TIMESTAMP
                 """, (device_id, name, room, pin, device_type, state))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to register IoT device {device_id}: {err}")
+            pass
 
     def update_device_state(self, device_id: str, state: str) -> None:
-        """Update hardware device active state."""
         try:
             with self.get_connection() as conn:
                 conn.execute("UPDATE iot_devices SET state = ?, updated_at = CURRENT_TIMESTAMP WHERE device_id = ?", (state, device_id))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to update device state {device_id}: {err}")
+            pass
 
     def get_all_iot_devices(self) -> List[Dict[str, Any]]:
-        """Fetch all registered IoT devices."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("SELECT device_id, name, room, pin, device_type, state, updated_at FROM iot_devices ORDER BY room ASC")
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
-            logger.error(f"Failed to fetch IoT devices: {err}")
             return []
 
-    # Phase-4: Sensor Telemetry CRUD
     def log_sensor_reading(self, sensor_name: str, room: str, reading_type: str, value: float) -> None:
-        """Record sensor telemetry reading to SQLite."""
         try:
             with self.get_connection() as conn:
-                conn.execute(
-                    "INSERT INTO sensor_logs (sensor_name, room, reading_type, value) VALUES (?, ?, ?, ?)",
-                    (sensor_name, room, reading_type, value)
-                )
+                conn.execute("INSERT INTO sensor_logs (sensor_name, room, reading_type, value) VALUES (?, ?, ?, ?)", (sensor_name, room, reading_type, value))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to log sensor reading: {err}")
+            pass
 
     def get_latest_sensor_readings(self) -> Dict[str, float]:
-        """Get latest sensor telemetry values."""
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute("""
-                    SELECT sensor_name, reading_type, value FROM sensor_logs
-                    WHERE id IN (SELECT MAX(id) FROM sensor_logs GROUP BY sensor_name, reading_type)
-                """)
+                cursor = conn.execute("SELECT sensor_name, reading_type, value FROM sensor_logs WHERE id IN (SELECT MAX(id) FROM sensor_logs GROUP BY sensor_name, reading_type)")
                 readings = {}
                 for row in cursor.fetchall():
-                    key = f"{row['sensor_name']}_{row['reading_type']}".lower()
-                    readings[key] = row["value"]
+                    readings[f"{row['sensor_name']}_{row['reading_type']}".lower()] = row["value"]
                 return readings
         except Exception as err:
-            logger.error(f"Failed to fetch latest sensor readings: {err}")
             return {}
 
-    # Phase-4: Automation Rules CRUD
     def add_automation_rule(self, rule_name: str, trigger_sensor: str, condition_op: str, threshold_value: float, action_device: str, action_command: str) -> int:
-        """Add automation rule."""
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute("""
-                    INSERT INTO automation_rules (rule_name, trigger_sensor, condition_op, threshold_value, action_device, action_command)
-                    VALUES (?, ?, ?, ?, ?, ?)
-                """, (rule_name, trigger_sensor, condition_op, threshold_value, action_device, action_command))
+                cursor = conn.execute("INSERT INTO automation_rules (rule_name, trigger_sensor, condition_op, threshold_value, action_device, action_command) VALUES (?, ?, ?, ?, ?, ?)", (rule_name, trigger_sensor, condition_op, threshold_value, action_device, action_command))
                 conn.commit()
                 return cursor.lastrowid or 0
         except Exception as err:
-            logger.error(f"Failed to add automation rule: {err}")
             return 0
 
     def get_active_automation_rules(self) -> List[Dict[str, Any]]:
-        """Fetch enabled automation rules."""
         try:
             with self.get_connection() as conn:
                 cursor = conn.execute("SELECT id, rule_name, trigger_sensor, condition_op, threshold_value, action_device, action_command FROM automation_rules WHERE is_enabled = 1")
                 return [dict(row) for row in cursor.fetchall()]
         except Exception as err:
-            logger.error(f"Failed to fetch automation rules: {err}")
             return []
 
-    # Phase-1 to 3 Table methods...
     def log_audit_event(self, action_type: str, target_item: str, user_confirmed: bool = True, status: str = "SUCCESS", details: str = "") -> None:
         try:
             with self.get_connection() as conn:
-                conn.execute(
-                    "INSERT INTO audit_logs (action_type, target_item, user_confirmed, status, details) VALUES (?, ?, ?, ?, ?)",
-                    (action_type, target_item, 1 if user_confirmed else 0, status, details)
-                )
+                conn.execute("INSERT INTO audit_logs (action_type, target_item, user_confirmed, status, details) VALUES (?, ?, ?, ?, ?)", (action_type, target_item, 1 if user_confirmed else 0, status, details))
                 conn.commit()
         except Exception as err:
-            logger.error(f"Failed to record audit event: {err}")
+            pass
 
     def get_recent_audit_logs(self, limit: int = 15) -> List[Dict[str, Any]]:
         try:
@@ -335,10 +386,7 @@ class DatabaseManager:
     def add_calendar_event(self, title: str, event_date: str, event_time: str = "09:00 AM", description: str = "") -> int:
         try:
             with self.get_connection() as conn:
-                cursor = conn.execute(
-                    "INSERT INTO calendar_events (title, event_date, event_time, description) VALUES (?, ?, ?, ?)",
-                    (title, event_date, event_time, description)
-                )
+                cursor = conn.execute("INSERT INTO calendar_events (title, event_date, event_time, description) VALUES (?, ?, ?, ?)", (title, event_date, event_time, description))
                 conn.commit()
                 return cursor.lastrowid or 0
         except Exception as err:
@@ -525,5 +573,5 @@ class DatabaseManager:
             pass
 
 
-# Global Phase-4 database instance
+# Global Phase-5 database instance
 db = DatabaseManager()

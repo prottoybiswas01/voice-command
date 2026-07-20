@@ -1,7 +1,8 @@
 """
-Main Application Entry Point for X Assistant (Phase 4 Upgrade).
-Orchestrates Autonomous AI Agent, Arduino Serial Bridge, IoT Device Manager, Automation Rules Engine,
-Win32 Window Manager, Playwright Browser Agent, Smart Home Controller, Ollama LLM, TTS, and GUI Dashboard.
+Main Application Entry Point for X Assistant (Phase 5 Upgrade).
+Orchestrates Autonomous AI Agent, Multimodal Vision AI, Camera Engine, OCR Engine,
+Arduino Serial Bridge, IoT Device Manager, Automation Rules Engine, Win32 Window Manager,
+Playwright Browser Agent, Ollama LLM, TTS, and GUI Dashboard.
 """
 
 import sys
@@ -23,6 +24,7 @@ from brain.reasoning import reasoning_agent
 from brain.agent import autonomous_agent
 from brain.pomodoro import pomodoro_timer
 from brain.llm_client import ollama_client
+from brain.multimodal import multimodal_synthesizer
 from brain.intent_parser import intent_parser
 
 from actions.system_actions import system_actions
@@ -46,11 +48,16 @@ from iot.device_manager import device_manager
 from iot.smart_home import smart_home_controller
 from iot.automation_rules import automation_rule_engine
 
+from vision.camera_engine import camera_engine
+from vision.detector import vision_detector
+from vision.ocr_engine import ocr_engine
+from vision.vision_actions import vision_actions_handler
+
 from ui.dashboard import AssistantDashboard
 
 
 class XAssistantController:
-    """Central Phase-4 Autonomous Orchestrator combining AI Agent & Smart Home IoT subsystems."""
+    """Central Phase-5 Multimodal Autonomous Orchestrator combining Vision AI & Computer Control."""
 
     def __init__(self) -> None:
         logger.info(f"Initializing {settings.assistant.name} (v{settings.assistant.version}) Core...")
@@ -63,8 +70,8 @@ class XAssistantController:
 
     def process_command(self, user_text: str) -> str:
         """
-        Main Phase-4 Pipeline:
-        Input text -> Implicit Memory -> Confirmations -> Multi-step Reasoning -> Intent -> Hardware / Action -> Response.
+        Main Phase-5 Multimodal Pipeline:
+        Input text -> Memory -> Security Confirmations -> Multi-step Reasoning -> Intent / Vision / Hardware -> LLM / Speech.
         """
         if not user_text or not user_text.strip():
             return ""
@@ -118,17 +125,21 @@ class XAssistantController:
         return self._execute_single_intent(user_text)
 
     def _execute_single_intent(self, prompt_text: str) -> str:
-        """Execute single intent prompt across Phase 1, 2, 3, and Phase 4 action engines."""
+        """Execute single intent prompt across all action engines."""
         intent = intent_parser.parse(prompt_text)
         logger.info(f"Parsed Intent: {intent.name} (Category: {intent.action_type})")
 
         response = ""
 
-        # A. Phase-4 Smart Home & IoT Hardware Controls
-        if intent.action_type == "smart_home":
+        # A. Phase-5 Vision AI Commands
+        if intent.action_type == "vision":
+            response = vision_actions_handler.handle_vision_command(intent.name, intent.params)
+
+        # B. Phase-4 Smart Home & IoT Hardware Controls
+        elif intent.action_type == "smart_home":
             response = smart_home_controller.handle_voice_command(intent.name, intent.params)
 
-        # B. Phase-3 Win32 Application Window Controls
+        # C. Phase-3 Win32 Application Window Controls
         elif intent.action_type == "window":
             app = intent.params.get("app", "")
             if intent.name == "minimize_window":
@@ -140,7 +151,7 @@ class XAssistantController:
             elif intent.name == "close_window":
                 response = window_manager.close_window(app)
 
-        # C. Phase-3 File System & Archive Operations
+        # D. Phase-3 File System & Archive Operations
         elif intent.action_type == "file_system":
             path = intent.params.get("path", "")
             if intent.name == "create_dir":
@@ -153,14 +164,14 @@ class XAssistantController:
                 self.pending_confirmation = {"action_type": "delete_file", "target": path}
                 response = security_auditor.request_confirmation_prompt("delete_file", path)
 
-        # D. Phase-3 Screen & Audio Recording
+        # E. Phase-3 Screen & Audio Recording
         elif intent.action_type == "recording":
             if intent.name == "record_audio":
                 response = recorder.record_audio_note(duration_seconds=10)
             elif intent.name == "record_screen":
                 response = recorder.record_screen_snapshot_series(duration_seconds=5)
 
-        # E. Phase-3 Network & Windows Settings
+        # F. Phase-3 Network & Windows Settings
         elif intent.action_type == "network_settings":
             if intent.name == "wifi_control":
                 act = intent.params.get("action", "status")
@@ -171,7 +182,7 @@ class XAssistantController:
             elif intent.name == "get_startup_apps":
                 response = network_settings_manager.get_startup_apps()
 
-        # F. Phase-3 Pomodoro & Productivity Hub
+        # G. Phase-3 Pomodoro & Productivity Hub
         elif intent.action_type == "productivity_hub":
             if intent.name == "pomodoro_control":
                 act = intent.params.get("action", "start")
@@ -181,16 +192,16 @@ class XAssistantController:
             elif intent.name == "show_calendar":
                 response = productivity_hub.list_calendar_events()
 
-        # G. Phase-3 Security Audit Logs
+        # H. Phase-3 Security Audit Logs
         elif intent.action_type == "security":
             response = security_auditor.get_audit_trail_summary()
 
-        # H. Phase-2 Smart Music Playback
+        # I. Phase-2 Smart Music Playback
         elif intent.action_type == "smart_music":
             query = intent.params.get("query", "")
             response = smart_music_dispatcher.play_music(query)
 
-        # I. Phase-2 Playwright Browser Automation
+        # J. Phase-2 Playwright Browser Automation
         elif intent.action_type == "browser_auto":
             if intent.name == "open_browser_site":
                 site = intent.params.get("site", "github")
@@ -199,7 +210,7 @@ class XAssistantController:
                 direction = intent.params.get("direction", "down")
                 response = browser_controller.scroll_page(direction)
 
-        # J. Phase-2 Live Internet Data
+        # K. Phase-2 Live Internet Data
         elif intent.action_type == "internet":
             if intent.name == "get_live_weather":
                 loc = intent.params.get("location", "Dhaka")
@@ -210,7 +221,7 @@ class XAssistantController:
                 query = intent.params.get("query", "")
                 response = internet_actions.search_wikipedia(query)
 
-        # K. System Controls
+        # L. System Controls
         elif intent.action_type == "system_control":
             if intent.name == "take_screenshot":
                 response = system_control.take_screenshot()
@@ -224,7 +235,7 @@ class XAssistantController:
                 query = intent.params.get("query", "")
                 response = system_control.search_local_files(query)
 
-        # L. System Actions & App Launchers
+        # M. System Actions & App Launchers
         elif intent.action_type == "system":
             if intent.name == "greeting":
                 response = system_actions.handle_greeting()
@@ -236,10 +247,10 @@ class XAssistantController:
                 app_name = intent.params.get("app", "")
                 response = system_actions.execute_app_launch(app_name)
 
-        # M. Power Actions & Security Gate
+        # N. Power Actions & Security Gate
         elif intent.action_type == "power":
             if intent.name == "exit":
-                response = "Goodbye! Shutting down X Assistant Phase 4."
+                response = "Goodbye! Shutting down X Assistant Phase 5."
                 tts_engine.speak(response, sync=True)
                 self.stop()
                 sys.exit(0)
@@ -251,13 +262,13 @@ class XAssistantController:
                     self.pending_confirmation = {"action_type": action, "target": "System Computer"}
                     response = security_auditor.request_confirmation_prompt(action, "System Computer")
 
-        # N. Media & Volume Controls
+        # O. Media & Volume Controls
         elif intent.action_type == "media":
             if intent.name == "volume_control":
                 cmd = intent.params.get("command", "")
                 response = media_actions.control_volume(cmd)
 
-        # O. Web Openers
+        # P. Web Openers
         elif intent.action_type == "web":
             if intent.name == "open_web":
                 site = intent.params.get("site", "youtube")
@@ -269,7 +280,7 @@ class XAssistantController:
                 query = intent.params.get("query", "")
                 response = web_actions.search_youtube(query)
 
-        # P. Productivity Actions
+        # Q. Productivity Actions
         elif intent.action_type == "productivity":
             if intent.name == "system_info":
                 metric = intent.params.get("metric", "all")
@@ -288,14 +299,14 @@ class XAssistantController:
                 msg = intent.params.get("message", "")
                 response = productivity_actions.set_reminder(msg)
 
-        # Q. Fallback LLM Conversation with Memory Context Injection
+        # R. Multimodal LLM Conversation Synthesis
         elif intent.action_type == "llm":
             prompt = intent.params.get("prompt", prompt_text)
-            response = ollama_client.generate_response(prompt)
+            response = multimodal_synthesizer.generate_multimodal_response(prompt)
 
         # Default Fallback
         if not response:
-            response = ollama_client.generate_response(prompt_text)
+            response = multimodal_synthesizer.generate_multimodal_response(prompt_text)
 
         tts_engine.speak(response)
         db.log_conversation(prompt_text, response)
@@ -323,25 +334,26 @@ class XAssistantController:
         wake_word_detector.start_loop(on_wake_detected)
 
     def start(self) -> None:
-        """Launch X Assistant Phase-4 controller and GUI Dashboard."""
-        logger.info(f"Starting {settings.assistant.name} Phase-4 application...")
-        tts_engine.speak(f"{settings.assistant.name} Phase 4 ready. Smart Home and IoT Engine online.")
+        """Launch X Assistant Phase-5 controller and GUI Dashboard."""
+        logger.info(f"Starting {settings.assistant.name} Phase-5 application...")
+        tts_engine.speak(f"{settings.assistant.name} Phase 5 ready. Multimodal Vision AI online.")
 
         listener_thread = threading.Thread(target=self._voice_listener_loop, daemon=True)
         listener_thread.start()
 
         self.dashboard = AssistantDashboard(on_user_submit_callback=self.process_command)
-        self.dashboard.append_transcript("Assistant", "X Assistant Phase 4 online. Smart Home IoT & Arduino Bridge active!")
+        self.dashboard.append_transcript("Assistant", "X Assistant Phase 5 online. Multimodal Vision AI & Smart Recognition active!")
         self.dashboard.start()
 
     def stop(self) -> None:
         """Stop all background processes."""
         self.is_running = False
+        camera_engine.stop_camera()
         automation_rule_engine.stop_engine()
         wake_word_detector.stop()
         tts_engine.stop()
         browser_controller.close()
-        logger.info("X Assistant Phase 4 stopped gracefully.")
+        logger.info("X Assistant Phase 5 stopped gracefully.")
 
 
 def main() -> None:

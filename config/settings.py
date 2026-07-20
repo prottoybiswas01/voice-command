@@ -1,5 +1,5 @@
 """
-X Assistant Configuration Loader Module (Phase 4 Upgrade).
+X Assistant Configuration Loader Module (Phase 5 Upgrade).
 Provides centralized settings management loading from YAML and environment variables.
 """
 
@@ -21,7 +21,7 @@ CONFIG_PATH = BASE_DIR / "config" / "config.yaml"
 @dataclass
 class AssistantSettings:
     name: str = "X Assistant"
-    version: str = "4.0.0"
+    version: str = "5.0.0"
     wake_words: List[str] = field(default_factory=lambda: ["x", "hey x", "x listen"])
     language: str = "bn-EN"
     debug_mode: bool = True
@@ -43,7 +43,7 @@ class OllamaSettings:
     model: str = "gemma2:2b"
     timeout: int = 45
     max_context_length: int = 4096
-    system_prompt: str = "You are X Assistant Phase 4, a Smart Home and IoT AI Assistant."
+    system_prompt: str = "You are X Assistant Phase 5, a multimodal AI Assistant."
 
 
 @dataclass
@@ -75,6 +75,16 @@ class IoTSettings:
 
 
 @dataclass
+class VisionSettings:
+    camera_index: int = 0
+    camera_fps: int = 30
+    frame_width: int = 640
+    frame_height: int = 480
+    privacy_default_off: bool = True
+    tesseract_cmd: str = "tesseract"
+
+
+@dataclass
 class PathSettings:
     db_path: Path = BASE_DIR / "data" / "x_assistant.db"
     logs_dir: Path = BASE_DIR / "logs"
@@ -82,10 +92,11 @@ class PathSettings:
     screenshots_dir: Path = BASE_DIR / "data" / "screenshots"
     recordings_dir: Path = BASE_DIR / "data" / "recordings"
     audio_dir: Path = BASE_DIR / "data" / "audio"
+    captures_dir: Path = BASE_DIR / "data" / "captures"
 
 
 class Settings:
-    """Central configuration instance for X Assistant Phase 4."""
+    """Central configuration instance for X Assistant Phase 5."""
 
     def __init__(self, config_file: Path = CONFIG_PATH) -> None:
         self.config_file = config_file
@@ -96,6 +107,7 @@ class Settings:
         self.music = MusicSettings()
         self.agent = AgentSettings()
         self.iot = IoTSettings()
+        self.vision = VisionSettings()
         self.paths = PathSettings()
         self.load_config()
 
@@ -156,6 +168,14 @@ class Settings:
                 self.iot.simulation_mode_if_disconnected = data["iot"].get("simulation_mode_if_disconnected", self.iot.simulation_mode_if_disconnected)
                 self.iot.default_room = data["iot"].get("default_room", self.iot.default_room)
 
+            if "vision" in data:
+                self.vision.camera_index = data["vision"].get("camera_index", self.vision.camera_index)
+                self.vision.camera_fps = data["vision"].get("camera_fps", self.vision.camera_fps)
+                self.vision.frame_width = data["vision"].get("frame_width", self.vision.frame_width)
+                self.vision.frame_height = data["vision"].get("frame_height", self.vision.frame_height)
+                self.vision.privacy_default_off = data["vision"].get("privacy_default_off", self.vision.privacy_default_off)
+                self.vision.tesseract_cmd = data["vision"].get("tesseract_cmd", self.vision.tesseract_cmd)
+
             if "paths" in data:
                 if "db_path" in data["paths"]:
                     self.paths.db_path = BASE_DIR / data["paths"]["db_path"]
@@ -169,6 +189,8 @@ class Settings:
                     self.paths.recordings_dir = BASE_DIR / data["paths"]["recordings_dir"]
                 if "audio_dir" in data["paths"]:
                     self.paths.audio_dir = BASE_DIR / data["paths"]["audio_dir"]
+                if "captures_dir" in data["paths"]:
+                    self.paths.captures_dir = BASE_DIR / data["paths"]["captures_dir"]
 
         except Exception as err:
             print(f"[Warning] Failed to parse config file: {err}. Using default settings.")
@@ -180,7 +202,8 @@ class Settings:
         self.paths.screenshots_dir.mkdir(parents=True, exist_ok=True)
         self.paths.recordings_dir.mkdir(parents=True, exist_ok=True)
         self.paths.audio_dir.mkdir(parents=True, exist_ok=True)
+        self.paths.captures_dir.mkdir(parents=True, exist_ok=True)
 
 
-# Global Phase-4 settings instance
+# Global Phase-5 settings instance
 settings = Settings()
