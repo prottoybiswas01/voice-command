@@ -8,6 +8,18 @@ Win32 Window Manager, Ollama LLM, TTS, and GUI Dashboard.
 """
 
 import sys
+import os
+import subprocess
+from pathlib import Path
+
+# Auto-re-execute under virtual environment if available
+_venv_py = Path(__file__).parent / "venv" / "Scripts" / "python.exe"
+if _venv_py.exists() and str(_venv_py.resolve()).lower() not in sys.executable.lower() and os.environ.get("X_ASSISTANT_VENV_ACTIVE") != "1":
+    os.environ["X_ASSISTANT_VENV_ACTIVE"] = "1"
+    print(f"[Launcher] Relaunching main.py inside Virtual Environment ({_venv_py})...")
+    res = subprocess.run([str(_venv_py)] + sys.argv)
+    sys.exit(res.returncode)
+
 import time
 import threading
 from typing import Optional, List
