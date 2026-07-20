@@ -15,6 +15,9 @@ call venv\Scripts\activate.bat
 echo Installing required Python packages from requirements.txt...
 pip install -r requirements.txt
 
+echo Installing PyAudio (optional microphone audio engine)...
+pip install pyaudio --only-binary=:all: || echo [Note] PyAudio binary wheel not available for this Python version. Microphone fallback enabled.
+
 echo Installing Playwright dependencies...
 playwright install chromium
 

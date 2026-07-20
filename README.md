@@ -85,14 +85,8 @@ c:\voice command\
 
 ### Step 2: Automatic Setup & Installation
 1. Double-click **`setup.bat`** to create the Python virtual environment (`venv`).
-2. Double-click **`install.bat`** to install all required dependencies:
-   - `pyttsx3`
-   - `SpeechRecognition`
-   - `PyAudio`
-   - `pyautogui`
-   - `pywin32`
-   - `psutil`
-   - `playwright`
+2. Double-click **`install.bat`** to install all required dependencies.
+   *(Note: If PyAudio compilation raises an error on Python 3.14, install the prebuilt wheel via `pip install pyaudio --only-binary=:all:` or use the GUI text input fallback).*
 
 ---
 
