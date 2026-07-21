@@ -54,6 +54,11 @@ iot:
   simulation_mode_if_disconnected: true
   default_room: "Living Room"
 
+web:
+  host: "0.0.0.0"
+  port: 8000
+  enabled: true
+
 vision:
   camera_index: 0
   camera_fps: 30

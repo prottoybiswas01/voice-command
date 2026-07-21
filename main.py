@@ -13,12 +13,13 @@ import subprocess
 from pathlib import Path
 
 # Auto-re-execute under virtual environment if available
-_venv_py = Path(__file__).parent / "venv" / "Scripts" / "python.exe"
-if _venv_py.exists() and str(_venv_py.resolve()).lower() not in sys.executable.lower() and os.environ.get("X_ASSISTANT_VENV_ACTIVE") != "1":
-    os.environ["X_ASSISTANT_VENV_ACTIVE"] = "1"
-    print(f"[Launcher] Relaunching main.py inside Virtual Environment ({_venv_py})...")
-    res = subprocess.run([str(_venv_py)] + sys.argv)
-    sys.exit(res.returncode)
+if __name__ == "__main__":
+    _venv_py = Path(__file__).parent / "venv" / "Scripts" / "python.exe"
+    if _venv_py.exists() and str(_venv_py.resolve()).lower() not in sys.executable.lower() and os.environ.get("X_ASSISTANT_VENV_ACTIVE") != "1":
+        os.environ["X_ASSISTANT_VENV_ACTIVE"] = "1"
+        print(f"[Launcher] Relaunching main.py inside Virtual Environment ({_venv_py})...")
+        res = subprocess.run([str(_venv_py)] + sys.argv)
+        sys.exit(res.returncode)
 
 import time
 import threading
@@ -75,6 +76,7 @@ from vision.ocr_engine import ocr_engine
 from vision.vision_actions import vision_actions_handler
 
 from ui.dashboard import AssistantDashboard
+from ui.web_server import web_server_manager
 
 
 class XAssistantController:
@@ -112,7 +114,12 @@ class XAssistantController:
         # Start Background Daemons
         automation_rule_engine.start_engine()
         diagnostics_monitor.start_monitoring(interval_sec=30)
-        log_system("Background daemons (automation_rule_engine, diagnostics_monitor, scheduler_service) started successfully.")
+
+        # Start Web Server Manager
+        if settings.web.enabled:
+            web_server_manager.start(controller=self)
+
+        log_system("Background daemons (automation_rule_engine, diagnostics_monitor, web_server_manager) started successfully.")
 
     def process_command(self, user_text: str) -> str:
         """
@@ -455,6 +462,7 @@ class XAssistantController:
         camera_engine.stop_camera()
         automation_rule_engine.stop_engine()
         wake_word_detector.stop()
+        web_server_manager.stop()
         tts_engine.stop()
         browser_controller.close()
         logger.info("X Assistant Phase 6 stopped gracefully.")

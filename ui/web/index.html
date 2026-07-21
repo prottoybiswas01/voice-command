@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X Assistant Phase 6 - Personal AI Ecosystem</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Top Glassmorphism Header -->
+    <header class="glass-header">
+      <div class="header-brand">
+        <span class="logo-icon">🤖</span>
+        <div>
+          <h1 id="app-title">X Assistant Phase 6</h1>
+          <p class="subtitle">Ultimate Personal AI Ecosystem</p>
+        </div>
+      </div>
+      <div class="header-status">
+        <div class="status-pill healthy" id="status-indicator">
+          <span class="pulse-dot"></span>
+          <span id="status-text">System Online</span>
+        </div>
+        <div class="mode-badge" id="backend-mode-badge">Virtual Mode</div>
+      </div>
+    </header>
+
+    <!-- Main Workspace Layout -->
+    <div class="workspace">
+      <!-- Left Sidebar Navigation -->
+      <nav class="sidebar glass-card">
+        <button class="nav-btn active" data-tab="tab-agent">
+          <span class="nav-icon">🤖</span> AI Agent
+        </button>
+        <button class="nav-btn" data-tab="tab-iot">
+          <span class="nav-icon">🏠</span> Smart Home
+        </button>
+        <button class="nav-btn" data-tab="tab-vision">
+          <span class="nav-icon">👁️</span> Vision AI
+        </button>
+        <button class="nav-btn" data-tab="tab-rag">
+          <span class="nav-icon">📚</span> Knowledge Base
+        </button>
+        <button class="nav-btn" data-tab="tab-workflows">
+          <span class="nav-icon">⚡</span> Workflows & Scenes
+        </button>
+        <button class="nav-btn" data-tab="tab-plugins">
+          <span class="nav-icon">🔌</span> Plugins
+        </button>
+        <button class="nav-btn" data-tab="tab-diagnostics">
+          <span class="nav-icon">🩺</span> Diagnostics & Audit
+        </button>
+
+        <div class="sidebar-footer">
+          <div class="personality-box">
+            <span class="p-label">Active AI Personality</span>
+            <div id="active-personality-name" class="p-value">Standard Assistant</div>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Main Dynamic Content Container -->
+      <main class="main-content">
+        
+        <!-- TAB 1: AI AGENT & REASONING LOG -->
+        <section id="tab-agent" class="tab-pane active">
+          <div class="agent-layout">
+            <div class="chat-column glass-card">
+              <div class="card-header">
+                <h2>Live AI Reasoning Log & Voice Interface</h2>
+                <button class="chip-btn danger-chip" onclick="clearLogs()">🧹 Clear Log</button>
+              </div>
+
+              <div class="transcript-box" id="transcript-box">
+                <div class="system-msg">
+                  🤖 <strong>System Ready:</strong> Listening for <code>"X"</code> / <code>"Hey X"</code> or text input. Type commands below.
+                </div>
+              </div>
+
+              <!-- Quick Command Chips -->
+              <div class="chips-row">
+                <button class="chip-btn" onclick="sendQuickCmd('start pomodoro')">🍅 Pomodoro</button>
+                <button class="chip-btn" onclick="sendQuickCmd('take screenshot')">📸 Screenshot</button>
+                <button class="chip-btn" onclick="sendQuickCmd('show security logs')">🔒 Audit Logs</button>
+                <button class="chip-btn" onclick="sendQuickCmd('what is the room temperature')">🌡️ Room Temp</button>
+                <button class="chip-btn" onclick="sendQuickCmd('start work mode')">⚡ Work Mode</button>
+              </div>
+
+              <!-- Command Entry Bar -->
+              <div class="input-bar">
+                <input type="text" id="cmd-input" placeholder="Ask X Assistant anything or enter voice command..." onkeydown="if(event.key==='Enter') executeCommand()">
+                <button class="mic-btn" id="mic-btn" onclick="toggleWebMic()" title="Voice Input (Web Speech)">🎙️</button>
+                <button class="action-btn" onclick="executeCommand()">Execute</button>
+              </div>
+            </div>
+
+            <!-- Right System Sidebar -->
+            <div class="metrics-sidebar glass-card">
+              <h3>System Metrics</h3>
+              <div class="metrics-grid">
+                <div class="metric-card">
+                  <span class="m-title">CPU Usage</span>
+                  <div class="m-val" id="metric-cpu">0.0%</div>
+                  <div class="progress-bar"><div class="progress-fill" id="fill-cpu" style="width:0%"></div></div>
+                </div>
+                <div class="metric-card">
+                  <span class="m-title">RAM Usage</span>
+                  <div class="m-val" id="metric-ram">0.0%</div>
+                  <div class="progress-bar"><div class="progress-fill" id="fill-ram" style="width:0%"></div></div>
+                </div>
+                <div class="metric-card">
+                  <span class="m-title">Disk Space</span>
+                  <div class="m-val" id="metric-disk">0.0%</div>
+                  <div class="progress-bar"><div class="progress-fill" id="fill-disk" style="width:0%"></div></div>
+                </div>
+              </div>
+
+              <div class="pomodoro-widget">
+                <h4>🍅 Focus Pomodoro Timer</h4>
+                <div id="pomodoro-display" class="pomo-display">25:00 (Break: 5m)</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 2: SMART HOME IOT CONTROL -->
+        <section id="tab-iot" class="tab-pane">
+          <div class="iot-layout">
+            <!-- Telemetry Cards -->
+            <div class="glass-card">
+              <div class="card-header">
+                <h2>Live Hardware Telemetry</h2>
+                <div class="status-pill" id="iot-status-badge">⚡ Scanning Ports</div>
+              </div>
+              <div class="telemetry-grid">
+                <div class="tele-card">
+                  <span class="tele-icon">🌡️</span>
+                  <div>
+                    <span class="tele-label">Room Temperature</span>
+                    <h3 id="tele-temp">28.5 °C</h3>
+                  </div>
+                </div>
+                <div class="tele-card">
+                  <span class="tele-icon">💧</span>
+                  <div>
+                    <span class="tele-label">Relative Humidity</span>
+                    <h3 id="tele-humidity">65.0 %</h3>
+                  </div>
+                </div>
+                <div class="tele-card">
+                  <span class="tele-icon">🏃</span>
+                  <div>
+                    <span class="tele-label">PIR Motion Detection</span>
+                    <h3 id="tele-motion">Clear</h3>
+                  </div>
+                </div>
+                <div class="tele-card">
+                  <span class="tele-icon">⚠️</span>
+                  <div>
+                    <span class="tele-label">MQ2 Gas & Smoke</span>
+                    <h3 id="tele-gas">Safe</h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Hardware Actuator Controls -->
+            <div class="glass-card mt-20">
+              <h2>Smart Home Actuators</h2>
+              <div class="actuator-grid">
+                <button class="actuator-btn" onclick="sendIoTControl('turn on room light')">💡 Light ON</button>
+                <button class="actuator-btn off-btn" onclick="sendIoTControl('turn off room light')">💡 Light OFF</button>
+                <button class="actuator-btn" onclick="sendIoTControl('turn on fan')">🌀 Fan ON</button>
+                <button class="actuator-btn off-btn" onclick="sendIoTControl('turn off fan')">🌀 Fan OFF</button>
+                <button class="actuator-btn" onclick="sendIoTControl('blink led')">🔔 Test Buzzer Alarm</button>
+                <button class="actuator-btn" onclick="sendIoTControl('rotate servo to 90 degrees')">🔑 Servo Lock (90°)</button>
+                <button class="actuator-btn" onclick="sendIoTControl('turn on all relays')">⚡ All Relays ON</button>
+                <button class="actuator-btn off-btn" onclick="sendIoTControl('turn off all relays')">🛑 All Relays OFF</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 3: VISION AI & CAMERA -->
+        <section id="tab-vision" class="tab-pane">
+          <div class="vision-layout glass-card">
+            <div class="card-header">
+              <h2>👁️ Vision AI & Multimodal Analyzer</h2>
+              <span class="status-pill healthy" id="vision-privacy-pill">🔒 Privacy: Camera Standby</span>
+            </div>
+            <div class="vision-content">
+              <div class="vision-box">
+                <div class="vision-viewport" id="vision-viewport">
+                  <span class="camera-icon-bg">📸</span>
+                  <p id="vision-status-msg">Camera standby mode active. Click any Vision action below to trigger analysis.</p>
+                </div>
+                <div class="vision-results" id="vision-result-box">
+                  <strong>Analysis Result:</strong> Ready for scene description or person detection.
+                </div>
+              </div>
+              <div class="vision-controls">
+                <button class="action-btn" onclick="triggerVisionAction('what do you see')">👁️ Describe Scene</button>
+                <button class="action-btn" onclick="triggerVisionAction('count people')">👥 Count People</button>
+                <button class="action-btn" onclick="triggerVisionAction('read text on screen')">📄 Read Screen OCR</button>
+                <button class="action-btn" onclick="triggerVisionAction('take a picture')">📸 Take Photo</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 4: KNOWLEDGE BASE RAG -->
+        <section id="tab-rag" class="tab-pane">
+          <div class="rag-layout glass-card">
+            <div class="card-header">
+              <h2>📚 Local RAG Knowledge Base</h2>
+              <label class="action-btn upload-label">
+                📥 Upload Document
+                <input type="file" id="rag-file-input" accept=".pdf,.txt,.md,.docx" style="display:none" onchange="uploadRAGDocument(this)">
+              </label>
+            </div>
+            
+            <div class="drop-zone" id="drop-zone">
+              📄 Drag & Drop PDF, TXT, MD, DOCX files here to index into RAG Knowledge Base
+            </div>
+
+            <h3>Indexed Knowledge Documents</h3>
+            <div id="rag-docs-list" class="docs-list">
+              <div class="loading-spinner">Loading knowledge base documents...</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 5: WORKFLOWS & SCENES -->
+        <section id="tab-workflows" class="tab-pane">
+          <div class="workflows-layout glass-card">
+            <h2>⚡ Macro Workflows & Smart Home Scenes</h2>
+            <div class="workflow-cards">
+              <div class="wf-card">
+                <div class="wf-info">
+                  <h3>⚡ Start Work Mode</h3>
+                  <p>Launches VS Code, Chrome, GitHub, Spotify, and Pomodoro Focus Mode</p>
+                </div>
+                <button class="action-btn" onclick="runWorkflow('start work mode')">Execute Routine</button>
+              </div>
+              <div class="wf-card">
+                <div class="wf-info">
+                  <h3>🌙 Good Night Scene</h3>
+                  <p>Turns off all relays, locks door servo lock to 90°, and arms PIR security sensors</p>
+                </div>
+                <button class="action-btn" onclick="runWorkflow('good night')">Execute Scene</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 6: PLUGINS -->
+        <section id="tab-plugins" class="tab-pane">
+          <div class="plugins-layout glass-card">
+            <h2>🔌 Extensible Dynamic Plugins</h2>
+            <div id="plugins-list" class="plugins-list">
+              <div class="loading-spinner">Loading dynamic plugins...</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- TAB 7: DIAGNOSTICS & AUDIT -->
+        <section id="tab-diagnostics" class="tab-pane">
+          <div class="diagnostics-layout glass-card">
+            <h2>🩺 System Self-Diagnostics & Security Audit Log</h2>
+            <div id="audit-summary-box" class="audit-summary">
+              Loading security audit trail...
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- App Logic JS -->
+  <script src="app.js"></script>
+</body>
+</html>

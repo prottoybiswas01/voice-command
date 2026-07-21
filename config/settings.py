@@ -77,6 +77,14 @@ class IoTSettings:
 
 
 @dataclass
+class WebSettings:
+    host: str = "0.0.0.0"
+    port: int = 8000
+    enabled: bool = True
+    web_dir: Path = BASE_DIR / "ui" / "web"
+
+
+@dataclass
 class VisionSettings:
     camera_index: int = 0
     camera_fps: int = 30
@@ -118,6 +126,7 @@ class Settings:
         self.music = MusicSettings()
         self.agent = AgentSettings()
         self.iot = IoTSettings()
+        self.web = WebSettings()
         self.vision = VisionSettings()
         self.rag = RagSettings()
         self.paths = PathSettings()
@@ -180,6 +189,11 @@ class Settings:
                 self.iot.auto_detect_com = data["iot"].get("auto_detect_com", self.iot.auto_detect_com)
                 self.iot.simulation_mode_if_disconnected = data["iot"].get("simulation_mode_if_disconnected", self.iot.simulation_mode_if_disconnected)
                 self.iot.default_room = data["iot"].get("default_room", self.iot.default_room)
+
+            if "web" in data:
+                self.web.host = data["web"].get("host", self.web.host)
+                self.web.port = data["web"].get("port", self.web.port)
+                self.web.enabled = data["web"].get("enabled", self.web.enabled)
 
             if "vision" in data:
                 self.vision.camera_index = data["vision"].get("camera_index", self.vision.camera_index)
